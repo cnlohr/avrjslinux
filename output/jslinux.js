@@ -85,14 +85,14 @@ function start()
 	pc.register_ioport_write( 0x400, 0xff, 2, ioport_write16 );
 	pc.register_ioport_read( 0x400, 0xff, 2, ioport_read16 );
 
-    pc.load_binary("vmlinux-3.7.8.bin", 0x00100000);
-    initrd_size = pc.load_binary("root.bin", 0x00400000);
+//    pc.load_binary("vmlinux-3.7.8.bin", 0x00100000);
+//    initrd_size = pc.load_binary("root.bin", 0x00400000);
 
 //    pc.load_binary("vmlinux-2.6.34.14.bin", 0x00100000);
 //    initrd_size = pc.load_binary("root.bin", 0x00400000);
 
-//    pc.load_binary("vmlinux-2.6.20.bin", 0x00100000);
-//    initrd_size = pc.load_binary("root.bin", 0x00400000);
+    pc.load_binary("vmlinux-2.6.20.bin", 0x00100000);
+    initrd_size = pc.load_binary("root.bin", 0x00400000);
 
     start_addr = 0x10000;
     pc.load_binary("linuxstart.bin", start_addr);

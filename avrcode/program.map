@@ -1,0 +1,162 @@
+
+program.elf:     file format elf32-avr
+
+SYMBOL TABLE:
+00800100 l    d  .data	00000000 .data
+00000000 l    d  .text	00000000 .text
+00800162 l    d  .bss	00000000 .bss
+00000000 l    d  .stab	00000000 .stab
+00000000 l    d  .stabstr	00000000 .stabstr
+00000000 l    df *ABS*	00000000 example.c
+0000003f l       *ABS*	00000000 __SREG__
+0000003e l       *ABS*	00000000 __SP_H__
+0000003d l       *ABS*	00000000 __SP_L__
+00000034 l       *ABS*	00000000 __CCP__
+00000000 l       *ABS*	00000000 __tmp_reg__
+00000001 l       *ABS*	00000000 __zero_reg__
+00000142 l     F .text	0000001e hex2val
+00000160 l     F .text	00000024 int8tohex
+00000184 l     F .text	00000004 enc424j600_stopop
+00000188 l     F .text	00000028 UpdateRemoteMAC.7461
+008002aa l     O .bss	00000006 macfrom.1635
+000001b0 l     F .text	00000046 microSPIR
+000001f6 l     F .text	00000018 popSDread
+008002b8 l     O .bss	00000002 opsleftSD.1662
+0000020a l     F .text	00000020 WaitFor.11224
+00000228 l     F .text	00000054 microSPIW
+0000027c l     F .text	00000026 microSPID
+000002a2 l     F .text	0000002a dumpSD
+000002ca l     F .text	00000018 endSDread
+000002dc l     F .text	00000012 reCS.11229
+000002e8 l     F .text	00000010 InitFileStructure
+000002f8 l     F .text	00000028 internal_16LEFAT.12311
+0000031c l     F .text	00000080 internal_32LEFAT.12310
+00000394 l     F .text	00000092 startSDread
+00800435 l     O .bss	00000001 highcap.11231
+0000040e l     F .text	000000aa FATAdvanceSector
+00800420 l     O .bss	00000002 lastfile.12307
+00800422 l     O .bss	00000001 cluster512s.12306
+00800427 l     O .bss	00000004 fat_partition_head.12303
+00800423 l     O .bss	00000004 first_fat_table_sector.12305
+000004b0 l     F .text	0000007e StartReadFAT_SA
+0080042b l     O .bss	00000004 first_data_sector.12304
+0000052c l     F .text	0000009e StartReadFAT
+000005c6 l     F .text	0000000a standarddelay.4620
+000005d0 l     F .text	0000001c PushPGMStr
+000005ec l     F .text	00000036 PUSH32.7446
+00000622 l     F .text	0000000a enc_oneshot.4667
+0000062c l     F .text	0000002c enc424j600_pushblob
+00000658 l     F .text	0000003a enc424j600_write_ctrl_reg16
+00000692 l     F .text	00000030 enc424j600_finish_callback_now
+0080015f l     O .data	00000002 NextPacketPointer.4669
+0080041f l     O .bss	00000001 termcallbackearly.4618
+000006be l     F .text	00000038 enc424j600_alter_word
+00800168 l     O .bss	00000002 sendbaseaddress.1586
+000006f4 l     F .text	0000001a enc424j600_startsend
+0000070a l     F .text	00000014 enc424j600_push16
+0000071e l     F .text	0000001c send_etherlink_header
+00000736 l     F .text	00000060 send_ip_header
+00800157 l     O .data	00000004 MyIP
+00000788 l     F .text	0000009e write_tcp_header.7457
+0080016a l     O .bss	00000140 TCPs.1629
+00000810 l     F .text	00000028 PushStr
+00000838 l     F .text	0000007e POP32.7442
+000008b6 l     F .text	0000000e enc_read_ctrl_reg8_common.4659
+000008c4 l     F .text	0000001e enc424j600_wait_for_dma
+000008de l     F .text	0000003a enc424j600_start_checksum
+00000910 l     F .text	0000004e enc424j600_xmitpacket
+00000954 l     F .text	00000014 enc424j600_dumpbytes
+00000968 l     F .text	0000002c enc424j600_popblob
+00000994 l     F .text	0000001e enc424j600_pop16LE
+000009b2 l     F .text	0000001c enc424j600_read_ctrl_reg16
+000009cc l     F .text	00000012 enc424j600_get_checksum
+000009da l     F .text	0000001e enc424j600_endsend
+000009f2 l     F .text	000000a6 EndTCPWrite
+00000a82 l     F .text	00000040 HTTPClose
+008002ba l     O .bss	00000002 curhttp.1697
+00000abe l     F .text	0000001e enc424j600_pop16
+00000adc l     F .text	000002d2 FindClusterFileInDir.clone.1
+0080042f l     O .bss	00000006 dummy.12317
+00800162 l     O .bss	00000006 MyMAC.1381
+00800438 l     O .bss	00000002 i.6174
+00800436 l     O .bss	00000002 iptotallen.6173
+008002b0 l     O .bss	00000004 ipsource.1636
+0080015b l     O .data	00000004 MyMask.1380
+008002b4 l     O .bss	00000002 remoteport.1637
+008002b6 l     O .bss	00000002 localport.1638
+008002bc l     O .bss	00000162 HTTPConnections.1722
+0080041e l     O .bss	00000001 didsend.2038
+000000ca l     O .text	0000003d __c.10105
+000000a7 l     O .text	00000023 __c.10110
+00000094 l     O .text	00000013 __c.10112
+00000083 l     O .text	00000011 __c.10114
+00000077 l     O .text	0000000c __c.10119
+0000006d l     O .text	0000000a __c.10121
+00000068 l     O .text	00000005 __c.10123
+00001ec8 l       .text	00000000 __udivmodsi4_ep
+00001eae l       .text	00000000 __udivmodsi4_loop
+00001f84 l       .text	00000000 __stop_program
+00000134 l       .text	00000000 .do_clear_bss_start
+00000132 l       .text	00000000 .do_clear_bss_loop
+00000140  w      .text	00000000 __vector_22
+00000140  w      .text	00000000 __vector_1
+00001f1e g       .text	00000000 __epilogue_restores__
+00000108 g       .text	00000000 __trampolines_start
+00001f86 g       .text	00000000 _etext
+00000140  w      .text	00000000 __vector_24
+00000140  w      .text	00000000 __vector_12
+00001e18 g       .text	00000000 espiW_asm
+00000140 g       .text	00000000 __bad_interrupt
+00001fe8 g       *ABS*	00000000 __data_load_end
+00000140  w      .text	00000000 __vector_6
+00000108 g       .text	00000000 __trampolines_end
+00000140  w      .text	00000000 __vector_3
+00001dca g       .text	00000000 espiR_asm
+00000140  w      .text	00000000 __vector_23
+00001f86 g       *ABS*	00000000 __data_load_start
+00000108 g       .text	00000000 __dtors_end
+0080043a g       .bss	00000000 __bss_end
+00000140  w      .text	00000000 __vector_25
+00000140  w      .text	00000000 __vector_11
+00000108  w      .text	00000000 __init
+00000140  w      .text	00000000 __vector_13
+00000140  w      .text	00000000 __vector_17
+00000140  w      .text	00000000 __vector_19
+00000140  w      .text	00000000 __vector_7
+0000012a g       .text	00000000 __do_clear_bss
+00810000 g       .stab	00000000 __eeprom_end
+00000000 g       .text	00000000 __vectors
+00001f66 g     F .text	0000001c strncmp
+00800162 g       .data	00000000 __data_end
+00001e64 g       .text	00000000 __mulsi3
+00000000  w      .text	00000000 __vector_default
+00000140  w      .text	00000000 __vector_5
+00000108 g       .text	00000000 __ctors_start
+00000114 g       .text	00000000 __do_copy_data
+00800162 g       .bss	00000000 __bss_start
+00000da0 g     F .text	00001172 main
+00000140  w      .text	00000000 __vector_4
+00001f54 g     F .text	00000012 strcmp
+00000000  w      *ABS*	00000000 __heap_end
+00000140  w      .text	00000000 __vector_9
+00000140  w      .text	00000000 __vector_2
+00000140  w      .text	00000000 __vector_21
+00000140  w      .text	00000000 __vector_15
+00000108 g       .text	00000000 __dtors_start
+00000108 g       .text	00000000 __ctors_end
+000008ff  w      *ABS*	00000000 __stack
+00800162 g       .data	00000000 _edata
+0080043a g       .stab	00000000 _end
+00000140  w      .text	00000000 __vector_8
+00001f82  w      .text	00000000 exit
+00001ea2 g       .text	00000000 __udivmodsi4
+00001f82 g       .text	00000000 _exit
+00000140  w      .text	00000000 __vector_14
+00000140  w      .text	00000000 __vector_10
+00000140  w      .text	00000000 __vector_16
+00800100 g       .data	00000000 __data_start
+00000140  w      .text	00000000 __vector_18
+00000140  w      .text	00000000 __vector_20
+00001ee6 g       .text	00000000 __prologue_saves__
+
+

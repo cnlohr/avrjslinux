@@ -1,0 +1,5015 @@
+GAS LISTING /tmp/cc9QGGXX.s 			page 1
+
+
+   1               		.file	"example.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__ = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.text
+  10               	hex2val:
+  11               	/* prologue: function */
+  12               	/* frame size = 0 */
+  13               	/* stack size = 0 */
+  14               	.L__stack_usage = 0
+  15 0000 982F      		mov r25,r24
+  16 0002 8053      		subi r24,lo8(-(-48))
+  17 0004 8A30      		cpi r24,lo8(10)
+  18 0006 00F0      		brlo .L2
+  19 0008 8153      		subi r24,lo8(-(-49))
+  20 000a 8630      		cpi r24,lo8(6)
+  21 000c 00F0      		brlo .L5
+  22               	.L3:
+  23 000e 892F      		mov r24,r25
+  24 0010 8154      		subi r24,lo8(-(-65))
+  25 0012 8630      		cpi r24,lo8(6)
+  26 0014 00F4      		brsh .L4
+  27               	.L5:
+  28 0016 865F      		subi r24,lo8(-(10))
+  29 0018 0895      		ret
+  30               	.L4:
+  31 001a 80E0      		ldi r24,lo8(0)
+  32               	.L2:
+  33 001c 0895      		ret
+  36               	int8tohex:
+  37               	/* prologue: function */
+  38               	/* frame size = 0 */
+  39               	/* stack size = 0 */
+  40               	.L__stack_usage = 0
+  41 001e FB01      		movw r30,r22
+  42 0020 982F      		mov r25,r24
+  43 0022 9295      		swap r25
+  44 0024 9F70      		andi r25,lo8(15)
+  45 0026 9A30      		cpi r25,lo8(10)
+  46 0028 00F4      		brsh .L7
+  47 002a 905D      		subi r25,lo8(-(48))
+  48 002c 00C0      		rjmp .L8
+  49               	.L7:
+  50 002e 995A      		subi r25,lo8(-(87))
+  51               	.L8:
+  52 0030 9083      		st Z,r25
+  53 0032 8F70      		andi r24,lo8(15)
+  54 0034 8A30      		cpi r24,lo8(10)
+  55 0036 00F4      		brsh .L9
+  56 0038 805D      		subi r24,lo8(-(48))
+  57 003a 00C0      		rjmp .L10
+  58               	.L9:
+  59 003c 895A      		subi r24,lo8(-(87))
+  60               	.L10:
+GAS LISTING /tmp/cc9QGGXX.s 			page 2
+
+
+  61 003e 8183      		std Z+1,r24
+  62               	/* epilogue start */
+  63 0040 0895      		ret
+  66               	enc424j600_stopop:
+  67               	/* prologue: function */
+  68               	/* frame size = 0 */
+  69               	/* stack size = 0 */
+  70               	.L__stack_usage = 0
+  71 0042 459A      		sbi 40-32,5
+  72               	/* epilogue start */
+  73 0044 0895      		ret
+  76               	UpdateRemoteMAC.7461:
+  77               	/* prologue: function */
+  78               	/* frame size = 0 */
+  79               	/* stack size = 0 */
+  80               	.L__stack_usage = 0
+  81 0046 FC01      		movw r30,r24
+  82 0048 8091 0000 		lds r24,macfrom.1635
+  83 004c 8083      		st Z,r24
+  84 004e 8091 0000 		lds r24,macfrom.1635+1
+  85 0052 8183      		std Z+1,r24
+  86 0054 8091 0000 		lds r24,macfrom.1635+2
+  87 0058 8283      		std Z+2,r24
+  88 005a 8091 0000 		lds r24,macfrom.1635+3
+  89 005e 8383      		std Z+3,r24
+  90 0060 8091 0000 		lds r24,macfrom.1635+4
+  91 0064 8483      		std Z+4,r24
+  92 0066 8091 0000 		lds r24,macfrom.1635+5
+  93 006a 8583      		std Z+5,r24
+  94               	/* epilogue start */
+  95 006c 0895      		ret
+  98               	microSPIR:
+  99               	/* prologue: naked */
+ 100               	/* frame size = 0 */
+ 101               	/* stack size = 0 */
+ 102               	.L__stack_usage = 0
+ 103               	/* #APP */
+ 104               	 ;  379 "microsd.c" 1
+ 105               		
+ 106 006e 8827      		 clr r24 
+ 107 0070 5E98      		 cbi 11, 6 
+ 108 0072 5E9A      		 sbi 11, 6 
+ 109 0074 4D99      		 sbic 9, 5 
+ 110 0076 8068      		 ori r24, 0x80 
+ 111 0078 5E98      		 cbi 11, 6 
+ 112 007a 5E9A      		 sbi 11, 6 
+ 113 007c 4D99      		 sbic 9, 5 
+ 114 007e 8064      		 ori r24, 0x40 
+ 115 0080 5E98      		 cbi 11, 6 
+ 116 0082 5E9A      		 sbi 11, 6 
+ 117 0084 4D99      		 sbic 9, 5 
+ 118 0086 8062      		 ori r24, 0x20 
+ 119 0088 5E98      		 cbi 11, 6 
+ 120 008a 5E9A      		 sbi 11, 6 
+ 121 008c 4D99      		 sbic 9, 5 
+ 122 008e 8061      		 ori r24, 0x10 
+ 123 0090 5E98      		 cbi 11, 6 
+GAS LISTING /tmp/cc9QGGXX.s 			page 3
+
+
+ 124 0092 5E9A      		 sbi 11, 6 
+ 125 0094 4D99      		 sbic 9, 5 
+ 126 0096 8860      		 ori r24, 0x08 
+ 127 0098 5E98      		 cbi 11, 6 
+ 128 009a 5E9A      		 sbi 11, 6 
+ 129 009c 4D99      		 sbic 9, 5 
+ 130 009e 8460      		 ori r24, 0x04 
+ 131 00a0 5E98      		 cbi 11, 6 
+ 132 00a2 5E9A      		 sbi 11, 6 
+ 133 00a4 4D99      		 sbic 9, 5 
+ 134 00a6 8260      		 ori r24, 0x02 
+ 135 00a8 5E98      		 cbi 11, 6 
+ 136 00aa 5E9A      		 sbi 11, 6 
+ 137 00ac 4D99      		 sbic 9, 5 
+ 138 00ae 8160      		 ori r24, 0x01 
+ 139 00b0 5E98      		 cbi 11, 6 
+ 140 00b2 0895      		 ret 
+ 141               		
+ 142               	 ;  0 "" 2
+ 143               	/* epilogue start */
+ 144               	/* #NOAPP */
+ 147               	popSDread:
+ 148               	/* prologue: function */
+ 149               	/* frame size = 0 */
+ 150               	/* stack size = 0 */
+ 151               	.L__stack_usage = 0
+ 152 00b4 8091 0000 		lds r24,opsleftSD.1662
+ 153 00b8 9091 0000 		lds r25,opsleftSD.1662+1
+ 154 00bc 0197      		sbiw r24,1
+ 155 00be 9093 0000 		sts opsleftSD.1662+1,r25
+ 156 00c2 8093 0000 		sts opsleftSD.1662,r24
+ 157 00c6 0E94 0000 		call microSPIR
+ 158               	/* epilogue start */
+ 159 00ca 0895      		ret
+ 162               	WaitFor.11224:
+ 163 00cc 0F93      		push r16
+ 164 00ce 1F93      		push r17
+ 165               	/* prologue: function */
+ 166               	/* frame size = 0 */
+ 167               	/* stack size = 2 */
+ 168               	.L__stack_usage = 2
+ 169 00d0 082F      		mov r16,r24
+ 170 00d2 1AEF      		ldi r17,lo8(-6)
+ 171               	.L17:
+ 172 00d4 0E94 0000 		call microSPIR
+ 173 00d8 8017      		cp r24,r16
+ 174 00da 01F0      		breq .L18
+ 175 00dc 1150      		subi r17,lo8(-(-1))
+ 176 00de 01F4      		brne .L17
+ 177 00e0 81E0      		ldi r24,lo8(1)
+ 178 00e2 00C0      		rjmp .L16
+ 179               	.L18:
+ 180 00e4 80E0      		ldi r24,lo8(0)
+ 181               	.L16:
+ 182               	/* epilogue start */
+ 183 00e6 1F91      		pop r17
+ 184 00e8 0F91      		pop r16
+GAS LISTING /tmp/cc9QGGXX.s 			page 4
+
+
+ 185 00ea 0895      		ret
+ 188               	microSPIW:
+ 189               	/* prologue: function */
+ 190               	/* frame size = 0 */
+ 191               	/* stack size = 0 */
+ 192               	.L__stack_usage = 0
+ 193               	/* #APP */
+ 194               	 ;  474 "microsd.c" 1
+ 195               		
+ 196 00ec 5E98      		 cbi 11, 6
+ 197 00ee 5F98      		 cbi 11, 7
+ 198 00f0 87FD      		 sbrc r24, 7
+ 199 00f2 5F9A      		 sbi 11, 7
+ 200 00f4 5E9A      		 sbi 11, 6
+ 201 00f6 5E98      		 cbi 11, 6
+ 202               		
+ 203 00f8 5F98      		 cbi 11, 7
+ 204 00fa 86FD      		 sbrc r24, 6
+ 205 00fc 5F9A      		 sbi 11, 7
+ 206 00fe 5E9A      		 sbi 11, 6
+ 207 0100 5E98      		 cbi 11, 6
+ 208               		
+ 209 0102 5F98      		 cbi 11, 7
+ 210 0104 85FD      		 sbrc r24, 5
+ 211 0106 5F9A      		 sbi 11, 7
+ 212 0108 5E9A      		 sbi 11, 6
+ 213 010a 5E98      		 cbi 11, 6
+ 214               		
+ 215 010c 5F98      		 cbi 11, 7
+ 216 010e 84FD      		 sbrc r24, 4
+ 217 0110 5F9A      		 sbi 11, 7
+ 218 0112 5E9A      		 sbi 11, 6
+ 219 0114 5E98      		 cbi 11, 6
+ 220               		
+ 221 0116 5F98      		 cbi 11, 7
+ 222 0118 83FD      		 sbrc r24, 3
+ 223 011a 5F9A      		 sbi 11, 7
+ 224 011c 5E9A      		 sbi 11, 6
+ 225 011e 5E98      		 cbi 11, 6
+ 226               		
+ 227 0120 5F98      		 cbi 11, 7
+ 228 0122 82FD      		 sbrc r24, 2
+ 229 0124 5F9A      		 sbi 11, 7
+ 230 0126 5E9A      		 sbi 11, 6
+ 231 0128 5E98      		 cbi 11, 6
+ 232               		
+ 233 012a 5F98      		 cbi 11, 7
+ 234 012c 81FD      		 sbrc r24, 1
+ 235 012e 5F9A      		 sbi 11, 7
+ 236 0130 5E9A      		 sbi 11, 6
+ 237 0132 5E98      		 cbi 11, 6
+ 238               		
+ 239 0134 5F98      		 cbi 11, 7
+ 240 0136 80FD      		 sbrc r24, 0
+ 241 0138 5F9A      		 sbi 11, 7
+ 242 013a 5E9A      		 sbi 11, 6
+ 243 013c 5E98      		 cbi 11, 6
+GAS LISTING /tmp/cc9QGGXX.s 			page 5
+
+
+ 244               		
+ 245               	 ;  0 "" 2
+ 246               	/* epilogue start */
+ 247               	/* #NOAPP */
+ 248 013e 0895      		ret
+ 251               	microSPID:
+ 252               	/* prologue: naked */
+ 253               	/* frame size = 0 */
+ 254               	/* stack size = 0 */
+ 255               	.L__stack_usage = 0
+ 256               	/* #APP */
+ 257               	 ;  529 "microsd.c" 1
+ 258               		
+ 259 0140 5E98      		 cbi 11, 6
+ 260 0142 5F9A      		 sbi 11, 7
+ 261 0144 5E9A      		 sbi 11, 6
+ 262 0146 5E98      		 cbi 11, 6
+ 263               		
+ 264 0148 5E9A      		 sbi 11, 6
+ 265 014a 5E98      		 cbi 11, 6
+ 266               		
+ 267 014c 5E9A      		 sbi 11, 6
+ 268 014e 5E98      		 cbi 11, 6
+ 269               		
+ 270 0150 5E9A      		 sbi 11, 6
+ 271 0152 5E98      		 cbi 11, 6
+ 272               		
+ 273 0154 5E9A      		 sbi 11, 6
+ 274 0156 5E98      		 cbi 11, 6
+ 275               		
+ 276 0158 5E9A      		 sbi 11, 6
+ 277 015a 5E98      		 cbi 11, 6
+ 278               		
+ 279 015c 5E9A      		 sbi 11, 6
+ 280 015e 5E98      		 cbi 11, 6
+ 281               		
+ 282 0160 5E9A      		 sbi 11, 6
+ 283 0162 5E98      		 cbi 11, 6
+ 284 0164 0895      		 ret
+ 285               	 ;  0 "" 2
+ 286               	/* epilogue start */
+ 287               	/* #NOAPP */
+ 290               	dumpSD:
+ 291 0166 EF92      		push r14
+ 292 0168 FF92      		push r15
+ 293 016a CF93      		push r28
+ 294 016c DF93      		push r29
+ 295               	/* prologue: function */
+ 296               	/* frame size = 0 */
+ 297               	/* stack size = 4 */
+ 298               	.L__stack_usage = 4
+ 299 016e E82E      		mov r14,r24
+ 300 0170 E701      		movw r28,r14
+ 301 0172 7E01      		movw r14,r28
+ 302 0174 F92E      		mov r15,r25
+ 303 0176 E701      		movw r28,r14
+ 304 0178 00C0      		rjmp .L23
+GAS LISTING /tmp/cc9QGGXX.s 			page 6
+
+
+ 305               	.L24:
+ 306 017a 0E94 0000 		call microSPID
+ 307 017e 2197      		sbiw r28,1
+ 308               	.L23:
+ 309 0180 1C16      		cp __zero_reg__,r28
+ 310 0182 1D06      		cpc __zero_reg__,r29
+ 311 0184 04F0      		brlt .L24
+ 312               	/* epilogue start */
+ 313 0186 DF91      		pop r29
+ 314 0188 CF91      		pop r28
+ 315 018a FF90      		pop r15
+ 316 018c EF90      		pop r14
+ 317 018e 0895      		ret
+ 320               	endSDread:
+ 321               	/* prologue: function */
+ 322               	/* frame size = 0 */
+ 323               	/* stack size = 0 */
+ 324               	.L__stack_usage = 0
+ 325 0190 8091 0000 		lds r24,opsleftSD.1662
+ 326 0194 9091 0000 		lds r25,opsleftSD.1662+1
+ 327 0198 0396      		adiw r24,3
+ 328 019a 0E94 0000 		call dumpSD
+ 329 019e 209A      		sbi 36-32,0
+ 330 01a0 289A      		sbi 37-32,0
+ 331 01a2 0E94 0000 		call microSPID
+ 332               	/* epilogue start */
+ 333 01a6 0895      		ret
+ 336               	reCS.11229:
+ 337               	/* prologue: function */
+ 338               	/* frame size = 0 */
+ 339               	/* stack size = 0 */
+ 340               	.L__stack_usage = 0
+ 341 01a8 209A      		sbi 36-32,0
+ 342 01aa 289A      		sbi 37-32,0
+ 343 01ac 0E94 0000 		call microSPID
+ 344 01b0 209A      		sbi 36-32,0
+ 345 01b2 2898      		cbi 37-32,0
+ 346 01b4 0E94 0000 		call microSPID
+ 347               	/* epilogue start */
+ 348 01b8 0895      		ret
+ 351               	InitFileStructure:
+ 352               	/* prologue: function */
+ 353               	/* frame size = 0 */
+ 354               	/* stack size = 0 */
+ 355               	.L__stack_usage = 0
+ 356 01ba FC01      		movw r30,r24
+ 357 01bc 4083      		st Z,r20
+ 358 01be 5183      		std Z+1,r21
+ 359 01c0 6283      		std Z+2,r22
+ 360 01c2 7383      		std Z+3,r23
+ 361 01c4 1482      		std Z+4,__zero_reg__
+ 362 01c6 1582      		std Z+5,__zero_reg__
+ 363               	/* epilogue start */
+ 364 01c8 0895      		ret
+ 367               	internal_16LEFAT.12311:
+ 368 01ca EF92      		push r14
+ 369 01cc FF92      		push r15
+GAS LISTING /tmp/cc9QGGXX.s 			page 7
+
+
+ 370 01ce CF93      		push r28
+ 371 01d0 DF93      		push r29
+ 372               	/* prologue: function */
+ 373               	/* frame size = 0 */
+ 374               	/* stack size = 4 */
+ 375               	.L__stack_usage = 4
+ 376 01d2 0E94 0000 		call popSDread
+ 377 01d6 C82F      		mov r28,r24
+ 378 01d8 D0E0      		ldi r29,lo8(0)
+ 379 01da 0E94 0000 		call popSDread
+ 380 01de 382F      		mov r19,r24
+ 381 01e0 20E0      		ldi r18,lo8(0)
+ 382 01e2 C22B      		or r28,r18
+ 383 01e4 D32B      		or r29,r19
+ 384 01e6 CE01      		movw r24,r28
+ 385               	/* epilogue start */
+ 386 01e8 DF91      		pop r29
+ 387 01ea CF91      		pop r28
+ 388 01ec FF90      		pop r15
+ 389 01ee EF90      		pop r14
+ 390 01f0 0895      		ret
+ 393               	internal_32LEFAT.12310:
+ 394 01f2 AF92      		push r10
+ 395 01f4 BF92      		push r11
+ 396 01f6 CF92      		push r12
+ 397 01f8 DF92      		push r13
+ 398 01fa EF92      		push r14
+ 399 01fc FF92      		push r15
+ 400 01fe 0F93      		push r16
+ 401 0200 1F93      		push r17
+ 402               	/* prologue: function */
+ 403               	/* frame size = 0 */
+ 404               	/* stack size = 8 */
+ 405               	.L__stack_usage = 8
+ 406 0202 0E94 0000 		call popSDread
+ 407 0206 A82E      		mov r10,r24
+ 408 0208 BB24      		clr r11
+ 409 020a CC24      		clr r12
+ 410 020c DD24      		clr r13
+ 411 020e 0E94 0000 		call popSDread
+ 412 0212 E82E      		mov r14,r24
+ 413 0214 0E94 0000 		call popSDread
+ 414 0218 FF24      		clr r15
+ 415 021a 00E0      		ldi r16,lo8(0)
+ 416 021c 10E0      		ldi r17,hi8(0)
+ 417 021e 102F      		mov r17,r16
+ 418 0220 0F2D      		mov r16,r15
+ 419 0222 FE2C      		mov r15,r14
+ 420 0224 EE24      		clr r14
+ 421 0226 90E0      		ldi r25,lo8(0)
+ 422 0228 A0E0      		ldi r26,lo8(0)
+ 423 022a B0E0      		ldi r27,hi8(0)
+ 424 022c DC01      		movw r26,r24
+ 425 022e 9927      		clr r25
+ 426 0230 8827      		clr r24
+ 427 0232 E82A      		or r14,r24
+ 428 0234 F92A      		or r15,r25
+GAS LISTING /tmp/cc9QGGXX.s 			page 8
+
+
+ 429 0236 0A2B      		or r16,r26
+ 430 0238 1B2B      		or r17,r27
+ 431 023a EA28      		or r14,r10
+ 432 023c FB28      		or r15,r11
+ 433 023e 0C29      		or r16,r12
+ 434 0240 1D29      		or r17,r13
+ 435 0242 0E94 0000 		call popSDread
+ 436 0246 90E0      		ldi r25,lo8(0)
+ 437 0248 A0E0      		ldi r26,lo8(0)
+ 438 024a B0E0      		ldi r27,hi8(0)
+ 439 024c 582F      		mov r21,r24
+ 440 024e 4427      		clr r20
+ 441 0250 3327      		clr r19
+ 442 0252 2227      		clr r18
+ 443 0254 2E29      		or r18,r14
+ 444 0256 3F29      		or r19,r15
+ 445 0258 402B      		or r20,r16
+ 446 025a 512B      		or r21,r17
+ 447 025c B901      		movw r22,r18
+ 448 025e CA01      		movw r24,r20
+ 449               	/* epilogue start */
+ 450 0260 1F91      		pop r17
+ 451 0262 0F91      		pop r16
+ 452 0264 FF90      		pop r15
+ 453 0266 EF90      		pop r14
+ 454 0268 DF90      		pop r13
+ 455 026a CF90      		pop r12
+ 456 026c BF90      		pop r11
+ 457 026e AF90      		pop r10
+ 458 0270 0895      		ret
+ 461               	startSDread:
+ 462 0272 EF92      		push r14
+ 463 0274 FF92      		push r15
+ 464 0276 0F93      		push r16
+ 465 0278 1F93      		push r17
+ 466               	/* prologue: function */
+ 467               	/* frame size = 0 */
+ 468               	/* stack size = 4 */
+ 469               	.L__stack_usage = 4
+ 470 027a 7B01      		movw r14,r22
+ 471 027c 8C01      		movw r16,r24
+ 472 027e 0E94 0000 		call reCS.11229
+ 473 0282 8091 0000 		lds r24,highcap.11231
+ 474 0286 8823      		tst r24
+ 475 0288 01F4      		brne .L31
+ 476 028a 59E0      		ldi r21,9
+ 477 028c EE0C      	1:	lsl r14
+ 478 028e FF1C      		rol r15
+ 479 0290 001F      		rol r16
+ 480 0292 111F      		rol r17
+ 481 0294 5A95      		dec r21
+ 482 0296 01F4      		brne 1b
+ 483               	.L31:
+ 484 0298 81E5      		ldi r24,lo8(81)
+ 485 029a 0E94 0000 		call microSPIW
+ 486 029e 812F      		mov r24,r17
+ 487 02a0 0E94 0000 		call microSPIW
+GAS LISTING /tmp/cc9QGGXX.s 			page 9
+
+
+ 488 02a4 802F      		mov r24,r16
+ 489 02a6 0E94 0000 		call microSPIW
+ 490 02aa 8F2D      		mov r24,r15
+ 491 02ac 0E94 0000 		call microSPIW
+ 492 02b0 8E2D      		mov r24,r14
+ 493 02b2 0E94 0000 		call microSPIW
+ 494 02b6 0E94 0000 		call microSPID
+ 495 02ba 0E94 0000 		call microSPID
+ 496 02be 0E94 0000 		call microSPID
+ 497 02c2 0E94 0000 		call microSPIR
+ 498 02c6 80E0      		ldi r24,lo8(512)
+ 499 02c8 92E0      		ldi r25,hi8(512)
+ 500 02ca 9093 0000 		sts opsleftSD.1662+1,r25
+ 501 02ce 8093 0000 		sts opsleftSD.1662,r24
+ 502 02d2 1AEF      		ldi r17,lo8(-6)
+ 503 02d4 00C0      		rjmp .L32
+ 504               	.L34:
+ 505 02d6 8EEF      		ldi r24,lo8(-2)
+ 506 02d8 0E94 0000 		call WaitFor.11224
+ 507 02dc 8823      		tst r24
+ 508 02de 01F0      		breq .L35
+ 509 02e0 86EF      		 ldi r24,lo8(7158)
+ 510 02e2 9BE1      	    ldi r25,hi8(7158)
+ 511 02e4 0197      	    1:sbiw r24,1
+ 512 02e6 01F4      	    brne 1b
+ 513 02e8 00C0      		rjmp .
+ 514 02ea 0000      		nop
+ 515               	.L32:
+ 516 02ec 1150      		subi r17,1
+ 517 02ee 00F4      		brcc .L34
+ 518 02f0 0E94 0000 		call endSDread
+ 519 02f4 81E0      		ldi r24,lo8(1)
+ 520 02f6 00C0      		rjmp .L33
+ 521               	.L35:
+ 522 02f8 80E0      		ldi r24,lo8(0)
+ 523               	.L33:
+ 524               	/* epilogue start */
+ 525 02fa 1F91      		pop r17
+ 526 02fc 0F91      		pop r16
+ 527 02fe FF90      		pop r15
+ 528 0300 EF90      		pop r14
+ 529 0302 0895      		ret
+ 532               	FATAdvanceSector:
+ 533 0304 CF93      		push r28
+ 534 0306 DF93      		push r29
+ 535               	/* prologue: function */
+ 536               	/* frame size = 0 */
+ 537               	/* stack size = 2 */
+ 538               	.L__stack_usage = 2
+ 539 0308 E091 0000 		lds r30,lastfile.12307
+ 540 030c F091 0000 		lds r31,lastfile.12307+1
+ 541 0310 1482      		std Z+4,__zero_reg__
+ 542 0312 2581      		ldd r18,Z+5
+ 543 0314 2695      		lsr r18
+ 544 0316 2F5F      		subi r18,lo8(-(1))
+ 545 0318 2F77      		andi r18,lo8(127)
+ 546 031a 822F      		mov r24,r18
+GAS LISTING /tmp/cc9QGGXX.s 			page 10
+
+
+ 547 031c 880F      		lsl r24
+ 548 031e 8583      		std Z+5,r24
+ 549 0320 30E0      		ldi r19,lo8(0)
+ 550 0322 8091 0000 		lds r24,cluster512s.12306
+ 551 0326 90E0      		ldi r25,lo8(0)
+ 552 0328 2817      		cp r18,r24
+ 553 032a 3907      		cpc r19,r25
+ 554 032c 01F4      		brne .L36
+ 555 032e 1582      		std Z+5,__zero_reg__
+ 556 0330 6091 0000 		lds r22,fat_partition_head.12303
+ 557 0334 7091 0000 		lds r23,fat_partition_head.12303+1
+ 558 0338 8091 0000 		lds r24,fat_partition_head.12303+2
+ 559 033c 9091 0000 		lds r25,fat_partition_head.12303+3
+ 560 0340 2091 0000 		lds r18,first_fat_table_sector.12305
+ 561 0344 3091 0000 		lds r19,first_fat_table_sector.12305+1
+ 562 0348 4091 0000 		lds r20,first_fat_table_sector.12305+2
+ 563 034c 5091 0000 		lds r21,first_fat_table_sector.12305+3
+ 564 0350 620F      		add r22,r18
+ 565 0352 731F      		adc r23,r19
+ 566 0354 841F      		adc r24,r20
+ 567 0356 951F      		adc r25,r21
+ 568 0358 2081      		ld r18,Z
+ 569 035a 3181      		ldd r19,Z+1
+ 570 035c 4281      		ldd r20,Z+2
+ 571 035e 5381      		ldd r21,Z+3
+ 572 0360 E7E0      		ldi r30,7
+ 573 0362 5695      	1:	lsr r21
+ 574 0364 4795      		ror r20
+ 575 0366 3795      		ror r19
+ 576 0368 2795      		ror r18
+ 577 036a EA95      		dec r30
+ 578 036c 01F4      		brne 1b
+ 579 036e 620F      		add r22,r18
+ 580 0370 731F      		adc r23,r19
+ 581 0372 841F      		adc r24,r20
+ 582 0374 951F      		adc r25,r21
+ 583 0376 0E94 0000 		call startSDread
+ 584 037a 8823      		tst r24
+ 585 037c 01F4      		brne .L36
+ 586 037e C091 0000 		lds r28,lastfile.12307
+ 587 0382 D091 0000 		lds r29,lastfile.12307+1
+ 588 0386 8881      		ld r24,Y
+ 589 0388 9981      		ldd r25,Y+1
+ 590 038a 880F      		lsl r24
+ 591 038c 991F      		rol r25
+ 592 038e 880F      		lsl r24
+ 593 0390 991F      		rol r25
+ 594 0392 9170      		andi r25,hi8(511)
+ 595 0394 0E94 0000 		call dumpSD
+ 596 0398 0E94 0000 		call internal_32LEFAT.12310
+ 597 039c 6883      		st Y,r22
+ 598 039e 7983      		std Y+1,r23
+ 599 03a0 8A83      		std Y+2,r24
+ 600 03a2 9B83      		std Y+3,r25
+ 601 03a4 0E94 0000 		call endSDread
+ 602               	.L36:
+ 603               	/* epilogue start */
+GAS LISTING /tmp/cc9QGGXX.s 			page 11
+
+
+ 604 03a8 DF91      		pop r29
+ 605 03aa CF91      		pop r28
+ 606 03ac 0895      		ret
+ 609               	StartReadFAT_SA:
+ 610 03ae EF92      		push r14
+ 611 03b0 FF92      		push r15
+ 612 03b2 0F93      		push r16
+ 613 03b4 1F93      		push r17
+ 614               	/* prologue: function */
+ 615               	/* frame size = 0 */
+ 616               	/* stack size = 4 */
+ 617               	.L__stack_usage = 4
+ 618 03b6 FC01      		movw r30,r24
+ 619 03b8 9093 0000 		sts lastfile.12307+1,r25
+ 620 03bc 8093 0000 		sts lastfile.12307,r24
+ 621 03c0 E090 0000 		lds r14,first_data_sector.12304
+ 622 03c4 F090 0000 		lds r15,first_data_sector.12304+1
+ 623 03c8 0091 0000 		lds r16,first_data_sector.12304+2
+ 624 03cc 1091 0000 		lds r17,first_data_sector.12304+3
+ 625 03d0 2091 0000 		lds r18,fat_partition_head.12303
+ 626 03d4 3091 0000 		lds r19,fat_partition_head.12303+1
+ 627 03d8 4091 0000 		lds r20,fat_partition_head.12303+2
+ 628 03dc 5091 0000 		lds r21,fat_partition_head.12303+3
+ 629 03e0 E20E      		add r14,r18
+ 630 03e2 F31E      		adc r15,r19
+ 631 03e4 041F      		adc r16,r20
+ 632 03e6 151F      		adc r17,r21
+ 633 03e8 8581      		ldd r24,Z+5
+ 634 03ea 8695      		lsr r24
+ 635 03ec E80E      		add r14,r24
+ 636 03ee F11C      		adc r15,__zero_reg__
+ 637 03f0 011D      		adc r16,__zero_reg__
+ 638 03f2 111D      		adc r17,__zero_reg__
+ 639 03f4 6081      		ld r22,Z
+ 640 03f6 7181      		ldd r23,Z+1
+ 641 03f8 8281      		ldd r24,Z+2
+ 642 03fa 9381      		ldd r25,Z+3
+ 643 03fc 6250      		subi r22,lo8(-(-2))
+ 644 03fe 7040      		sbci r23,hi8(-(-2))
+ 645 0400 8040      		sbci r24,hlo8(-(-2))
+ 646 0402 9040      		sbci r25,hhi8(-(-2))
+ 647 0404 2091 0000 		lds r18,cluster512s.12306
+ 648 0408 30E0      		ldi r19,lo8(0)
+ 649 040a 40E0      		ldi r20,lo8(0)
+ 650 040c 50E0      		ldi r21,hi8(0)
+ 651 040e 0E94 0000 		call __mulsi3
+ 652 0412 E60E      		add r14,r22
+ 653 0414 F71E      		adc r15,r23
+ 654 0416 081F      		adc r16,r24
+ 655 0418 191F      		adc r17,r25
+ 656 041a C801      		movw r24,r16
+ 657 041c B701      		movw r22,r14
+ 658 041e 0E94 0000 		call startSDread
+ 659               	/* epilogue start */
+ 660 0422 1F91      		pop r17
+ 661 0424 0F91      		pop r16
+ 662 0426 FF90      		pop r15
+GAS LISTING /tmp/cc9QGGXX.s 			page 12
+
+
+ 663 0428 EF90      		pop r14
+ 664 042a 0895      		ret
+ 667               	StartReadFAT:
+ 668 042c EF92      		push r14
+ 669 042e FF92      		push r15
+ 670 0430 0F93      		push r16
+ 671 0432 1F93      		push r17
+ 672 0434 CF93      		push r28
+ 673 0436 DF93      		push r29
+ 674               	/* prologue: function */
+ 675               	/* frame size = 0 */
+ 676               	/* stack size = 6 */
+ 677               	.L__stack_usage = 6
+ 678 0438 EC01      		movw r28,r24
+ 679 043a 9093 0000 		sts lastfile.12307+1,r25
+ 680 043e 8093 0000 		sts lastfile.12307,r24
+ 681 0442 E090 0000 		lds r14,first_data_sector.12304
+ 682 0446 F090 0000 		lds r15,first_data_sector.12304+1
+ 683 044a 0091 0000 		lds r16,first_data_sector.12304+2
+ 684 044e 1091 0000 		lds r17,first_data_sector.12304+3
+ 685 0452 8091 0000 		lds r24,fat_partition_head.12303
+ 686 0456 9091 0000 		lds r25,fat_partition_head.12303+1
+ 687 045a A091 0000 		lds r26,fat_partition_head.12303+2
+ 688 045e B091 0000 		lds r27,fat_partition_head.12303+3
+ 689 0462 E80E      		add r14,r24
+ 690 0464 F91E      		adc r15,r25
+ 691 0466 0A1F      		adc r16,r26
+ 692 0468 1B1F      		adc r17,r27
+ 693 046a 8D81      		ldd r24,Y+5
+ 694 046c 8695      		lsr r24
+ 695 046e E80E      		add r14,r24
+ 696 0470 F11C      		adc r15,__zero_reg__
+ 697 0472 011D      		adc r16,__zero_reg__
+ 698 0474 111D      		adc r17,__zero_reg__
+ 699 0476 6881      		ld r22,Y
+ 700 0478 7981      		ldd r23,Y+1
+ 701 047a 8A81      		ldd r24,Y+2
+ 702 047c 9B81      		ldd r25,Y+3
+ 703 047e 6250      		subi r22,lo8(-(-2))
+ 704 0480 7040      		sbci r23,hi8(-(-2))
+ 705 0482 8040      		sbci r24,hlo8(-(-2))
+ 706 0484 9040      		sbci r25,hhi8(-(-2))
+ 707 0486 2091 0000 		lds r18,cluster512s.12306
+ 708 048a 30E0      		ldi r19,lo8(0)
+ 709 048c 40E0      		ldi r20,lo8(0)
+ 710 048e 50E0      		ldi r21,hi8(0)
+ 711 0490 0E94 0000 		call __mulsi3
+ 712 0494 E60E      		add r14,r22
+ 713 0496 F71E      		adc r15,r23
+ 714 0498 081F      		adc r16,r24
+ 715 049a 191F      		adc r17,r25
+ 716 049c C801      		movw r24,r16
+ 717 049e B701      		movw r22,r14
+ 718 04a0 0E94 0000 		call startSDread
+ 719 04a4 E82E      		mov r14,r24
+ 720 04a6 0C81      		ldd r16,Y+4
+ 721 04a8 8D81      		ldd r24,Y+5
+GAS LISTING /tmp/cc9QGGXX.s 			page 13
+
+
+ 722 04aa 182F      		mov r17,r24
+ 723 04ac 1170      		andi r17,lo8(1)
+ 724 04ae 00C0      		rjmp .L40
+ 725               	.L41:
+ 726 04b0 0E94 0000 		call popSDread
+ 727 04b4 0150      		subi r16,lo8(-(-1))
+ 728 04b6 1040      		sbci r17,hi8(-(-1))
+ 729               	.L40:
+ 730 04b8 0115      		cp r16,__zero_reg__
+ 731 04ba 1105      		cpc r17,__zero_reg__
+ 732 04bc 01F4      		brne .L41
+ 733 04be 8E2D      		mov r24,r14
+ 734               	/* epilogue start */
+ 735 04c0 CDB7      		in r28,__SP_L__
+ 736 04c2 DEB7      		in r29,__SP_H__
+ 737 04c4 E6E0      		ldi r30, lo8(6)
+ 738 04c6 0C94 0000 		jmp __epilogue_restores__ + ((18 - 6) * 2)
+ 741               	standarddelay.4620:
+ 742               	/* prologue: function */
+ 743               	/* frame size = 0 */
+ 744               	/* stack size = 0 */
+ 745               	.L__stack_usage = 0
+ 746 04ca 8FE8      		 ldi r24,lo8(-113)
+ 747 04cc 8A95      	    1:dec r24
+ 748 04ce 01F4      	    brne 1b
+ 749 04d0 0000      		nop
+ 750               	/* epilogue start */
+ 751 04d2 0895      		ret
+ 754               	PushPGMStr:
+ 755 04d4 CF93      		push r28
+ 756 04d6 DF93      		push r29
+ 757               	/* prologue: function */
+ 758               	/* frame size = 0 */
+ 759               	/* stack size = 2 */
+ 760               	.L__stack_usage = 2
+ 761 04d8 EC01      		movw r28,r24
+ 762               	.L45:
+ 763 04da FE01      		movw r30,r28
+ 764 04dc 2196      		adiw r28,1
+ 765               	/* #APP */
+ 766               	 ;  142 "http.c" 1
+ 767 04de 8491      		lpm r24, Z
+ 768               		
+ 769               	 ;  0 "" 2
+ 770               	/* #NOAPP */
+ 771 04e0 8823      		tst r24
+ 772 04e2 01F0      		breq .L43
+ 773 04e4 0E94 0000 		call espiW_asm
+ 774 04e8 00C0      		rjmp .L45
+ 775               	.L43:
+ 776               	/* epilogue start */
+ 777 04ea DF91      		pop r29
+ 778 04ec CF91      		pop r28
+ 779 04ee 0895      		ret
+ 782               	PUSH32.7446:
+ 783 04f0 A2E0      		ldi r26,lo8(2)
+ 784 04f2 B0E0      		ldi r27,hi8(2)
+GAS LISTING /tmp/cc9QGGXX.s 			page 14
+
+
+ 785 04f4 E0E0      		ldi r30,lo8(gs(1f))
+ 786 04f6 F0E0      		ldi r31,hi8(gs(1f))
+ 787 04f8 0C94 0000 		jmp __prologue_saves__+((18 - 3) * 2)
+ 788               	1:
+ 789               	/* prologue: function */
+ 790               	/* frame size = 2 */
+ 791               	/* stack size = 5 */
+ 792               	.L__stack_usage = 5
+ 793 04fc 182F      		mov r17,r24
+ 794 04fe 892F      		mov r24,r25
+ 795 0500 6A83      		std Y+2,r22
+ 796 0502 7983      		std Y+1,r23
+ 797 0504 0E94 0000 		call espiW_asm
+ 798 0508 812F      		mov r24,r17
+ 799 050a 0E94 0000 		call espiW_asm
+ 800 050e 7981      		ldd r23,Y+1
+ 801 0510 872F      		mov r24,r23
+ 802 0512 0E94 0000 		call espiW_asm
+ 803 0516 6A81      		ldd r22,Y+2
+ 804 0518 862F      		mov r24,r22
+ 805 051a 0E94 0000 		call espiW_asm
+ 806               	/* epilogue start */
+ 807 051e 2296      		adiw r28,2
+ 808 0520 E3E0      		ldi r30, lo8(3)
+ 809 0522 0C94 0000 		jmp __epilogue_restores__ + ((18 - 3) * 2)
+ 812               	enc_oneshot.4667:
+ 813               	/* prologue: function */
+ 814               	/* frame size = 0 */
+ 815               	/* stack size = 0 */
+ 816               	.L__stack_usage = 0
+ 817 0526 4598      		cbi 40-32,5
+ 818 0528 0E94 0000 		call espiW_asm
+ 819 052c 459A      		sbi 40-32,5
+ 820               	/* epilogue start */
+ 821 052e 0895      		ret
+ 824               	enc424j600_pushblob:
+ 825 0530 A1E0      		ldi r26,lo8(1)
+ 826 0532 B0E0      		ldi r27,hi8(1)
+ 827 0534 E0E0      		ldi r30,lo8(gs(1f))
+ 828 0536 F0E0      		ldi r31,hi8(gs(1f))
+ 829 0538 0C94 0000 		jmp __prologue_saves__+((18 - 4) * 2)
+ 830               	1:
+ 831               	/* prologue: function */
+ 832               	/* frame size = 1 */
+ 833               	/* stack size = 5 */
+ 834               	.L__stack_usage = 5
+ 835 053c 8C01      		movw r16,r24
+ 836 053e 00C0      		rjmp .L49
+ 837               	.L50:
+ 838 0540 F801      		movw r30,r16
+ 839 0542 8191      		ld r24,Z+
+ 840 0544 8F01      		movw r16,r30
+ 841 0546 6983      		std Y+1,r22
+ 842 0548 0E94 0000 		call espiW_asm
+ 843 054c 6981      		ldd r22,Y+1
+ 844 054e 6150      		subi r22,lo8(-(-1))
+ 845               	.L49:
+GAS LISTING /tmp/cc9QGGXX.s 			page 15
+
+
+ 846 0550 6623      		tst r22
+ 847 0552 01F4      		brne .L50
+ 848               	/* epilogue start */
+ 849 0554 2196      		adiw r28,1
+ 850 0556 E4E0      		ldi r30, lo8(4)
+ 851 0558 0C94 0000 		jmp __epilogue_restores__ + ((18 - 4) * 2)
+ 854               	enc424j600_write_ctrl_reg16:
+ 855 055c A2E0      		ldi r26,lo8(2)
+ 856 055e B0E0      		ldi r27,hi8(2)
+ 857 0560 E0E0      		ldi r30,lo8(gs(1f))
+ 858 0562 F0E0      		ldi r31,hi8(gs(1f))
+ 859 0564 0C94 0000 		jmp __prologue_saves__+((18 - 3) * 2)
+ 860               	1:
+ 861               	/* prologue: function */
+ 862               	/* frame size = 2 */
+ 863               	/* stack size = 5 */
+ 864               	.L__stack_usage = 5
+ 865 0568 182F      		mov r17,r24
+ 866 056a 4598      		cbi 40-32,5
+ 867 056c 82E2      		ldi r24,lo8(34)
+ 868 056e 6983      		std Y+1,r22
+ 869 0570 7A83      		std Y+2,r23
+ 870 0572 0E94 0000 		call espiW_asm
+ 871 0576 812F      		mov r24,r17
+ 872 0578 0E94 0000 		call espiW_asm
+ 873 057c 6981      		ldd r22,Y+1
+ 874 057e 862F      		mov r24,r22
+ 875 0580 0E94 0000 		call espiW_asm
+ 876 0584 7A81      		ldd r23,Y+2
+ 877 0586 872F      		mov r24,r23
+ 878 0588 0E94 0000 		call espiW_asm
+ 879 058c 459A      		sbi 40-32,5
+ 880               	/* epilogue start */
+ 881 058e 2296      		adiw r28,2
+ 882 0590 E3E0      		ldi r30, lo8(3)
+ 883 0592 0C94 0000 		jmp __epilogue_restores__ + ((18 - 3) * 2)
+ 886               	enc424j600_finish_callback_now:
+ 887               	/* prologue: function */
+ 888               	/* frame size = 0 */
+ 889               	/* stack size = 0 */
+ 890               	.L__stack_usage = 0
+ 891 0596 459A      		sbi 40-32,5
+ 892 0598 8CEC      		ldi r24,lo8(-52)
+ 893 059a 0E94 0000 		call enc_oneshot.4667
+ 894 059e 6091 0000 		lds r22,NextPacketPointer.4669
+ 895 05a2 7091 0000 		lds r23,NextPacketPointer.4669+1
+ 896 05a6 83E5      		ldi r24,hi8(21312)
+ 897 05a8 6034      		cpi r22,lo8(21312)
+ 898 05aa 7807      		cpc r23,r24
+ 899 05ac 01F0      		breq .L54
+ 900 05ae 6250      		subi r22,lo8(-(-2))
+ 901 05b0 7040      		sbci r23,hi8(-(-2))
+ 902 05b2 00C0      		rjmp .L53
+ 903               	.L54:
+ 904 05b4 6EEF      		ldi r22,lo8(24574)
+ 905 05b6 7FE5      		ldi r23,hi8(24574)
+ 906               	.L53:
+GAS LISTING /tmp/cc9QGGXX.s 			page 16
+
+
+ 907 05b8 86E0      		ldi r24,lo8(6)
+ 908 05ba 0E94 0000 		call enc424j600_write_ctrl_reg16
+ 909 05be 81E0      		ldi r24,lo8(1)
+ 910 05c0 8093 0000 		sts termcallbackearly.4618,r24
+ 911               	/* epilogue start */
+ 912 05c4 0895      		ret
+ 915               	enc424j600_alter_word:
+ 916 05c6 0F93      		push r16
+ 917 05c8 1F93      		push r17
+ 918               	/* prologue: function */
+ 919               	/* frame size = 0 */
+ 920               	/* stack size = 2 */
+ 921               	.L__stack_usage = 2
+ 922 05ca 162F      		mov r17,r22
+ 923 05cc 072F      		mov r16,r23
+ 924 05ce 2091 0000 		lds r18,sendbaseaddress.1586
+ 925 05d2 3091 0000 		lds r19,sendbaseaddress.1586+1
+ 926 05d6 280F      		add r18,r24
+ 927 05d8 391F      		adc r19,r25
+ 928 05da 80E9      		ldi r24,lo8(-112)
+ 929 05dc B901      		movw r22,r18
+ 930 05de 0E94 0000 		call enc424j600_write_ctrl_reg16
+ 931 05e2 4598      		cbi 40-32,5
+ 932 05e4 82E3      		ldi r24,lo8(50)
+ 933 05e6 0E94 0000 		call espiW_asm
+ 934 05ea 802F      		mov r24,r16
+ 935 05ec 0E94 0000 		call espiW_asm
+ 936 05f0 812F      		mov r24,r17
+ 937 05f2 0E94 0000 		call espiW_asm
+ 938 05f6 459A      		sbi 40-32,5
+ 939               	/* epilogue start */
+ 940 05f8 1F91      		pop r17
+ 941 05fa 0F91      		pop r16
+ 942 05fc 0895      		ret
+ 945               	enc424j600_startsend:
+ 946               	/* prologue: function */
+ 947               	/* frame size = 0 */
+ 948               	/* stack size = 0 */
+ 949               	.L__stack_usage = 0
+ 950 05fe BC01      		movw r22,r24
+ 951 0600 9093 0000 		sts sendbaseaddress.1586+1,r25
+ 952 0604 8093 0000 		sts sendbaseaddress.1586,r24
+ 953 0608 88E8      		ldi r24,lo8(-120)
+ 954 060a 0E94 0000 		call enc424j600_write_ctrl_reg16
+ 955 060e 4598      		cbi 40-32,5
+ 956 0610 8AE2      		ldi r24,lo8(42)
+ 957 0612 0E94 0000 		call espiW_asm
+ 958               	/* epilogue start */
+ 959 0616 0895      		ret
+ 962               	enc424j600_push16:
+ 963 0618 1F93      		push r17
+ 964               	/* prologue: function */
+ 965               	/* frame size = 0 */
+ 966               	/* stack size = 1 */
+ 967               	.L__stack_usage = 1
+ 968 061a 182F      		mov r17,r24
+ 969 061c 892F      		mov r24,r25
+GAS LISTING /tmp/cc9QGGXX.s 			page 17
+
+
+ 970 061e 0E94 0000 		call espiW_asm
+ 971 0622 812F      		mov r24,r17
+ 972 0624 0E94 0000 		call espiW_asm
+ 973               	/* epilogue start */
+ 974 0628 1F91      		pop r17
+ 975 062a 0895      		ret
+ 978               	send_etherlink_header:
+ 979 062c CF93      		push r28
+ 980 062e DF93      		push r29
+ 981               	/* prologue: function */
+ 982               	/* frame size = 0 */
+ 983               	/* stack size = 2 */
+ 984               	.L__stack_usage = 2
+ 985 0630 EC01      		movw r28,r24
+ 986 0632 80E0      		ldi r24,lo8(macfrom.1635)
+ 987 0634 90E0      		ldi r25,hi8(macfrom.1635)
+ 988 0636 66E0      		ldi r22,lo8(6)
+ 989 0638 0E94 0000 		call enc424j600_pushblob
+ 990 063c CE01      		movw r24,r28
+ 991 063e 0E94 0000 		call enc424j600_push16
+ 992               	/* epilogue start */
+ 993 0642 DF91      		pop r29
+ 994 0644 CF91      		pop r28
+ 995 0646 0895      		ret
+ 998               	send_ip_header:
+ 999 0648 A1E0      		ldi r26,lo8(1)
+ 1000 064a B0E0      		ldi r27,hi8(1)
+ 1001 064c E0E0      		ldi r30,lo8(gs(1f))
+ 1002 064e F0E0      		ldi r31,hi8(gs(1f))
+ 1003 0650 0C94 0000 		jmp __prologue_saves__+((18 - 6) * 2)
+ 1004               	1:
+ 1005               	/* prologue: function */
+ 1006               	/* frame size = 1 */
+ 1007               	/* stack size = 7 */
+ 1008               	.L__stack_usage = 7
+ 1009 0654 8C01      		movw r16,r24
+ 1010 0656 7B01      		movw r14,r22
+ 1011 0658 80E0      		ldi r24,lo8(17664)
+ 1012 065a 95E4      		ldi r25,hi8(17664)
+ 1013 065c 4983      		std Y+1,r20
+ 1014 065e 0E94 0000 		call enc424j600_push16
+ 1015 0662 C801      		movw r24,r16
+ 1016 0664 0E94 0000 		call enc424j600_push16
+ 1017 0668 80E0      		ldi r24,lo8(0)
+ 1018 066a 90E0      		ldi r25,hi8(0)
+ 1019 066c 0E94 0000 		call enc424j600_push16
+ 1020 0670 80E0      		ldi r24,lo8(16384)
+ 1021 0672 90E4      		ldi r25,hi8(16384)
+ 1022 0674 0E94 0000 		call enc424j600_push16
+ 1023 0678 80E4      		ldi r24,lo8(64)
+ 1024 067a 0E94 0000 		call espiW_asm
+ 1025 067e 4981      		ldd r20,Y+1
+ 1026 0680 842F      		mov r24,r20
+ 1027 0682 0E94 0000 		call espiW_asm
+ 1028 0686 80E0      		ldi r24,lo8(0)
+ 1029 0688 90E0      		ldi r25,hi8(0)
+ 1030 068a 0E94 0000 		call enc424j600_push16
+GAS LISTING /tmp/cc9QGGXX.s 			page 18
+
+
+ 1031 068e 80E0      		ldi r24,lo8(MyIP)
+ 1032 0690 90E0      		ldi r25,hi8(MyIP)
+ 1033 0692 64E0      		ldi r22,lo8(4)
+ 1034 0694 0E94 0000 		call enc424j600_pushblob
+ 1035 0698 C701      		movw r24,r14
+ 1036 069a 64E0      		ldi r22,lo8(4)
+ 1037 069c 0E94 0000 		call enc424j600_pushblob
+ 1038               	/* epilogue start */
+ 1039 06a0 2196      		adiw r28,1
+ 1040 06a2 E6E0      		ldi r30, lo8(6)
+ 1041 06a4 0C94 0000 		jmp __epilogue_restores__ + ((18 - 6) * 2)
+ 1044               	write_tcp_header.7457:
+ 1045 06a8 0F93      		push r16
+ 1046 06aa 1F93      		push r17
+ 1047 06ac CF93      		push r28
+ 1048 06ae DF93      		push r29
+ 1049               	/* prologue: function */
+ 1050               	/* frame size = 0 */
+ 1051               	/* stack size = 4 */
+ 1052               	.L__stack_usage = 4
+ 1053 06b0 082F      		mov r16,r24
+ 1054 06b2 10E0      		ldi r17,lo8(0)
+ 1055 06b4 F5E0      		ldi r31,5
+ 1056 06b6 000F      	1:	lsl r16
+ 1057 06b8 111F      		rol r17
+ 1058 06ba FA95      		dec r31
+ 1059 06bc 01F4      		brne 1b
+ 1060 06be E801      		movw r28,r16
+ 1061 06c0 C050      		subi r28,lo8(-(TCPs.1629))
+ 1062 06c2 D040      		sbci r29,hi8(-(TCPs.1629))
+ 1063 06c4 8C8D      		ldd r24,Y+28
+ 1064 06c6 9D8D      		ldd r25,Y+29
+ 1065 06c8 0E94 0000 		call enc424j600_startsend
+ 1066 06cc C801      		movw r24,r16
+ 1067 06ce 8050      		subi r24,lo8(-(TCPs.1629+17))
+ 1068 06d0 9040      		sbci r25,hi8(-(TCPs.1629+17))
+ 1069 06d2 66E0      		ldi r22,lo8(6)
+ 1070 06d4 0E94 0000 		call enc424j600_pushblob
+ 1071 06d8 80E0      		ldi r24,lo8(2048)
+ 1072 06da 98E0      		ldi r25,hi8(2048)
+ 1073 06dc 0E94 0000 		call enc424j600_push16
+ 1074 06e0 B801      		movw r22,r16
+ 1075 06e2 6050      		subi r22,lo8(-(TCPs.1629+5))
+ 1076 06e4 7040      		sbci r23,hi8(-(TCPs.1629+5))
+ 1077 06e6 80E0      		ldi r24,lo8(0)
+ 1078 06e8 90E0      		ldi r25,hi8(0)
+ 1079 06ea 46E0      		ldi r20,lo8(6)
+ 1080 06ec 0E94 0000 		call send_ip_header
+ 1081 06f0 8981      		ldd r24,Y+1
+ 1082 06f2 9A81      		ldd r25,Y+2
+ 1083 06f4 0E94 0000 		call enc424j600_push16
+ 1084 06f8 8B81      		ldd r24,Y+3
+ 1085 06fa 9C81      		ldd r25,Y+4
+ 1086 06fc 0E94 0000 		call enc424j600_push16
+ 1087 0700 6985      		ldd r22,Y+9
+ 1088 0702 7A85      		ldd r23,Y+10
+ 1089 0704 8B85      		ldd r24,Y+11
+GAS LISTING /tmp/cc9QGGXX.s 			page 19
+
+
+ 1090 0706 9C85      		ldd r25,Y+12
+ 1091 0708 0E94 0000 		call PUSH32.7446
+ 1092 070c 6D85      		ldd r22,Y+13
+ 1093 070e 7E85      		ldd r23,Y+14
+ 1094 0710 8F85      		ldd r24,Y+15
+ 1095 0712 9889      		ldd r25,Y+16
+ 1096 0714 0E94 0000 		call PUSH32.7446
+ 1097 0718 80E5      		ldi r24,lo8(80)
+ 1098 071a 0E94 0000 		call espiW_asm
+ 1099 071e 8B8D      		ldd r24,Y+27
+ 1100 0720 0E94 0000 		call espiW_asm
+ 1101 0724 80E0      		ldi r24,lo8(2048)
+ 1102 0726 98E0      		ldi r25,hi8(2048)
+ 1103 0728 0E94 0000 		call enc424j600_push16
+ 1104 072c 80E0      		ldi r24,lo8(0)
+ 1105 072e 90E0      		ldi r25,hi8(0)
+ 1106 0730 0E94 0000 		call enc424j600_push16
+ 1107 0734 80E0      		ldi r24,lo8(0)
+ 1108 0736 90E0      		ldi r25,hi8(0)
+ 1109 0738 0E94 0000 		call enc424j600_push16
+ 1110               	/* epilogue start */
+ 1111 073c DF91      		pop r29
+ 1112 073e CF91      		pop r28
+ 1113 0740 1F91      		pop r17
+ 1114 0742 0F91      		pop r16
+ 1115 0744 0895      		ret
+ 1118               	PushStr:
+ 1119 0746 EF92      		push r14
+ 1120 0748 FF92      		push r15
+ 1121 074a CF93      		push r28
+ 1122 074c DF93      		push r29
+ 1123               	/* prologue: function */
+ 1124               	/* frame size = 0 */
+ 1125               	/* stack size = 4 */
+ 1126               	.L__stack_usage = 4
+ 1127 074e E82E      		mov r14,r24
+ 1128 0750 E701      		movw r28,r14
+ 1129 0752 7E01      		movw r14,r28
+ 1130 0754 F92E      		mov r15,r25
+ 1131 0756 E701      		movw r28,r14
+ 1132 0758 00C0      		rjmp .L62
+ 1133               	.L63:
+ 1134 075a 0E94 0000 		call espiW_asm
+ 1135               	.L62:
+ 1136 075e 8991      		ld r24,Y+
+ 1137 0760 8823      		tst r24
+ 1138 0762 01F4      		brne .L63
+ 1139               	/* epilogue start */
+ 1140 0764 DF91      		pop r29
+ 1141 0766 CF91      		pop r28
+ 1142 0768 FF90      		pop r15
+ 1143 076a EF90      		pop r14
+ 1144 076c 0895      		ret
+ 1147               	POP32.7442:
+ 1148 076e CF92      		push r12
+ 1149 0770 DF92      		push r13
+ 1150 0772 EF92      		push r14
+GAS LISTING /tmp/cc9QGGXX.s 			page 20
+
+
+ 1151 0774 FF92      		push r15
+ 1152 0776 0F93      		push r16
+ 1153 0778 1F93      		push r17
+ 1154               	/* prologue: function */
+ 1155               	/* frame size = 0 */
+ 1156               	/* stack size = 6 */
+ 1157               	.L__stack_usage = 6
+ 1158 077a 0E94 0000 		call espiR_asm
+ 1159 077e 90E0      		ldi r25,lo8(0)
+ 1160 0780 A0E0      		ldi r26,lo8(0)
+ 1161 0782 B0E0      		ldi r27,hi8(0)
+ 1162 0784 182F      		mov r17,r24
+ 1163 0786 0027      		clr r16
+ 1164 0788 FF24      		clr r15
+ 1165 078a EE24      		clr r14
+ 1166 078c 0E94 0000 		call espiR_asm
+ 1167 0790 C82E      		mov r12,r24
+ 1168 0792 0E94 0000 		call espiR_asm
+ 1169 0796 D82E      		mov r13,r24
+ 1170 0798 0E94 0000 		call espiR_asm
+ 1171 079c 2C2D      		mov r18,r12
+ 1172 079e 30E0      		ldi r19,lo8(0)
+ 1173 07a0 40E0      		ldi r20,lo8(0)
+ 1174 07a2 50E0      		ldi r21,hi8(0)
+ 1175 07a4 A901      		movw r20,r18
+ 1176 07a6 3327      		clr r19
+ 1177 07a8 2227      		clr r18
+ 1178 07aa 2E29      		or r18,r14
+ 1179 07ac 3F29      		or r19,r15
+ 1180 07ae 402B      		or r20,r16
+ 1181 07b0 512B      		or r21,r17
+ 1182 07b2 682F      		mov r22,r24
+ 1183 07b4 70E0      		ldi r23,lo8(0)
+ 1184 07b6 80E0      		ldi r24,lo8(0)
+ 1185 07b8 90E0      		ldi r25,hi8(0)
+ 1186 07ba 262B      		or r18,r22
+ 1187 07bc 372B      		or r19,r23
+ 1188 07be 482B      		or r20,r24
+ 1189 07c0 592B      		or r21,r25
+ 1190 07c2 8D2D      		mov r24,r13
+ 1191 07c4 90E0      		ldi r25,lo8(0)
+ 1192 07c6 A0E0      		ldi r26,lo8(0)
+ 1193 07c8 B0E0      		ldi r27,hi8(0)
+ 1194 07ca BA2F      		mov r27,r26
+ 1195 07cc A92F      		mov r26,r25
+ 1196 07ce 982F      		mov r25,r24
+ 1197 07d0 8827      		clr r24
+ 1198 07d2 282B      		or r18,r24
+ 1199 07d4 392B      		or r19,r25
+ 1200 07d6 4A2B      		or r20,r26
+ 1201 07d8 5B2B      		or r21,r27
+ 1202 07da B901      		movw r22,r18
+ 1203 07dc CA01      		movw r24,r20
+ 1204               	/* epilogue start */
+ 1205 07de 1F91      		pop r17
+ 1206 07e0 0F91      		pop r16
+ 1207 07e2 FF90      		pop r15
+GAS LISTING /tmp/cc9QGGXX.s 			page 21
+
+
+ 1208 07e4 EF90      		pop r14
+ 1209 07e6 DF90      		pop r13
+ 1210 07e8 CF90      		pop r12
+ 1211 07ea 0895      		ret
+ 1214               	enc_read_ctrl_reg8_common.4659:
+ 1215               	/* prologue: function */
+ 1216               	/* frame size = 0 */
+ 1217               	/* stack size = 0 */
+ 1218               	.L__stack_usage = 0
+ 1219 07ec 4598      		cbi 40-32,5
+ 1220 07ee 0E94 0000 		call espiW_asm
+ 1221 07f2 0E94 0000 		call espiR_asm
+ 1222 07f6 459A      		sbi 40-32,5
+ 1223               	/* epilogue start */
+ 1224 07f8 0895      		ret
+ 1227               	enc424j600_wait_for_dma:
+ 1228 07fa 1F93      		push r17
+ 1229               	/* prologue: function */
+ 1230               	/* frame size = 0 */
+ 1231               	/* stack size = 1 */
+ 1232               	.L__stack_usage = 1
+ 1233 07fc 10E0      		ldi r17,lo8(0)
+ 1234 07fe 00C0      		rjmp .L67
+ 1235               	.L69:
+ 1236 0800 1F5F      		subi r17,lo8(-(1))
+ 1237 0802 0E94 0000 		call standarddelay.4620
+ 1238               	.L67:
+ 1239 0806 8EE1      		ldi r24,lo8(30)
+ 1240 0808 0E94 0000 		call enc_read_ctrl_reg8_common.4659
+ 1241 080c 85FF      		sbrs r24,5
+ 1242 080e 00C0      		rjmp .L66
+ 1243 0810 1A3F      		cpi r17,lo8(-6)
+ 1244 0812 01F4      		brne .L69
+ 1245               	.L66:
+ 1246               	/* epilogue start */
+ 1247 0814 1F91      		pop r17
+ 1248 0816 0895      		ret
+ 1251               	enc424j600_start_checksum:
+ 1252 0818 0F93      		push r16
+ 1253 081a 1F93      		push r17
+ 1254 081c CF93      		push r28
+ 1255 081e DF93      		push r29
+ 1256               	/* prologue: function */
+ 1257               	/* frame size = 0 */
+ 1258               	/* stack size = 4 */
+ 1259               	.L__stack_usage = 4
+ 1260 0820 8C01      		movw r16,r24
+ 1261 0822 EB01      		movw r28,r22
+ 1262 0824 0E94 0000 		call enc424j600_wait_for_dma
+ 1263 0828 6091 0000 		lds r22,sendbaseaddress.1586
+ 1264 082c 7091 0000 		lds r23,sendbaseaddress.1586+1
+ 1265 0830 600F      		add r22,r16
+ 1266 0832 711F      		adc r23,r17
+ 1267 0834 8AE0      		ldi r24,lo8(10)
+ 1268 0836 0E94 0000 		call enc424j600_write_ctrl_reg16
+ 1269 083a 8CE0      		ldi r24,lo8(12)
+ 1270 083c BE01      		movw r22,r28
+GAS LISTING /tmp/cc9QGGXX.s 			page 22
+
+
+ 1271 083e 0E94 0000 		call enc424j600_write_ctrl_reg16
+ 1272 0842 88ED      		ldi r24,lo8(-40)
+ 1273 0844 0E94 0000 		call enc_oneshot.4667
+ 1274               	/* epilogue start */
+ 1275 0848 DF91      		pop r29
+ 1276 084a CF91      		pop r28
+ 1277 084c 1F91      		pop r17
+ 1278 084e 0F91      		pop r16
+ 1279 0850 0895      		ret
+ 1282               	enc424j600_xmitpacket:
+ 1283 0852 FF92      		push r15
+ 1284 0854 0F93      		push r16
+ 1285 0856 1F93      		push r17
+ 1286 0858 CF93      		push r28
+ 1287 085a DF93      		push r29
+ 1288               	/* prologue: function */
+ 1289               	/* frame size = 0 */
+ 1290               	/* stack size = 5 */
+ 1291               	.L__stack_usage = 5
+ 1292 085c 8C01      		movw r16,r24
+ 1293 085e EB01      		movw r28,r22
+ 1294 0860 FF24      		clr r15
+ 1295 0862 00C0      		rjmp .L72
+ 1296               	.L74:
+ 1297 0864 F394      		inc r15
+ 1298 0866 8F2D      		mov r24,r15
+ 1299 0868 8B3F      		cpi r24,lo8(-5)
+ 1300 086a 01F0      		breq .L75
+ 1301 086c 0E94 0000 		call standarddelay.4620
+ 1302               	.L72:
+ 1303 0870 8EE1      		ldi r24,lo8(30)
+ 1304 0872 0E94 0000 		call enc_read_ctrl_reg8_common.4659
+ 1305 0876 81FD      		sbrc r24,1
+ 1306 0878 00C0      		rjmp .L74
+ 1307 087a 80E0      		ldi r24,lo8(0)
+ 1308 087c B801      		movw r22,r16
+ 1309 087e 0E94 0000 		call enc424j600_write_ctrl_reg16
+ 1310 0882 82E0      		ldi r24,lo8(2)
+ 1311 0884 BE01      		movw r22,r28
+ 1312 0886 0E94 0000 		call enc424j600_write_ctrl_reg16
+ 1313 088a 84ED      		ldi r24,lo8(-44)
+ 1314 088c 0E94 0000 		call enc_oneshot.4667
+ 1315 0890 80E0      		ldi r24,lo8(0)
+ 1316 0892 00C0      		rjmp .L73
+ 1317               	.L75:
+ 1318 0894 8FEF      		ldi r24,lo8(-1)
+ 1319               	.L73:
+ 1320               	/* epilogue start */
+ 1321 0896 CDB7      		in r28,__SP_L__
+ 1322 0898 DEB7      		in r29,__SP_H__
+ 1323 089a E5E0      		ldi r30, lo8(5)
+ 1324 089c 0C94 0000 		jmp __epilogue_restores__ + ((18 - 5) * 2)
+ 1327               	enc424j600_dumpbytes:
+ 1328 08a0 1F93      		push r17
+ 1329               	/* prologue: function */
+ 1330               	/* frame size = 0 */
+ 1331               	/* stack size = 1 */
+GAS LISTING /tmp/cc9QGGXX.s 			page 23
+
+
+ 1332               	.L__stack_usage = 1
+ 1333 08a2 182F      		mov r17,r24
+ 1334 08a4 00C0      		rjmp .L77
+ 1335               	.L78:
+ 1336 08a6 0E94 0000 		call espiR_asm
+ 1337 08aa 1150      		subi r17,lo8(-(-1))
+ 1338               	.L77:
+ 1339 08ac 1123      		tst r17
+ 1340 08ae 01F4      		brne .L78
+ 1341               	/* epilogue start */
+ 1342 08b0 1F91      		pop r17
+ 1343 08b2 0895      		ret
+ 1346               	enc424j600_popblob:
+ 1347 08b4 A1E0      		ldi r26,lo8(1)
+ 1348 08b6 B0E0      		ldi r27,hi8(1)
+ 1349 08b8 E0E0      		ldi r30,lo8(gs(1f))
+ 1350 08ba F0E0      		ldi r31,hi8(gs(1f))
+ 1351 08bc 0C94 0000 		jmp __prologue_saves__+((18 - 4) * 2)
+ 1352               	1:
+ 1353               	/* prologue: function */
+ 1354               	/* frame size = 1 */
+ 1355               	/* stack size = 5 */
+ 1356               	.L__stack_usage = 5
+ 1357 08c0 8C01      		movw r16,r24
+ 1358 08c2 00C0      		rjmp .L80
+ 1359               	.L81:
+ 1360 08c4 6983      		std Y+1,r22
+ 1361 08c6 0E94 0000 		call espiR_asm
+ 1362 08ca F801      		movw r30,r16
+ 1363 08cc 8193      		st Z+,r24
+ 1364 08ce 8F01      		movw r16,r30
+ 1365 08d0 6981      		ldd r22,Y+1
+ 1366 08d2 6150      		subi r22,lo8(-(-1))
+ 1367               	.L80:
+ 1368 08d4 6623      		tst r22
+ 1369 08d6 01F4      		brne .L81
+ 1370               	/* epilogue start */
+ 1371 08d8 2196      		adiw r28,1
+ 1372 08da E4E0      		ldi r30, lo8(4)
+ 1373 08dc 0C94 0000 		jmp __epilogue_restores__ + ((18 - 4) * 2)
+ 1376               	enc424j600_pop16LE:
+ 1377 08e0 1F93      		push r17
+ 1378               	/* prologue: function */
+ 1379               	/* frame size = 0 */
+ 1380               	/* stack size = 1 */
+ 1381               	.L__stack_usage = 1
+ 1382 08e2 0E94 0000 		call espiR_asm
+ 1383 08e6 182F      		mov r17,r24
+ 1384 08e8 0E94 0000 		call espiR_asm
+ 1385 08ec 582F      		mov r21,r24
+ 1386 08ee 40E0      		ldi r20,lo8(0)
+ 1387 08f0 212F      		mov r18,r17
+ 1388 08f2 30E0      		ldi r19,lo8(0)
+ 1389 08f4 242B      		or r18,r20
+ 1390 08f6 352B      		or r19,r21
+ 1391 08f8 C901      		movw r24,r18
+ 1392               	/* epilogue start */
+GAS LISTING /tmp/cc9QGGXX.s 			page 24
+
+
+ 1393 08fa 1F91      		pop r17
+ 1394 08fc 0895      		ret
+ 1397               	enc424j600_read_ctrl_reg16:
+ 1398 08fe 1F93      		push r17
+ 1399               	/* prologue: function */
+ 1400               	/* frame size = 0 */
+ 1401               	/* stack size = 1 */
+ 1402               	.L__stack_usage = 1
+ 1403 0900 182F      		mov r17,r24
+ 1404 0902 4598      		cbi 40-32,5
+ 1405 0904 80E2      		ldi r24,lo8(32)
+ 1406 0906 0E94 0000 		call espiW_asm
+ 1407 090a 812F      		mov r24,r17
+ 1408 090c 0E94 0000 		call espiW_asm
+ 1409 0910 0E94 0000 		call enc424j600_pop16LE
+ 1410 0914 459A      		sbi 40-32,5
+ 1411               	/* epilogue start */
+ 1412 0916 1F91      		pop r17
+ 1413 0918 0895      		ret
+ 1416               	enc424j600_get_checksum:
+ 1417               	/* prologue: function */
+ 1418               	/* frame size = 0 */
+ 1419               	/* stack size = 0 */
+ 1420               	.L__stack_usage = 0
+ 1421 091a 0E94 0000 		call enc424j600_wait_for_dma
+ 1422 091e 80E1      		ldi r24,lo8(16)
+ 1423 0920 0E94 0000 		call enc424j600_read_ctrl_reg16
+ 1424 0924 382F      		mov r19,r24
+ 1425 0926 292F      		mov r18,r25
+ 1426 0928 C901      		movw r24,r18
+ 1427               	/* epilogue start */
+ 1428 092a 0895      		ret
+ 1431               	enc424j600_endsend:
+ 1432               	/* prologue: function */
+ 1433               	/* frame size = 0 */
+ 1434               	/* stack size = 0 */
+ 1435               	.L__stack_usage = 0
+ 1436 092c 459A      		sbi 40-32,5
+ 1437 092e 88E8      		ldi r24,lo8(-120)
+ 1438 0930 0E94 0000 		call enc424j600_read_ctrl_reg16
+ 1439 0934 2091 0000 		lds r18,sendbaseaddress.1586
+ 1440 0938 3091 0000 		lds r19,sendbaseaddress.1586+1
+ 1441 093c BC01      		movw r22,r24
+ 1442 093e 621B      		sub r22,r18
+ 1443 0940 730B      		sbc r23,r19
+ 1444 0942 C901      		movw r24,r18
+ 1445 0944 0E94 0000 		call enc424j600_xmitpacket
+ 1446               	/* epilogue start */
+ 1447 0948 0895      		ret
+ 1450               	EndTCPWrite:
+ 1451 094a 0F93      		push r16
+ 1452 094c 1F93      		push r17
+ 1453 094e CF93      		push r28
+ 1454 0950 DF93      		push r29
+ 1455               	/* prologue: function */
+ 1456               	/* frame size = 0 */
+ 1457               	/* stack size = 4 */
+GAS LISTING /tmp/cc9QGGXX.s 			page 25
+
+
+ 1458               	.L__stack_usage = 4
+ 1459 0952 082F      		mov r16,r24
+ 1460 0954 10E0      		ldi r17,lo8(0)
+ 1461 0956 0E94 0000 		call enc424j600_stopop
+ 1462 095a 88E8      		ldi r24,lo8(-120)
+ 1463 095c 0E94 0000 		call enc424j600_read_ctrl_reg16
+ 1464 0960 2091 0000 		lds r18,sendbaseaddress.1586
+ 1465 0964 3091 0000 		lds r19,sendbaseaddress.1586+1
+ 1466 0968 EC01      		movw r28,r24
+ 1467 096a C21B      		sub r28,r18
+ 1468 096c D30B      		sbc r29,r19
+ 1469 096e 2696      		adiw r28,6
+ 1470 0970 F801      		movw r30,r16
+ 1471 0972 35E0      		ldi r19,5
+ 1472 0974 EE0F      	1:	lsl r30
+ 1473 0976 FF1F      		rol r31
+ 1474 0978 3A95      		dec r19
+ 1475 097a 01F4      		brne 1b
+ 1476 097c E050      		subi r30,lo8(-(TCPs.1629))
+ 1477 097e F040      		sbci r31,hi8(-(TCPs.1629))
+ 1478 0980 D78F      		std Z+31,r29
+ 1479 0982 C68F      		std Z+30,r28
+ 1480 0984 838D      		ldd r24,Z+27
+ 1481 0986 8B70      		andi r24,lo8(11)
+ 1482 0988 01F0      		breq .L87
+ 1483 098a 81E0      		ldi r24,lo8(1)
+ 1484 098c 878B      		std Z+23,r24
+ 1485 098e 128E      		std Z+26,__zero_reg__
+ 1486               	.L87:
+ 1487 0990 BE01      		movw r22,r28
+ 1488 0992 6E50      		subi r22,lo8(-(-14))
+ 1489 0994 7040      		sbci r23,hi8(-(-14))
+ 1490 0996 8AE0      		ldi r24,lo8(10)
+ 1491 0998 90E0      		ldi r25,hi8(10)
+ 1492 099a 0E94 0000 		call enc424j600_alter_word
+ 1493 099e 88E0      		ldi r24,lo8(8)
+ 1494 09a0 90E0      		ldi r25,hi8(8)
+ 1495 09a2 64E1      		ldi r22,lo8(20)
+ 1496 09a4 70E0      		ldi r23,hi8(20)
+ 1497 09a6 0E94 0000 		call enc424j600_start_checksum
+ 1498 09aa 0E94 0000 		call enc424j600_get_checksum
+ 1499 09ae BC01      		movw r22,r24
+ 1500 09b0 82E1      		ldi r24,lo8(18)
+ 1501 09b2 90E0      		ldi r25,hi8(18)
+ 1502 09b4 0E94 0000 		call enc424j600_alter_word
+ 1503 09b8 BE01      		movw r22,r28
+ 1504 09ba 6C51      		subi r22,lo8(-(-28))
+ 1505 09bc 7040      		sbci r23,hi8(-(-28))
+ 1506 09be 8CE2      		ldi r24,lo8(44)
+ 1507 09c0 90E0      		ldi r25,hi8(44)
+ 1508 09c2 0E94 0000 		call enc424j600_alter_word
+ 1509 09c6 BE01      		movw r22,r28
+ 1510 09c8 6A51      		subi r22,lo8(-(-26))
+ 1511 09ca 7040      		sbci r23,hi8(-(-26))
+ 1512 09cc 84E1      		ldi r24,lo8(20)
+ 1513 09ce 90E0      		ldi r25,hi8(20)
+ 1514 09d0 0E94 0000 		call enc424j600_start_checksum
+GAS LISTING /tmp/cc9QGGXX.s 			page 26
+
+
+ 1515 09d4 0E94 0000 		call enc424j600_get_checksum
+ 1516 09d8 BC01      		movw r22,r24
+ 1517 09da 8CE2      		ldi r24,lo8(44)
+ 1518 09dc 90E0      		ldi r25,hi8(44)
+ 1519 09de 0E94 0000 		call enc424j600_alter_word
+ 1520 09e2 0E94 0000 		call enc424j600_endsend
+ 1521               	/* epilogue start */
+ 1522 09e6 DF91      		pop r29
+ 1523 09e8 CF91      		pop r28
+ 1524 09ea 1F91      		pop r17
+ 1525 09ec 0F91      		pop r16
+ 1526 09ee 0895      		ret
+ 1529               	HTTPClose:
+ 1530 09f0 1F93      		push r17
+ 1531               	/* prologue: function */
+ 1532               	/* frame size = 0 */
+ 1533               	/* stack size = 1 */
+ 1534               	.L__stack_usage = 1
+ 1535 09f2 E091 0000 		lds r30,curhttp.1697
+ 1536 09f6 F091 0000 		lds r31,curhttp.1697+1
+ 1537 09fa 8081      		ld r24,Z
+ 1538 09fc 807F      		andi r24,lo8(-16)
+ 1539 09fe 8083      		st Z,r24
+ 1540 0a00 12AD      		ldd r17,Z+58
+ 1541 0a02 E12F      		mov r30,r17
+ 1542 0a04 F0E0      		ldi r31,lo8(0)
+ 1543 0a06 45E0      		ldi r20,5
+ 1544 0a08 EE0F      	1:	lsl r30
+ 1545 0a0a FF1F      		rol r31
+ 1546 0a0c 4A95      		dec r20
+ 1547 0a0e 01F4      		brne 1b
+ 1548 0a10 E050      		subi r30,lo8(-(TCPs.1629))
+ 1549 0a12 F040      		sbci r31,hi8(-(TCPs.1629))
+ 1550 0a14 8081      		ld r24,Z
+ 1551 0a16 8770      		andi r24,lo8(7)
+ 1552 0a18 01F0      		breq .L88
+ 1553 0a1a 81E0      		ldi r24,lo8(1)
+ 1554 0a1c 838F      		std Z+27,r24
+ 1555 0a1e 178A      		std Z+23,__zero_reg__
+ 1556 0a20 812F      		mov r24,r17
+ 1557 0a22 0E94 0000 		call write_tcp_header.7457
+ 1558 0a26 812F      		mov r24,r17
+ 1559 0a28 0E94 0000 		call EndTCPWrite
+ 1560               	.L88:
+ 1561               	/* epilogue start */
+ 1562 0a2c 1F91      		pop r17
+ 1563 0a2e 0895      		ret
+ 1566               	enc424j600_pop16:
+ 1567 0a30 1F93      		push r17
+ 1568               	/* prologue: function */
+ 1569               	/* frame size = 0 */
+ 1570               	/* stack size = 1 */
+ 1571               	.L__stack_usage = 1
+ 1572 0a32 0E94 0000 		call espiR_asm
+ 1573 0a36 182F      		mov r17,r24
+ 1574 0a38 0E94 0000 		call espiR_asm
+ 1575 0a3c 512F      		mov r21,r17
+GAS LISTING /tmp/cc9QGGXX.s 			page 27
+
+
+ 1576 0a3e 40E0      		ldi r20,lo8(0)
+ 1577 0a40 282F      		mov r18,r24
+ 1578 0a42 30E0      		ldi r19,lo8(0)
+ 1579 0a44 242B      		or r18,r20
+ 1580 0a46 352B      		or r19,r21
+ 1581 0a48 C901      		movw r24,r18
+ 1582               	/* epilogue start */
+ 1583 0a4a 1F91      		pop r17
+ 1584 0a4c 0895      		ret
+ 1587               	FindClusterFileInDir.clone.1:
+ 1588 0a4e ACE2      		ldi r26,lo8(44)
+ 1589 0a50 B0E0      		ldi r27,hi8(44)
+ 1590 0a52 E0E0      		ldi r30,lo8(gs(1f))
+ 1591 0a54 F0E0      		ldi r31,hi8(gs(1f))
+ 1592 0a56 0C94 0000 		jmp __prologue_saves__+((18 - 18) * 2)
+ 1593               	1:
+ 1594               	/* prologue: function */
+ 1595               	/* frame size = 44 */
+ 1596               	/* stack size = 62 */
+ 1597               	.L__stack_usage = 62
+ 1598 0a5a 8BA7      		std Y+43,r24
+ 1599 0a5c 9CA7      		std Y+44,r25
+ 1600 0a5e 78A7      		std Y+40,r23
+ 1601 0a60 6FA3      		std Y+39,r22
+ 1602 0a62 2DB7      		in r18,__SP_L__
+ 1603 0a64 3EB7      		in r19,__SP_H__
+ 1604 0a66 3AA7      		std Y+42,r19
+ 1605 0a68 29A7      		std Y+41,r18
+ 1606 0a6a 82E0      		ldi r24,lo8(2)
+ 1607 0a6c 90E0      		ldi r25,hi8(2)
+ 1608 0a6e A0E0      		ldi r26,hlo8(2)
+ 1609 0a70 B0E0      		ldi r27,hhi8(2)
+ 1610 0a72 8983      		std Y+1,r24
+ 1611 0a74 9A83      		std Y+2,r25
+ 1612 0a76 AB83      		std Y+3,r26
+ 1613 0a78 BC83      		std Y+4,r27
+ 1614 0a7a 1D82      		std Y+5,__zero_reg__
+ 1615 0a7c 1E82      		std Y+6,__zero_reg__
+ 1616 0a7e CE01      		movw r24,r28
+ 1617 0a80 0196      		adiw r24,1
+ 1618 0a82 0E94 0000 		call StartReadFAT
+ 1619 0a86 8DB7      		in r24,__SP_L__
+ 1620 0a88 9EB7      		in r25,__SP_H__
+ 1621 0a8a 8897      		sbiw r24,40
+ 1622 0a8c 0FB6      		in __tmp_reg__,__SREG__
+ 1623 0a8e F894      		cli
+ 1624 0a90 9EBF      		out __SP_H__,r25
+ 1625 0a92 0FBE      		out __SREG__,__tmp_reg__
+ 1626 0a94 8DBF      		out __SP_L__,r24
+ 1627 0a96 EDB6      		in r14,__SP_L__
+ 1628 0a98 FEB6      		in r15,__SP_H__
+ 1629 0a9a 0894      		sec
+ 1630 0a9c E11C      		adc r14,__zero_reg__
+ 1631 0a9e F11C      		adc r15,__zero_reg__
+ 1632 0aa0 AA24      		clr r10
+ 1633 0aa2 BB24      		clr r11
+ 1634 0aa4 9924      		clr r9
+GAS LISTING /tmp/cc9QGGXX.s 			page 28
+
+
+ 1635 0aa6 8E01      		movw r16,r28
+ 1636 0aa8 095F      		subi r16,lo8(-(7))
+ 1637 0aaa 1F4F      		sbci r17,hi8(-(7))
+ 1638 0aac F7E2      		ldi r31,lo8(39)
+ 1639 0aae 4F2E      		mov r4,r31
+ 1640 0ab0 512C      		mov r5,__zero_reg__
+ 1641 0ab2 4C0E      		add r4,r28
+ 1642 0ab4 5D1E      		adc r5,r29
+ 1643 0ab6 EEE2      		ldi r30,lo8(46)
+ 1644 0ab8 3E2E      		mov r3,r30
+ 1645 0aba 7DE0      		ldi r23,lo8(13)
+ 1646 0abc 272E      		mov r2,r23
+ 1647               	.L118:
+ 1648 0abe 3801      		movw r6,r16
+ 1649 0ac0 6801      		movw r12,r16
+ 1650               	.L95:
+ 1651 0ac2 0E94 0000 		call popSDread
+ 1652 0ac6 882E      		mov r8,r24
+ 1653 0ac8 E091 0000 		lds r30,lastfile.12307
+ 1654 0acc F091 0000 		lds r31,lastfile.12307+1
+ 1655 0ad0 3097      		sbiw r30,0
+ 1656 0ad2 01F0      		breq .L93
+ 1657 0ad4 8481      		ldd r24,Z+4
+ 1658 0ad6 2581      		ldd r18,Z+5
+ 1659 0ad8 922F      		mov r25,r18
+ 1660 0ada 9170      		andi r25,lo8(1)
+ 1661 0adc 0196      		adiw r24,1
+ 1662 0ade 9170      		andi r25,hi8(511)
+ 1663 0ae0 8483      		std Z+4,r24
+ 1664 0ae2 892F      		mov r24,r25
+ 1665 0ae4 8170      		andi r24,lo8(1)
+ 1666 0ae6 2E7F      		andi r18,lo8(-2)
+ 1667 0ae8 282B      		or r18,r24
+ 1668 0aea 2583      		std Z+5,r18
+ 1669               	.L93:
+ 1670 0aec 8091 0000 		lds r24,opsleftSD.1662
+ 1671 0af0 9091 0000 		lds r25,opsleftSD.1662+1
+ 1672 0af4 1816      		cp __zero_reg__,r24
+ 1673 0af6 1906      		cpc __zero_reg__,r25
+ 1674 0af8 04F0      		brlt .L94
+ 1675 0afa 0E94 0000 		call endSDread
+ 1676 0afe 0E94 0000 		call FATAdvanceSector
+ 1677 0b02 8091 0000 		lds r24,lastfile.12307
+ 1678 0b06 9091 0000 		lds r25,lastfile.12307+1
+ 1679 0b0a 0E94 0000 		call StartReadFAT
+ 1680               	.L94:
+ 1681 0b0e D601      		movw r26,r12
+ 1682 0b10 8D92      		st X+,r8
+ 1683 0b12 6D01      		movw r12,r26
+ 1684 0b14 A415      		cp r26,r4
+ 1685 0b16 B505      		cpc r27,r5
+ 1686 0b18 01F4      		brne .L95
+ 1687 0b1a 8F81      		ldd r24,Y+7
+ 1688 0b1c 853E      		cpi r24,lo8(-27)
+ 1689 0b1e 01F0      		breq .L118
+ 1690 0b20 8823      		tst r24
+ 1691 0b22 01F4      		brne .L97
+GAS LISTING /tmp/cc9QGGXX.s 			page 29
+
+
+ 1692 0b24 0E94 0000 		call endSDread
+ 1693 0b28 EE24      		clr r14
+ 1694 0b2a EA94      		dec r14
+ 1695 0b2c FE2C      		mov r15,r14
+ 1696 0b2e 8701      		movw r16,r14
+ 1697 0b30 00C0      		rjmp .L98
+ 1698               	.L97:
+ 1699 0b32 2A89      		ldd r18,Y+18
+ 1700 0b34 2F30      		cpi r18,lo8(15)
+ 1701 0b36 01F4      		brne .L99
+ 1702 0b38 8F71      		andi r24,lo8(31)
+ 1703 0b3a 8150      		subi r24,lo8(-(-1))
+ 1704 0b3c 8431      		cpi r24,lo8(20)
+ 1705 0b3e 00F0      		brlo .+2
+ 1706 0b40 00C0      		rjmp .L118
+ 1707 0b42 829D      		mul r24,r2
+ 1708 0b44 802D      		mov r24,r0
+ 1709 0b46 1124      		clr r1
+ 1710 0b48 90E0      		ldi r25,lo8(0)
+ 1711 0b4a 8C31      		cpi r24,28
+ 1712 0b4c 9105      		cpc r25,__zero_reg__
+ 1713 0b4e 04F0      		brlt .+2
+ 1714 0b50 00C0      		rjmp .L118
+ 1715 0b52 F701      		movw r30,r14
+ 1716 0b54 E80F      		add r30,r24
+ 1717 0b56 F91F      		adc r31,r25
+ 1718 0b58 8885      		ldd r24,Y+8
+ 1719 0b5a 8083      		st Z,r24
+ 1720 0b5c 8A85      		ldd r24,Y+10
+ 1721 0b5e 8183      		std Z+1,r24
+ 1722 0b60 8C85      		ldd r24,Y+12
+ 1723 0b62 8283      		std Z+2,r24
+ 1724 0b64 8E85      		ldd r24,Y+14
+ 1725 0b66 8383      		std Z+3,r24
+ 1726 0b68 8889      		ldd r24,Y+16
+ 1727 0b6a 8483      		std Z+4,r24
+ 1728 0b6c 8D89      		ldd r24,Y+21
+ 1729 0b6e 8583      		std Z+5,r24
+ 1730 0b70 8F89      		ldd r24,Y+23
+ 1731 0b72 8683      		std Z+6,r24
+ 1732 0b74 898D      		ldd r24,Y+25
+ 1733 0b76 8783      		std Z+7,r24
+ 1734 0b78 8B8D      		ldd r24,Y+27
+ 1735 0b7a 8087      		std Z+8,r24
+ 1736 0b7c 8D8D      		ldd r24,Y+29
+ 1737 0b7e 8187      		std Z+9,r24
+ 1738 0b80 8F8D      		ldd r24,Y+31
+ 1739 0b82 8287      		std Z+10,r24
+ 1740 0b84 8BA1      		ldd r24,Y+35
+ 1741 0b86 8387      		std Z+11,r24
+ 1742 0b88 8DA1      		ldd r24,Y+37
+ 1743 0b8a 8487      		std Z+12,r24
+ 1744 0b8c 9924      		clr r9
+ 1745 0b8e 9394      		inc r9
+ 1746 0b90 00C0      		rjmp .L118
+ 1747               	.L99:
+ 1748 0b92 9920      		tst r9
+GAS LISTING /tmp/cc9QGGXX.s 			page 30
+
+
+ 1749 0b94 01F4      		brne .L100
+ 1750 0b96 F701      		movw r30,r14
+ 1751 0b98 90E0      		ldi r25,lo8(0)
+ 1752 0b9a 00C0      		rjmp .L102
+ 1753               	.L113:
+ 1754 0b9c 982F      		mov r25,r24
+ 1755               	.L102:
+ 1756 0b9e D301      		movw r26,r6
+ 1757 0ba0 3D91      		ld r19,X+
+ 1758 0ba2 3D01      		movw r6,r26
+ 1759 0ba4 3193      		st Z+,r19
+ 1760 0ba6 892F      		mov r24,r25
+ 1761 0ba8 8F5F      		subi r24,lo8(-(1))
+ 1762 0baa 3032      		cpi r19,lo8(32)
+ 1763 0bac 01F0      		breq .L101
+ 1764 0bae 8830      		cpi r24,lo8(8)
+ 1765 0bb0 01F4      		brne .L113
+ 1766 0bb2 98E0      		ldi r25,lo8(8)
+ 1767               	.L101:
+ 1768 0bb4 F701      		movw r30,r14
+ 1769 0bb6 E80F      		add r30,r24
+ 1770 0bb8 F11D      		adc r31,__zero_reg__
+ 1771 0bba 3197      		sbiw r30,1
+ 1772 0bbc 3082      		st Z,r3
+ 1773 0bbe 00C0      		rjmp .L103
+ 1774               	.L105:
+ 1775 0bc0 F801      		movw r30,r16
+ 1776 0bc2 E90F      		add r30,r25
+ 1777 0bc4 F11D      		adc r31,__zero_reg__
+ 1778 0bc6 3081      		ld r19,Z
+ 1779 0bc8 F701      		movw r30,r14
+ 1780 0bca E80F      		add r30,r24
+ 1781 0bcc F11D      		adc r31,__zero_reg__
+ 1782 0bce 3083      		st Z,r19
+ 1783 0bd0 8F5F      		subi r24,lo8(-(1))
+ 1784 0bd2 3032      		cpi r19,lo8(32)
+ 1785 0bd4 01F0      		breq .L104
+ 1786 0bd6 9F5F      		subi r25,lo8(-(1))
+ 1787               	.L103:
+ 1788 0bd8 9B30      		cpi r25,lo8(11)
+ 1789 0bda 00F0      		brlo .L105
+ 1790               	.L104:
+ 1791 0bdc F701      		movw r30,r14
+ 1792 0bde E80F      		add r30,r24
+ 1793 0be0 F11D      		adc r31,__zero_reg__
+ 1794 0be2 3197      		sbiw r30,1
+ 1795 0be4 1082      		st Z,__zero_reg__
+ 1796 0be6 F701      		movw r30,r14
+ 1797 0be8 8081      		ld r24,Z
+ 1798 0bea 8E32      		cpi r24,lo8(46)
+ 1799 0bec 01F4      		brne .+2
+ 1800 0bee 00C0      		rjmp .L118
+ 1801               	.L100:
+ 1802 0bf0 FFEF      		ldi r31,lo8(-1)
+ 1803 0bf2 AF16      		cp r10,r31
+ 1804 0bf4 FFEF      		ldi r31,hi8(-1)
+ 1805 0bf6 BF06      		cpc r11,r31
+GAS LISTING /tmp/cc9QGGXX.s 			page 31
+
+
+ 1806 0bf8 01F0      		breq .L106
+ 1807 0bfa F701      		movw r30,r14
+ 1808 0bfc 4BA5      		ldd r20,Y+43
+ 1809 0bfe 3CA5      		ldd r19,Y+44
+ 1810 0c00 842F      		mov r24,r20
+ 1811 0c02 932F      		mov r25,r19
+ 1812 0c04 DC01      		movw r26,r24
+ 1813               	.L110:
+ 1814 0c06 8191      		ld r24,Z+
+ 1815 0c08 982F      		mov r25,r24
+ 1816 0c0a 9156      		subi r25,lo8(-(-97))
+ 1817 0c0c 9A31      		cpi r25,lo8(26)
+ 1818 0c0e 00F4      		brsh .L107
+ 1819 0c10 8052      		subi r24,lo8(-(-32))
+ 1820               	.L107:
+ 1821 0c12 9D91      		ld r25,X+
+ 1822 0c14 392F      		mov r19,r25
+ 1823 0c16 3156      		subi r19,lo8(-(-97))
+ 1824 0c18 3A31      		cpi r19,lo8(26)
+ 1825 0c1a 00F4      		brsh .L108
+ 1826 0c1c 9052      		subi r25,lo8(-(-32))
+ 1827               	.L108:
+ 1828 0c1e 8917      		cp r24,r25
+ 1829 0c20 01F4      		brne .L109
+ 1830 0c22 8823      		tst r24
+ 1831 0c24 01F4      		brne .L110
+ 1832 0c26 00C0      		rjmp .L106
+ 1833               	.L109:
+ 1834 0c28 D701      		movw r26,r14
+ 1835 0c2a 1C92      		st X,__zero_reg__
+ 1836 0c2c 0894      		sec
+ 1837 0c2e A11C      		adc r10,__zero_reg__
+ 1838 0c30 B11C      		adc r11,__zero_reg__
+ 1839 0c32 9924      		clr r9
+ 1840 0c34 00C0      		rjmp .L118
+ 1841               	.L106:
+ 1842 0c36 EAA0      		ldd r14,Y+34
+ 1843 0c38 FF24      		clr r15
+ 1844 0c3a 00E0      		ldi r16,lo8(0)
+ 1845 0c3c 10E0      		ldi r17,hi8(0)
+ 1846 0c3e 102F      		mov r17,r16
+ 1847 0c40 0F2D      		mov r16,r15
+ 1848 0c42 FE2C      		mov r15,r14
+ 1849 0c44 EE24      		clr r14
+ 1850 0c46 8B8D      		ldd r24,Y+27
+ 1851 0c48 90E0      		ldi r25,lo8(0)
+ 1852 0c4a A0E0      		ldi r26,lo8(0)
+ 1853 0c4c B0E0      		ldi r27,hi8(0)
+ 1854 0c4e DC01      		movw r26,r24
+ 1855 0c50 9927      		clr r25
+ 1856 0c52 8827      		clr r24
+ 1857 0c54 E82A      		or r14,r24
+ 1858 0c56 F92A      		or r15,r25
+ 1859 0c58 0A2B      		or r16,r26
+ 1860 0c5a 1B2B      		or r17,r27
+ 1861 0c5c 89A1      		ldd r24,Y+33
+ 1862 0c5e 90E0      		ldi r25,lo8(0)
+GAS LISTING /tmp/cc9QGGXX.s 			page 32
+
+
+ 1863 0c60 A0E0      		ldi r26,lo8(0)
+ 1864 0c62 B0E0      		ldi r27,hi8(0)
+ 1865 0c64 E82A      		or r14,r24
+ 1866 0c66 F92A      		or r15,r25
+ 1867 0c68 0A2B      		or r16,r26
+ 1868 0c6a 1B2B      		or r17,r27
+ 1869 0c6c 8C8D      		ldd r24,Y+28
+ 1870 0c6e 90E0      		ldi r25,lo8(0)
+ 1871 0c70 A0E0      		ldi r26,lo8(0)
+ 1872 0c72 B0E0      		ldi r27,hi8(0)
+ 1873 0c74 B82F      		mov r27,r24
+ 1874 0c76 AA27      		clr r26
+ 1875 0c78 9927      		clr r25
+ 1876 0c7a 8827      		clr r24
+ 1877 0c7c E82A      		or r14,r24
+ 1878 0c7e F92A      		or r15,r25
+ 1879 0c80 0A2B      		or r16,r26
+ 1880 0c82 1B2B      		or r17,r27
+ 1881 0c84 EFA1      		ldd r30,Y+39
+ 1882 0c86 F8A5      		ldd r31,Y+40
+ 1883 0c88 3097      		sbiw r30,0
+ 1884 0c8a 01F0      		breq .L111
+ 1885 0c8c 8CA1      		ldd r24,Y+36
+ 1886 0c8e 90E0      		ldi r25,lo8(0)
+ 1887 0c90 A0E0      		ldi r26,lo8(0)
+ 1888 0c92 B0E0      		ldi r27,hi8(0)
+ 1889 0c94 BA2F      		mov r27,r26
+ 1890 0c96 A92F      		mov r26,r25
+ 1891 0c98 982F      		mov r25,r24
+ 1892 0c9a 8827      		clr r24
+ 1893 0c9c 4DA1      		ldd r20,Y+37
+ 1894 0c9e 50E0      		ldi r21,lo8(0)
+ 1895 0ca0 60E0      		ldi r22,lo8(0)
+ 1896 0ca2 70E0      		ldi r23,hi8(0)
+ 1897 0ca4 BA01      		movw r22,r20
+ 1898 0ca6 5527      		clr r21
+ 1899 0ca8 4427      		clr r20
+ 1900 0caa 842B      		or r24,r20
+ 1901 0cac 952B      		or r25,r21
+ 1902 0cae A62B      		or r26,r22
+ 1903 0cb0 B72B      		or r27,r23
+ 1904 0cb2 4BA1      		ldd r20,Y+35
+ 1905 0cb4 50E0      		ldi r21,lo8(0)
+ 1906 0cb6 60E0      		ldi r22,lo8(0)
+ 1907 0cb8 70E0      		ldi r23,hi8(0)
+ 1908 0cba 842B      		or r24,r20
+ 1909 0cbc 952B      		or r25,r21
+ 1910 0cbe A62B      		or r26,r22
+ 1911 0cc0 B72B      		or r27,r23
+ 1912 0cc2 4EA1      		ldd r20,Y+38
+ 1913 0cc4 50E0      		ldi r21,lo8(0)
+ 1914 0cc6 60E0      		ldi r22,lo8(0)
+ 1915 0cc8 70E0      		ldi r23,hi8(0)
+ 1916 0cca 742F      		mov r23,r20
+ 1917 0ccc 6627      		clr r22
+ 1918 0cce 5527      		clr r21
+ 1919 0cd0 4427      		clr r20
+GAS LISTING /tmp/cc9QGGXX.s 			page 33
+
+
+ 1920 0cd2 842B      		or r24,r20
+ 1921 0cd4 952B      		or r25,r21
+ 1922 0cd6 A62B      		or r26,r22
+ 1923 0cd8 B72B      		or r27,r23
+ 1924 0cda 24FF      		sbrs r18,4
+ 1925 0cdc 00C0      		rjmp .L114
+ 1926 0cde 2FEF      		ldi r18,lo8(-1)
+ 1927 0ce0 3FEF      		ldi r19,hi8(-1)
+ 1928 0ce2 4FEF      		ldi r20,hlo8(-1)
+ 1929 0ce4 5FEF      		ldi r21,hhi8(-1)
+ 1930 0ce6 00C0      		rjmp .L112
+ 1931               	.L114:
+ 1932 0ce8 20E0      		ldi r18,lo8(0)
+ 1933 0cea 30E0      		ldi r19,hi8(0)
+ 1934 0cec A901      		movw r20,r18
+ 1935               	.L112:
+ 1936 0cee 822B      		or r24,r18
+ 1937 0cf0 932B      		or r25,r19
+ 1938 0cf2 A42B      		or r26,r20
+ 1939 0cf4 B52B      		or r27,r21
+ 1940 0cf6 EFA1      		ldd r30,Y+39
+ 1941 0cf8 F8A5      		ldd r31,Y+40
+ 1942 0cfa 8083      		st Z,r24
+ 1943 0cfc 9183      		std Z+1,r25
+ 1944 0cfe A283      		std Z+2,r26
+ 1945 0d00 B383      		std Z+3,r27
+ 1946               	.L111:
+ 1947 0d02 0E94 0000 		call endSDread
+ 1948               	.L98:
+ 1949 0d06 B701      		movw r22,r14
+ 1950 0d08 C801      		movw r24,r16
+ 1951 0d0a 29A5      		ldd r18,Y+41
+ 1952 0d0c 3AA5      		ldd r19,Y+42
+ 1953 0d0e 0FB6      		in __tmp_reg__,__SREG__
+ 1954 0d10 F894      		cli
+ 1955 0d12 3EBF      		out __SP_H__,r19
+ 1956 0d14 0FBE      		out __SREG__,__tmp_reg__
+ 1957 0d16 2DBF      		out __SP_L__,r18
+ 1958               	/* epilogue start */
+ 1959 0d18 AC96      		adiw r28,44
+ 1960 0d1a E2E1      		ldi r30, lo8(18)
+ 1961 0d1c 0C94 0000 		jmp __epilogue_restores__ + ((18 - 18) * 2)
+ 1963               		.data
+ 1964               	.LC0:
+ 1965 0000 4854 5450 		.string	"HTTP/1.1 200 Ok\r\nConnection: close\r\n\r\n"
+ 1965      2F31 2E31 
+ 1965      2032 3030 
+ 1965      204F 6B0D 
+ 1965      0A43 6F6E 
+ 1966               	.LC1:
+ 1967 0027 2F64 2F72 		.string	"/d/r1?"
+ 1967      313F 00
+ 1968               	.LC2:
+ 1969 002e 2F64 2F77 		.string	"/d/w1?"
+ 1969      313F 00
+ 1970               	.LC3:
+ 1971 0035 2F64 2F72 		.string	"/d/r2?"
+GAS LISTING /tmp/cc9QGGXX.s 			page 34
+
+
+ 1971      323F 00
+ 1972               	.LC4:
+ 1973 003c 2F64 2F77 		.string	"/d/w2?"
+ 1973      323F 00
+ 1974               	.LC5:
+ 1975 0043 4865 6C6C 		.string	"Hello, World!\r\n"
+ 1975      6F2C 2057 
+ 1975      6F72 6C64 
+ 1975      210D 0A00 
+ 1976               	.LC6:
+ 1977 0053 6D70 3300 		.string	"mp3"
+ 1978               		.text
+ 1979               	.global	main
+ 1981               	main:
+ 1982 0d20 A9E1      		ldi r26,lo8(25)
+ 1983 0d22 B0E0      		ldi r27,hi8(25)
+ 1984 0d24 E0E0      		ldi r30,lo8(gs(1f))
+ 1985 0d26 F0E0      		ldi r31,hi8(gs(1f))
+ 1986 0d28 0C94 0000 		jmp __prologue_saves__+((18 - 18) * 2)
+ 1987               	1:
+ 1988               	/* prologue: function */
+ 1989               	/* frame size = 25 */
+ 1990               	/* stack size = 43 */
+ 1991               	.L__stack_usage = 43
+ 1992               	.L120:
+ 1993 0d2c 50E8      		ldi r21,lo8(-128)
+ 1994 0d2e 752E      		mov r7,r21
+ 1995 0d30 43E0      		ldi r20,lo8(3)
+ 1996 0d32 342E      		mov r3,r20
+ 1997 0d34 3FE0      		ldi r19,lo8(15)
+ 1998 0d36 632E      		mov r6,r19
+ 1999 0d38 2EEF      		ldi r18,lo8(-2)
+ 2000 0d3a 822E      		mov r8,r18
+ 2001 0d3c 90E0      		ldi r25,lo8(dummy.12317)
+ 2002 0d3e 492E      		mov r4,r25
+ 2003 0d40 90E0      		ldi r25,hi8(dummy.12317)
+ 2004 0d42 592E      		mov r5,r25
+ 2005               	.L135:
+ 2006 0d44 5298      		cbi 42-32,2
+ 2007               	/* #APP */
+ 2008               	 ;  213 "example.c" 1
+ 2009 0d46 F894      		cli
+ 2010               	 ;  0 "" 2
+ 2011               	/* #NOAPP */
+ 2012 0d48 7092 6100 		sts 97,r7
+ 2013 0d4c 1092 6100 		sts 97,__zero_reg__
+ 2014 0d50 3092 B000 		sts 176,r3
+ 2015 0d54 6092 B100 		sts 177,r6
+ 2016 0d58 8092 B300 		sts 179,r8
+ 2017 0d5c 00E0      		ldi r16,lo8(0)
+ 2018               	.L121:
+ 2019 0d5e 5E98      		cbi 43-32,6
+ 2020 0d60 5F9A      		sbi 43-32,7
+ 2021 0d62 8AB1      		in r24,42-32
+ 2022 0d64 806C      		ori r24,lo8(-64)
+ 2023 0d66 8AB9      		out 42-32,r24
+ 2024 0d68 5598      		cbi 42-32,5
+GAS LISTING /tmp/cc9QGGXX.s 			page 35
+
+
+ 2025 0d6a 209A      		sbi 36-32,0
+ 2026 0d6c 289A      		sbi 37-32,0
+ 2027 0d6e 8AE0      		ldi r24,lo8(10)
+ 2028 0d70 90E0      		ldi r25,hi8(10)
+ 2029 0d72 0E94 0000 		call dumpSD
+ 2030 0d76 86EF      		 ldi r24,lo8(7158)
+ 2031 0d78 9BE1      	    ldi r25,hi8(7158)
+ 2032 0d7a 0197      	    1:sbiw r24,1
+ 2033 0d7c 01F4      	    brne 1b
+ 2034 0d7e 00C0      		rjmp .
+ 2035 0d80 0000      		nop
+ 2036 0d82 209A      		sbi 36-32,0
+ 2037 0d84 2898      		cbi 37-32,0
+ 2038 0d86 A5E6      		 ldi r26,lo8(357)
+ 2039 0d88 B1E0      	    ldi r27,hi8(357)
+ 2040 0d8a 1197      	    1:sbiw r26,1
+ 2041 0d8c 01F4      	    brne 1b
+ 2042 0d8e 00C0      		rjmp .
+ 2043 0d90 0000      		nop
+ 2044 0d92 80E4      		ldi r24,lo8(64)
+ 2045 0d94 0E94 0000 		call microSPIW
+ 2046 0d98 80E0      		ldi r24,lo8(0)
+ 2047 0d9a 0E94 0000 		call microSPIW
+ 2048 0d9e 80E0      		ldi r24,lo8(0)
+ 2049 0da0 0E94 0000 		call microSPIW
+ 2050 0da4 80E0      		ldi r24,lo8(0)
+ 2051 0da6 0E94 0000 		call microSPIW
+ 2052 0daa 80E0      		ldi r24,lo8(0)
+ 2053 0dac 0E94 0000 		call microSPIW
+ 2054 0db0 85E9      		ldi r24,lo8(-107)
+ 2055 0db2 0E94 0000 		call microSPIW
+ 2056 0db6 81E0      		ldi r24,lo8(1)
+ 2057 0db8 0E94 0000 		call WaitFor.11224
+ 2058 0dbc 8823      		tst r24
+ 2059 0dbe 01F0      		breq .L122
+ 2060 0dc0 209A      		sbi 36-32,0
+ 2061 0dc2 289A      		sbi 37-32,0
+ 2062 0dc4 0A30      		cpi r16,lo8(10)
+ 2063 0dc6 01F4      		brne .+2
+ 2064 0dc8 00C0      		rjmp .L236
+ 2065 0dca 0F5F      		subi r16,lo8(-(1))
+ 2066 0dcc 00C0      		rjmp .L121
+ 2067               	.L122:
+ 2068 0dce 0E94 0000 		call reCS.11229
+ 2069 0dd2 88E4      		ldi r24,lo8(72)
+ 2070 0dd4 0E94 0000 		call microSPIW
+ 2071 0dd8 80E0      		ldi r24,lo8(0)
+ 2072 0dda 0E94 0000 		call microSPIW
+ 2073 0dde 80E0      		ldi r24,lo8(0)
+ 2074 0de0 0E94 0000 		call microSPIW
+ 2075 0de4 81E0      		ldi r24,lo8(1)
+ 2076 0de6 0E94 0000 		call microSPIW
+ 2077 0dea 8AEA      		ldi r24,lo8(-86)
+ 2078 0dec 0E94 0000 		call microSPIW
+ 2079 0df0 87E8      		ldi r24,lo8(-121)
+ 2080 0df2 0E94 0000 		call microSPIW
+ 2081 0df6 86E0      		ldi r24,lo8(6)
+GAS LISTING /tmp/cc9QGGXX.s 			page 36
+
+
+ 2082 0df8 90E0      		ldi r25,hi8(6)
+ 2083 0dfa 0E94 0000 		call dumpSD
+ 2084               	.L125:
+ 2085 0dfe 0E94 0000 		call reCS.11229
+ 2086 0e02 87E7      		ldi r24,lo8(119)
+ 2087 0e04 0E94 0000 		call microSPIW
+ 2088 0e08 80E0      		ldi r24,lo8(0)
+ 2089 0e0a 0E94 0000 		call microSPIW
+ 2090 0e0e 80E0      		ldi r24,lo8(0)
+ 2091 0e10 0E94 0000 		call microSPIW
+ 2092 0e14 80E0      		ldi r24,lo8(0)
+ 2093 0e16 0E94 0000 		call microSPIW
+ 2094 0e1a 80E0      		ldi r24,lo8(0)
+ 2095 0e1c 0E94 0000 		call microSPIW
+ 2096 0e20 83E0      		ldi r24,lo8(3)
+ 2097 0e22 90E0      		ldi r25,hi8(3)
+ 2098 0e24 0E94 0000 		call dumpSD
+ 2099 0e28 0E94 0000 		call reCS.11229
+ 2100 0e2c 89E6      		ldi r24,lo8(105)
+ 2101 0e2e 0E94 0000 		call microSPIW
+ 2102 0e32 80E4      		ldi r24,lo8(64)
+ 2103 0e34 0E94 0000 		call microSPIW
+ 2104 0e38 80E0      		ldi r24,lo8(0)
+ 2105 0e3a 0E94 0000 		call microSPIW
+ 2106 0e3e 80E0      		ldi r24,lo8(0)
+ 2107 0e40 0E94 0000 		call microSPIW
+ 2108 0e44 80E0      		ldi r24,lo8(0)
+ 2109 0e46 0E94 0000 		call microSPIW
+ 2110 0e4a 0E94 0000 		call microSPID
+ 2111 0e4e 80E0      		ldi r24,lo8(0)
+ 2112 0e50 0E94 0000 		call WaitFor.11224
+ 2113 0e54 8823      		tst r24
+ 2114 0e56 01F0      		breq .L126
+ 2115 0e58 0436      		cpi r16,lo8(100)
+ 2116 0e5a 00F4      		brsh .L236
+ 2117 0e5c 0F5F      		subi r16,lo8(-(1))
+ 2118 0e5e 00C0      		rjmp .L125
+ 2119               	.L126:
+ 2120 0e60 0E94 0000 		call reCS.11229
+ 2121 0e64 80E5      		ldi r24,lo8(80)
+ 2122 0e66 0E94 0000 		call microSPIW
+ 2123 0e6a 80E0      		ldi r24,lo8(0)
+ 2124 0e6c 0E94 0000 		call microSPIW
+ 2125 0e70 80E0      		ldi r24,lo8(0)
+ 2126 0e72 0E94 0000 		call microSPIW
+ 2127 0e76 82E0      		ldi r24,lo8(2)
+ 2128 0e78 0E94 0000 		call microSPIW
+ 2129 0e7c 80E0      		ldi r24,lo8(0)
+ 2130 0e7e 0E94 0000 		call microSPIW
+ 2131 0e82 81E0      		ldi r24,lo8(1)
+ 2132 0e84 0E94 0000 		call microSPIW
+ 2133 0e88 83E0      		ldi r24,lo8(3)
+ 2134 0e8a 90E0      		ldi r25,hi8(3)
+ 2135 0e8c 0E94 0000 		call dumpSD
+ 2136 0e90 0E94 0000 		call reCS.11229
+ 2137 0e94 8AE7      		ldi r24,lo8(122)
+ 2138 0e96 0E94 0000 		call microSPIW
+GAS LISTING /tmp/cc9QGGXX.s 			page 37
+
+
+ 2139 0e9a 87E0      		ldi r24,lo8(7)
+ 2140 0e9c 90E0      		ldi r25,hi8(7)
+ 2141 0e9e 0E94 0000 		call dumpSD
+ 2142 0ea2 0E94 0000 		call microSPIR
+ 2143 0ea6 86FF      		sbrs r24,6
+ 2144 0ea8 00C0      		rjmp .L128
+ 2145 0eaa 81E0      		ldi r24,lo8(1)
+ 2146 0eac 8093 0000 		sts highcap.11231,r24
+ 2147 0eb0 00C0      		rjmp .L129
+ 2148               	.L128:
+ 2149 0eb2 1092 0000 		sts highcap.11231,__zero_reg__
+ 2150               	.L129:
+ 2151 0eb6 83E0      		ldi r24,lo8(3)
+ 2152 0eb8 90E0      		ldi r25,hi8(3)
+ 2153 0eba 0E94 0000 		call dumpSD
+ 2154               	.L236:
+ 2155 0ebe 209A      		sbi 36-32,0
+ 2156 0ec0 289A      		sbi 37-32,0
+ 2157 0ec2 1092 0000 		sts fat_partition_head.12303,__zero_reg__
+ 2158 0ec6 1092 0000 		sts fat_partition_head.12303+1,__zero_reg__
+ 2159 0eca 1092 0000 		sts fat_partition_head.12303+2,__zero_reg__
+ 2160 0ece 1092 0000 		sts fat_partition_head.12303+3,__zero_reg__
+ 2161 0ed2 1092 0000 		sts dummy.12317,__zero_reg__
+ 2162 0ed6 1092 0000 		sts dummy.12317+1,__zero_reg__
+ 2163 0eda 1092 0000 		sts dummy.12317+2,__zero_reg__
+ 2164 0ede 1092 0000 		sts dummy.12317+3,__zero_reg__
+ 2165 0ee2 1092 0000 		sts dummy.12317+4,__zero_reg__
+ 2166 0ee6 1092 0000 		sts dummy.12317+5,__zero_reg__
+ 2167 0eea 5092 0000 		sts lastfile.12307+1,r5
+ 2168 0eee 4092 0000 		sts lastfile.12307,r4
+ 2169               	.L130:
+ 2170 0ef2 6091 0000 		lds r22,fat_partition_head.12303
+ 2171 0ef6 7091 0000 		lds r23,fat_partition_head.12303+1
+ 2172 0efa 8091 0000 		lds r24,fat_partition_head.12303+2
+ 2173 0efe 9091 0000 		lds r25,fat_partition_head.12303+3
+ 2174 0f02 0E94 0000 		call startSDread
+ 2175 0f06 8823      		tst r24
+ 2176 0f08 01F0      		breq .+2
+ 2177 0f0a 00C0      		rjmp .L131
+ 2178 0f0c 8BE0      		ldi r24,lo8(11)
+ 2179 0f0e 90E0      		ldi r25,hi8(11)
+ 2180 0f10 0E94 0000 		call dumpSD
+ 2181 0f14 0E94 0000 		call internal_16LEFAT.12311
+ 2182 0f18 0E94 0000 		call popSDread
+ 2183 0f1c A82E      		mov r10,r24
+ 2184 0f1e 0E94 0000 		call internal_16LEFAT.12311
+ 2185 0f22 6C01      		movw r12,r24
+ 2186 0f24 0E94 0000 		call popSDread
+ 2187 0f28 B82E      		mov r11,r24
+ 2188 0f2a 0E94 0000 		call internal_16LEFAT.12311
+ 2189 0f2e 8DE0      		ldi r24,lo8(13)
+ 2190 0f30 90E0      		ldi r25,hi8(13)
+ 2191 0f32 0E94 0000 		call dumpSD
+ 2192 0f36 0E94 0000 		call internal_32LEFAT.12310
+ 2193 0f3a 0E94 0000 		call internal_32LEFAT.12310
+ 2194 0f3e 6D8B      		std Y+21,r22
+ 2195 0f40 7E8B      		std Y+22,r23
+GAS LISTING /tmp/cc9QGGXX.s 			page 38
+
+
+ 2196 0f42 8F8B      		std Y+23,r24
+ 2197 0f44 988F      		std Y+24,r25
+ 2198 0f46 8AE2      		ldi r24,lo8(42)
+ 2199 0f48 90E0      		ldi r25,hi8(42)
+ 2200 0f4a 0E94 0000 		call dumpSD
+ 2201 0f4e 0E94 0000 		call internal_32LEFAT.12310
+ 2202 0f52 7B01      		movw r14,r22
+ 2203 0f54 8C01      		movw r16,r24
+ 2204 0f56 0E94 0000 		call internal_32LEFAT.12310
+ 2205 0f5a 6233      		cpi r22,lo8(538976306)
+ 2206 0f5c B0E2      		ldi r27,hi8(538976306)
+ 2207 0f5e 7B07      		cpc r23,r27
+ 2208 0f60 B0E2      		ldi r27,hlo8(538976306)
+ 2209 0f62 8B07      		cpc r24,r27
+ 2210 0f64 B0E2      		ldi r27,hhi8(538976306)
+ 2211 0f66 9B07      		cpc r25,r27
+ 2212 0f68 01F4      		brne .L132
+ 2213 0f6a E6E4      		ldi r30,lo8(861159750)
+ 2214 0f6c EE16      		cp r14,r30
+ 2215 0f6e E1E4      		ldi r30,hi8(861159750)
+ 2216 0f70 FE06      		cpc r15,r30
+ 2217 0f72 E4E5      		ldi r30,hlo8(861159750)
+ 2218 0f74 0E07      		cpc r16,r30
+ 2219 0f76 E3E3      		ldi r30,hhi8(861159750)
+ 2220 0f78 1E07      		cpc r17,r30
+ 2221 0f7a 01F0      		breq .L133
+ 2222               	.L132:
+ 2223 0f7c 8091 0000 		lds r24,fat_partition_head.12303
+ 2224 0f80 9091 0000 		lds r25,fat_partition_head.12303+1
+ 2225 0f84 A091 0000 		lds r26,fat_partition_head.12303+2
+ 2226 0f88 B091 0000 		lds r27,fat_partition_head.12303+3
+ 2227 0f8c 0097      		sbiw r24,0
+ 2228 0f8e A105      		cpc r26,__zero_reg__
+ 2229 0f90 B105      		cpc r27,__zero_reg__
+ 2230 0f92 01F0      		breq .L134
+ 2231 0f94 0E94 0000 		call endSDread
+ 2232 0f98 00C0      		rjmp .L131
+ 2233               	.L134:
+ 2234 0f9a 8CE6      		ldi r24,lo8(364)
+ 2235 0f9c 91E0      		ldi r25,hi8(364)
+ 2236 0f9e 0E94 0000 		call dumpSD
+ 2237 0fa2 0E94 0000 		call internal_32LEFAT.12310
+ 2238 0fa6 7B01      		movw r14,r22
+ 2239 0fa8 8C01      		movw r16,r24
+ 2240 0faa 6093 0000 		sts fat_partition_head.12303,r22
+ 2241 0fae 7093 0000 		sts fat_partition_head.12303+1,r23
+ 2242 0fb2 8093 0000 		sts fat_partition_head.12303+2,r24
+ 2243 0fb6 9093 0000 		sts fat_partition_head.12303+3,r25
+ 2244 0fba 0E94 0000 		call endSDread
+ 2245 0fbe E114      		cp r14,__zero_reg__
+ 2246 0fc0 F104      		cpc r15,__zero_reg__
+ 2247 0fc2 0105      		cpc r16,__zero_reg__
+ 2248 0fc4 1105      		cpc r17,__zero_reg__
+ 2249 0fc6 01F0      		breq .+2
+ 2250 0fc8 00C0      		rjmp .L130
+ 2251 0fca 00C0      		rjmp .L131
+ 2252               	.L133:
+GAS LISTING /tmp/cc9QGGXX.s 			page 39
+
+
+ 2253 0fcc 0E94 0000 		call endSDread
+ 2254 0fd0 7601      		movw r14,r12
+ 2255 0fd2 00E0      		ldi r16,lo8(0)
+ 2256 0fd4 10E0      		ldi r17,hi8(0)
+ 2257 0fd6 6B2D      		mov r22,r11
+ 2258 0fd8 70E0      		ldi r23,lo8(0)
+ 2259 0fda 80E0      		ldi r24,lo8(0)
+ 2260 0fdc 90E0      		ldi r25,hi8(0)
+ 2261 0fde 2D89      		ldd r18,Y+21
+ 2262 0fe0 3E89      		ldd r19,Y+22
+ 2263 0fe2 4F89      		ldd r20,Y+23
+ 2264 0fe4 588D      		ldd r21,Y+24
+ 2265 0fe6 0E94 0000 		call __mulsi3
+ 2266 0fea 6E0D      		add r22,r14
+ 2267 0fec 7F1D      		adc r23,r15
+ 2268 0fee 801F      		adc r24,r16
+ 2269 0ff0 911F      		adc r25,r17
+ 2270 0ff2 6093 0000 		sts first_data_sector.12304,r22
+ 2271 0ff6 7093 0000 		sts first_data_sector.12304+1,r23
+ 2272 0ffa 8093 0000 		sts first_data_sector.12304+2,r24
+ 2273 0ffe 9093 0000 		sts first_data_sector.12304+3,r25
+ 2274 1002 A092 0000 		sts cluster512s.12306,r10
+ 2275 1006 E092 0000 		sts first_fat_table_sector.12305,r14
+ 2276 100a F092 0000 		sts first_fat_table_sector.12305+1,r15
+ 2277 100e 0093 0000 		sts first_fat_table_sector.12305+2,r16
+ 2278 1012 1093 0000 		sts first_fat_table_sector.12305+3,r17
+ 2279               	.L131:
+ 2280               	/* #APP */
+ 2281               	 ;  238 "example.c" 1
+ 2282 1016 7894      		sei
+ 2283               	 ;  0 "" 2
+ 2284               	/* #NOAPP */
+ 2285 1018 87B1      		in r24,39-32
+ 2286 101a 17B8      		out 39-32,__zero_reg__
+ 2287 101c 4298      		cbi 40-32,2
+ 2288 101e 3C98      		cbi 39-32,4
+ 2289 1020 87B1      		in r24,39-32
+ 2290 1022 8C60      		ori r24,lo8(12)
+ 2291 1024 87B9      		out 39-32,r24
+ 2292 1026 3D9A      		sbi 39-32,5
+ 2293 1028 459A      		sbi 40-32,5
+ 2294 102a 0E94 0000 		call standarddelay.4620
+ 2295 102e 86E1      		ldi r24,lo8(22)
+ 2296 1030 64E3      		ldi r22,lo8(4660)
+ 2297 1032 72E1      		ldi r23,hi8(4660)
+ 2298 1034 0E94 0000 		call enc424j600_write_ctrl_reg16
+ 2299 1038 86E1      		ldi r24,lo8(22)
+ 2300 103a 0E94 0000 		call enc424j600_read_ctrl_reg16
+ 2301 103e F2E1      		ldi r31,hi8(4660)
+ 2302 1040 8433      		cpi r24,lo8(4660)
+ 2303 1042 9F07      		cpc r25,r31
+ 2304 1044 01F0      		breq .+2
+ 2305 1046 00C0      		rjmp .L135
+ 2306 1048 8AEC      		ldi r24,lo8(-54)
+ 2307 104a 0E94 0000 		call enc_oneshot.4667
+ 2308 104e 0E94 0000 		call standarddelay.4620
+ 2309 1052 0E94 0000 		call standarddelay.4620
+GAS LISTING /tmp/cc9QGGXX.s 			page 40
+
+
+ 2310 1056 8EE6      		ldi r24,lo8(110)
+ 2311 1058 60E0      		ldi r22,lo8(-5376)
+ 2312 105a 7BEE      		ldi r23,hi8(-5376)
+ 2313 105c 0E94 0000 		call enc424j600_write_ctrl_reg16
+ 2314 1060 84E0      		ldi r24,lo8(4)
+ 2315 1062 60E4      		ldi r22,lo8(21312)
+ 2316 1064 73E5      		ldi r23,hi8(21312)
+ 2317 1066 0E94 0000 		call enc424j600_write_ctrl_reg16
+ 2318 106a 8AE4      		ldi r24,lo8(74)
+ 2319 106c 62E4      		ldi r22,lo8(578)
+ 2320 106e 72E0      		ldi r23,hi8(578)
+ 2321 1070 0E94 0000 		call enc424j600_write_ctrl_reg16
+ 2322 1074 86E0      		ldi r24,lo8(6)
+ 2323 1076 6EEF      		ldi r22,lo8(24574)
+ 2324 1078 7FE5      		ldi r23,hi8(24574)
+ 2325 107a 0E94 0000 		call enc424j600_write_ctrl_reg16
+ 2326 107e 84E6      		ldi r24,lo8(100)
+ 2327 1080 0E94 0000 		call enc424j600_read_ctrl_reg16
+ 2328 1084 9093 0000 		sts MyMAC.1381+1,r25
+ 2329 1088 8093 0000 		sts MyMAC.1381,r24
+ 2330 108c 82E6      		ldi r24,lo8(98)
+ 2331 108e 0E94 0000 		call enc424j600_read_ctrl_reg16
+ 2332 1092 9093 0000 		sts MyMAC.1381+2+1,r25
+ 2333 1096 8093 0000 		sts MyMAC.1381+2,r24
+ 2334 109a 80E6      		ldi r24,lo8(96)
+ 2335 109c 0E94 0000 		call enc424j600_read_ctrl_reg16
+ 2336 10a0 9093 0000 		sts MyMAC.1381+4+1,r25
+ 2337 10a4 8093 0000 		sts MyMAC.1381+4,r24
+ 2338 10a8 88EE      		ldi r24,lo8(-24)
+ 2339 10aa 0E94 0000 		call enc_oneshot.4667
+ 2340               	.L232:
+ 2341 10ae 88EE      		ldi r24,lo8(-24)
+ 2342 10b0 0E94 0000 		call enc_oneshot.4667
+ 2343 10b4 1092 0000 		sts termcallbackearly.4618,__zero_reg__
+ 2344 10b8 8AE1      		ldi r24,lo8(26)
+ 2345 10ba 0E94 0000 		call enc_read_ctrl_reg8_common.4659
+ 2346 10be 8823      		tst r24
+ 2347 10c0 01F4      		brne .+2
+ 2348 10c2 00C0      		rjmp .L136
+ 2349 10c4 6091 0000 		lds r22,NextPacketPointer.4669
+ 2350 10c8 7091 0000 		lds r23,NextPacketPointer.4669+1
+ 2351 10cc 8AE8      		ldi r24,lo8(-118)
+ 2352 10ce 0E94 0000 		call enc424j600_write_ctrl_reg16
+ 2353 10d2 4598      		cbi 40-32,5
+ 2354 10d4 8CE2      		ldi r24,lo8(44)
+ 2355 10d6 0E94 0000 		call espiW_asm
+ 2356 10da 0E94 0000 		call enc424j600_pop16LE
+ 2357 10de 9093 0000 		sts NextPacketPointer.4669+1,r25
+ 2358 10e2 8093 0000 		sts NextPacketPointer.4669,r24
+ 2359 10e6 0E94 0000 		call enc424j600_pop16LE
+ 2360 10ea 8C01      		movw r16,r24
+ 2361 10ec 0E94 0000 		call enc424j600_pop16LE
+ 2362 10f0 87FF      		sbrs r24,7
+ 2363 10f2 00C0      		rjmp .L137
+ 2364 10f4 0E94 0000 		call enc424j600_pop16LE
+ 2365 10f8 0830      		cpi r16,8
+ 2366 10fa 1105      		cpc r17,__zero_reg__
+GAS LISTING /tmp/cc9QGGXX.s 			page 41
+
+
+ 2367 10fc 00F4      		brsh .+2
+ 2368 10fe 00C0      		rjmp .L137
+ 2369 1100 86E0      		ldi r24,lo8(6)
+ 2370 1102 0E94 0000 		call enc424j600_dumpbytes
+ 2371 1106 80E0      		ldi r24,lo8(macfrom.1635)
+ 2372 1108 90E0      		ldi r25,hi8(macfrom.1635)
+ 2373 110a 66E0      		ldi r22,lo8(6)
+ 2374 110c 0E94 0000 		call enc424j600_popblob
+ 2375 1110 0E94 0000 		call espiR_asm
+ 2376 1114 8830      		cpi r24,lo8(8)
+ 2377 1116 01F0      		breq .+2
+ 2378 1118 00C0      		rjmp .L137
+ 2379 111a 0E94 0000 		call espiR_asm
+ 2380 111e 8630      		cpi r24,lo8(6)
+ 2381 1120 01F0      		breq .+2
+ 2382 1122 00C0      		rjmp .L138
+ 2383 1124 0E94 0000 		call enc424j600_pop16
+ 2384 1128 0E94 0000 		call enc424j600_pop16
+ 2385 112c 8C01      		movw r16,r24
+ 2386 112e 0E94 0000 		call enc424j600_pop16
+ 2387 1132 0E94 0000 		call enc424j600_pop16
+ 2388 1136 8130      		cpi r24,lo8(1)
+ 2389 1138 01F0      		breq .+2
+ 2390 113a 00C0      		rjmp .L137
+ 2391 113c CE01      		movw r24,r28
+ 2392 113e 0196      		adiw r24,1
+ 2393 1140 60E1      		ldi r22,lo8(16)
+ 2394 1142 0E94 0000 		call enc424j600_popblob
+ 2395 1146 1092 0000 		sts i.6174+1,__zero_reg__
+ 2396 114a 1092 0000 		sts i.6174,__zero_reg__
+ 2397 114e 41E0      		ldi r20,lo8(1)
+ 2398 1150 00C0      		rjmp .L140
+ 2399               	.L142:
+ 2400 1152 498F      		std Y+25,r20
+ 2401 1154 0E94 0000 		call espiR_asm
+ 2402 1158 2091 0000 		lds r18,i.6174
+ 2403 115c 3091 0000 		lds r19,i.6174+1
+ 2404 1160 F901      		movw r30,r18
+ 2405 1162 E050      		subi r30,lo8(-(MyIP))
+ 2406 1164 F040      		sbci r31,hi8(-(MyIP))
+ 2407 1166 9081      		ld r25,Z
+ 2408 1168 498D      		ldd r20,Y+25
+ 2409 116a 8913      		cpse r24,r25
+ 2410 116c 40E0      		ldi r20,lo8(0)
+ 2411               	.L141:
+ 2412 116e 2F5F      		subi r18,lo8(-(1))
+ 2413 1170 3F4F      		sbci r19,hi8(-(1))
+ 2414 1172 3093 0000 		sts i.6174+1,r19
+ 2415 1176 2093 0000 		sts i.6174,r18
+ 2416               	.L140:
+ 2417 117a 8091 0000 		lds r24,i.6174
+ 2418 117e 9091 0000 		lds r25,i.6174+1
+ 2419 1182 8430      		cpi r24,4
+ 2420 1184 9105      		cpc r25,__zero_reg__
+ 2421 1186 00F0      		brlo .L142
+ 2422 1188 4423      		tst r20
+ 2423 118a 01F4      		brne .+2
+GAS LISTING /tmp/cc9QGGXX.s 			page 42
+
+
+ 2424 118c 00C0      		rjmp .L137
+ 2425 118e 0E94 0000 		call enc424j600_finish_callback_now
+ 2426 1192 80E0      		ldi r24,lo8(0)
+ 2427 1194 90E0      		ldi r25,hi8(0)
+ 2428 1196 0E94 0000 		call enc424j600_startsend
+ 2429 119a 86E0      		ldi r24,lo8(2054)
+ 2430 119c 98E0      		ldi r25,hi8(2054)
+ 2431 119e 0E94 0000 		call send_etherlink_header
+ 2432 11a2 81E0      		ldi r24,lo8(1)
+ 2433 11a4 90E0      		ldi r25,hi8(1)
+ 2434 11a6 0E94 0000 		call enc424j600_push16
+ 2435 11aa C801      		movw r24,r16
+ 2436 11ac 0E94 0000 		call enc424j600_push16
+ 2437 11b0 84E0      		ldi r24,lo8(1540)
+ 2438 11b2 96E0      		ldi r25,hi8(1540)
+ 2439 11b4 0E94 0000 		call enc424j600_push16
+ 2440 11b8 82E0      		ldi r24,lo8(2)
+ 2441 11ba 90E0      		ldi r25,hi8(2)
+ 2442 11bc 0E94 0000 		call enc424j600_push16
+ 2443 11c0 80E0      		ldi r24,lo8(MyMAC.1381)
+ 2444 11c2 90E0      		ldi r25,hi8(MyMAC.1381)
+ 2445 11c4 66E0      		ldi r22,lo8(6)
+ 2446 11c6 0E94 0000 		call enc424j600_pushblob
+ 2447 11ca 80E0      		ldi r24,lo8(MyIP)
+ 2448 11cc 90E0      		ldi r25,hi8(MyIP)
+ 2449 11ce 64E0      		ldi r22,lo8(4)
+ 2450 11d0 0E94 0000 		call enc424j600_pushblob
+ 2451 11d4 CE01      		movw r24,r28
+ 2452 11d6 0196      		adiw r24,1
+ 2453 11d8 6AE0      		ldi r22,lo8(10)
+ 2454 11da 0E94 0000 		call enc424j600_pushblob
+ 2455 11de 00C0      		rjmp .L241
+ 2456               	.L138:
+ 2457 11e0 0E94 0000 		call espiR_asm
+ 2458 11e4 8534      		cpi r24,lo8(69)
+ 2459 11e6 01F0      		breq .+2
+ 2460 11e8 00C0      		rjmp .L137
+ 2461 11ea 0E94 0000 		call espiR_asm
+ 2462 11ee 0E94 0000 		call enc424j600_pop16
+ 2463 11f2 9093 0000 		sts iptotallen.6173+1,r25
+ 2464 11f6 8093 0000 		sts iptotallen.6173,r24
+ 2465 11fa 85E0      		ldi r24,lo8(5)
+ 2466 11fc 0E94 0000 		call enc424j600_dumpbytes
+ 2467 1200 0E94 0000 		call espiR_asm
+ 2468 1204 C82E      		mov r12,r24
+ 2469 1206 0E94 0000 		call enc424j600_pop16
+ 2470 120a 80E0      		ldi r24,lo8(ipsource.1636)
+ 2471 120c 90E0      		ldi r25,hi8(ipsource.1636)
+ 2472 120e 64E0      		ldi r22,lo8(4)
+ 2473 1210 0E94 0000 		call enc424j600_popblob
+ 2474 1214 00E0      		ldi r16,lo8(MyMask.1380)
+ 2475 1216 10E0      		ldi r17,hi8(MyMask.1380)
+ 2476 1218 80E0      		ldi r24,lo8(MyIP)
+ 2477 121a E82E      		mov r14,r24
+ 2478 121c 80E0      		ldi r24,hi8(MyIP)
+ 2479 121e F82E      		mov r15,r24
+ 2480               	.L144:
+GAS LISTING /tmp/cc9QGGXX.s 			page 43
+
+
+ 2481 1220 D801      		movw r26,r16
+ 2482 1222 BD90      		ld r11,X+
+ 2483 1224 8D01      		movw r16,r26
+ 2484 1226 0E94 0000 		call espiR_asm
+ 2485 122a F701      		movw r30,r14
+ 2486 122c 9191      		ld r25,Z+
+ 2487 122e 7F01      		movw r14,r30
+ 2488 1230 8917      		cp r24,r25
+ 2489 1232 01F0      		breq .L143
+ 2490 1234 9B2D      		mov r25,r11
+ 2491 1236 9095      		com r25
+ 2492 1238 9823      		and r25,r24
+ 2493 123a 9F3F      		cpi r25,lo8(-1)
+ 2494 123c 01F0      		breq .+2
+ 2495 123e 00C0      		rjmp .L137
+ 2496               	.L143:
+ 2497 1240 F0E0      		ldi r31,hi8(MyMask.1380+4)
+ 2498 1242 0030      		cpi r16,lo8(MyMask.1380+4)
+ 2499 1244 1F07      		cpc r17,r31
+ 2500 1246 01F4      		brne .L144
+ 2501 1248 2C2D      		mov r18,r12
+ 2502 124a 2130      		cpi r18,lo8(1)
+ 2503 124c 01F0      		breq .L146
+ 2504 124e 2630      		cpi r18,lo8(6)
+ 2505 1250 01F0      		breq .+2
+ 2506 1252 00C0      		rjmp .L233
+ 2507 1254 00C0      		rjmp .L251
+ 2508               	.L146:
+ 2509 1256 C090 0000 		lds r12,iptotallen.6173
+ 2510 125a D090 0000 		lds r13,iptotallen.6173+1
+ 2511 125e 0E94 0000 		call espiR_asm
+ 2512 1262 082F      		mov r16,r24
+ 2513 1264 0E94 0000 		call espiR_asm
+ 2514 1268 0E94 0000 		call enc424j600_pop16
+ 2515 126c 0830      		cpi r16,lo8(8)
+ 2516 126e 01F0      		breq .+2
+ 2517 1270 00C0      		rjmp .L137
+ 2518 1272 0E94 0000 		call enc424j600_stopop
+ 2519 1276 8AE8      		ldi r24,lo8(-118)
+ 2520 1278 0E94 0000 		call enc424j600_read_ctrl_reg16
+ 2521 127c 5C01      		movw r10,r24
+ 2522 127e 80E0      		ldi r24,lo8(0)
+ 2523 1280 90E0      		ldi r25,hi8(0)
+ 2524 1282 0E94 0000 		call enc424j600_startsend
+ 2525 1286 80E0      		ldi r24,lo8(2048)
+ 2526 1288 98E0      		ldi r25,hi8(2048)
+ 2527 128a 0E94 0000 		call send_etherlink_header
+ 2528 128e 8091 0000 		lds r24,iptotallen.6173
+ 2529 1292 9091 0000 		lds r25,iptotallen.6173+1
+ 2530 1296 60E0      		ldi r22,lo8(ipsource.1636)
+ 2531 1298 70E0      		ldi r23,hi8(ipsource.1636)
+ 2532 129a 41E0      		ldi r20,lo8(1)
+ 2533 129c 0E94 0000 		call send_ip_header
+ 2534 12a0 80E0      		ldi r24,lo8(0)
+ 2535 12a2 90E0      		ldi r25,hi8(0)
+ 2536 12a4 0E94 0000 		call enc424j600_push16
+ 2537 12a8 80E0      		ldi r24,lo8(0)
+GAS LISTING /tmp/cc9QGGXX.s 			page 44
+
+
+ 2538 12aa 90E0      		ldi r25,hi8(0)
+ 2539 12ac 0E94 0000 		call enc424j600_push16
+ 2540 12b0 0E94 0000 		call enc424j600_stopop
+ 2541 12b4 88E8      		ldi r24,lo8(-120)
+ 2542 12b6 0E94 0000 		call enc424j600_read_ctrl_reg16
+ 2543 12ba 7C01      		movw r14,r24
+ 2544 12bc 8601      		movw r16,r12
+ 2545 12be 0851      		subi r16,lo8(-(-24))
+ 2546 12c0 1040      		sbci r17,hi8(-(-24))
+ 2547 12c2 0E94 0000 		call enc424j600_wait_for_dma
+ 2548 12c6 86E1      		ldi r24,lo8(22)
+ 2549 12c8 60E4      		ldi r22,lo8(21312)
+ 2550 12ca 73E5      		ldi r23,hi8(21312)
+ 2551 12cc 0E94 0000 		call enc424j600_write_ctrl_reg16
+ 2552 12d0 88E1      		ldi r24,lo8(24)
+ 2553 12d2 6EEF      		ldi r22,lo8(24574)
+ 2554 12d4 7FE5      		ldi r23,hi8(24574)
+ 2555 12d6 0E94 0000 		call enc424j600_write_ctrl_reg16
+ 2556 12da 8AE0      		ldi r24,lo8(10)
+ 2557 12dc B501      		movw r22,r10
+ 2558 12de 0E94 0000 		call enc424j600_write_ctrl_reg16
+ 2559 12e2 8EE0      		ldi r24,lo8(14)
+ 2560 12e4 B701      		movw r22,r14
+ 2561 12e6 0E94 0000 		call enc424j600_write_ctrl_reg16
+ 2562 12ea 8CE0      		ldi r24,lo8(12)
+ 2563 12ec B801      		movw r22,r16
+ 2564 12ee 0E94 0000 		call enc424j600_write_ctrl_reg16
+ 2565 12f2 8CED      		ldi r24,lo8(-36)
+ 2566 12f4 0E94 0000 		call enc_oneshot.4667
+ 2567 12f8 B701      		movw r22,r14
+ 2568 12fa 600F      		add r22,r16
+ 2569 12fc 711F      		adc r23,r17
+ 2570 12fe 88E8      		ldi r24,lo8(-120)
+ 2571 1300 0E94 0000 		call enc424j600_write_ctrl_reg16
+ 2572 1304 0E94 0000 		call enc424j600_finish_callback_now
+ 2573 1308 88E0      		ldi r24,lo8(8)
+ 2574 130a 90E0      		ldi r25,hi8(8)
+ 2575 130c 64E1      		ldi r22,lo8(20)
+ 2576 130e 70E0      		ldi r23,hi8(20)
+ 2577 1310 0E94 0000 		call enc424j600_start_checksum
+ 2578 1314 0E94 0000 		call enc424j600_get_checksum
+ 2579 1318 8C01      		movw r16,r24
+ 2580 131a B601      		movw r22,r12
+ 2581 131c 6451      		subi r22,lo8(-(-20))
+ 2582 131e 7040      		sbci r23,hi8(-(-20))
+ 2583 1320 8CE1      		ldi r24,lo8(28)
+ 2584 1322 90E0      		ldi r25,hi8(28)
+ 2585 1324 0E94 0000 		call enc424j600_start_checksum
+ 2586 1328 82E1      		ldi r24,lo8(18)
+ 2587 132a 90E0      		ldi r25,hi8(18)
+ 2588 132c B801      		movw r22,r16
+ 2589 132e 0E94 0000 		call enc424j600_alter_word
+ 2590 1332 0E94 0000 		call enc424j600_get_checksum
+ 2591 1336 BC01      		movw r22,r24
+ 2592 1338 8EE1      		ldi r24,lo8(30)
+ 2593 133a 90E0      		ldi r25,hi8(30)
+ 2594 133c 0E94 0000 		call enc424j600_alter_word
+GAS LISTING /tmp/cc9QGGXX.s 			page 45
+
+
+ 2595               	.L241:
+ 2596 1340 0E94 0000 		call enc424j600_endsend
+ 2597 1344 00C0      		rjmp .L137
+ 2598               	.L251:
+ 2599 1346 0E94 0000 		call enc424j600_pop16
+ 2600 134a 9093 0000 		sts remoteport.1637+1,r25
+ 2601 134e 8093 0000 		sts remoteport.1637,r24
+ 2602 1352 0E94 0000 		call enc424j600_pop16
+ 2603 1356 9093 0000 		sts localport.1638+1,r25
+ 2604 135a 8093 0000 		sts localport.1638,r24
+ 2605 135e C090 0000 		lds r12,iptotallen.6173
+ 2606 1362 D090 0000 		lds r13,iptotallen.6173+1
+ 2607 1366 4CEE      		ldi r20,lo8(-20)
+ 2608 1368 5FEF      		ldi r21,hi8(-20)
+ 2609 136a C40E      		add r12,r20
+ 2610 136c D51E      		adc r13,r21
+ 2611 136e D092 0000 		sts iptotallen.6173+1,r13
+ 2612 1372 C092 0000 		sts iptotallen.6173,r12
+ 2613 1376 E090 0000 		lds r14,remoteport.1637
+ 2614 137a F090 0000 		lds r15,remoteport.1637+1
+ 2615 137e 01E0      		ldi r16,lo8(1)
+ 2616 1380 E0E0      		ldi r30,lo8(TCPs.1629)
+ 2617 1382 F0E0      		ldi r31,hi8(TCPs.1629)
+ 2618 1384 9C01      		movw r18,r24
+ 2619               	.L151:
+ 2620 1386 B096      		adiw r30,32
+ 2621 1388 8081      		ld r24,Z
+ 2622 138a 8770      		andi r24,lo8(7)
+ 2623 138c 01F0      		breq .L149
+ 2624 138e 8181      		ldd r24,Z+1
+ 2625 1390 9281      		ldd r25,Z+2
+ 2626 1392 8217      		cp r24,r18
+ 2627 1394 9307      		cpc r25,r19
+ 2628 1396 01F4      		brne .L149
+ 2629 1398 8381      		ldd r24,Z+3
+ 2630 139a 9481      		ldd r25,Z+4
+ 2631 139c 8E15      		cp r24,r14
+ 2632 139e 9F05      		cpc r25,r15
+ 2633 13a0 01F4      		brne .L149
+ 2634 13a2 4581      		ldd r20,Z+5
+ 2635 13a4 5681      		ldd r21,Z+6
+ 2636 13a6 6781      		ldd r22,Z+7
+ 2637 13a8 7085      		ldd r23,Z+8
+ 2638 13aa 8091 0000 		lds r24,ipsource.1636
+ 2639 13ae 9091 0000 		lds r25,ipsource.1636+1
+ 2640 13b2 A091 0000 		lds r26,ipsource.1636+2
+ 2641 13b6 B091 0000 		lds r27,ipsource.1636+3
+ 2642 13ba 4817      		cp r20,r24
+ 2643 13bc 5907      		cpc r21,r25
+ 2644 13be 6A07      		cpc r22,r26
+ 2645 13c0 7B07      		cpc r23,r27
+ 2646 13c2 01F0      		breq .L150
+ 2647               	.L149:
+ 2648 13c4 0F5F      		subi r16,lo8(-(1))
+ 2649 13c6 0A30      		cpi r16,lo8(10)
+ 2650 13c8 01F4      		brne .L151
+ 2651 13ca 00E0      		ldi r16,lo8(0)
+GAS LISTING /tmp/cc9QGGXX.s 			page 46
+
+
+ 2652               	.L150:
+ 2653 13cc 1127      		clr r17
+ 2654 13ce 07FD      		sbrc r16,7
+ 2655 13d0 1095      		com r17
+ 2656 13d2 0E94 0000 		call POP32.7442
+ 2657 13d6 3B01      		movw r6,r22
+ 2658 13d8 4C01      		movw r8,r24
+ 2659 13da 0E94 0000 		call POP32.7442
+ 2660 13de 1B01      		movw r2,r22
+ 2661 13e0 2C01      		movw r4,r24
+ 2662 13e2 0E94 0000 		call espiR_asm
+ 2663 13e6 B82E      		mov r11,r24
+ 2664 13e8 B694      		lsr r11
+ 2665 13ea B694      		lsr r11
+ 2666 13ec 5CEF      		ldi r21,lo8(-4)
+ 2667 13ee B522      		and r11,r21
+ 2668 13f0 0E94 0000 		call espiR_asm
+ 2669 13f4 A82E      		mov r10,r24
+ 2670 13f6 0E94 0000 		call enc424j600_pop16
+ 2671 13fa 0E94 0000 		call enc424j600_pop16
+ 2672 13fe 0E94 0000 		call enc424j600_pop16
+ 2673 1402 BCEE      		ldi r27,lo8(-20)
+ 2674 1404 EB2E      		mov r14,r27
+ 2675 1406 EB0C      		add r14,r11
+ 2676 1408 00C0      		rjmp .L152
+ 2677               	.L153:
+ 2678 140a 0E94 0000 		call espiR_asm
+ 2679 140e EA94      		dec r14
+ 2680               	.L152:
+ 2681 1410 EE20      		tst r14
+ 2682 1412 01F4      		brne .L153
+ 2683 1414 A1FE      		sbrs r10,1
+ 2684 1416 00C0      		rjmp .L154
+ 2685 1418 C090 0000 		lds r12,localport.1638
+ 2686 141c D090 0000 		lds r13,localport.1638+1
+ 2687 1420 80E5      		ldi r24,lo8(80)
+ 2688 1422 C816      		cp r12,r24
+ 2689 1424 D104      		cpc r13,__zero_reg__
+ 2690 1426 01F0      		breq .+2
+ 2691 1428 00C0      		rjmp .L159
+ 2692 142a 80E0      		ldi r24,lo8(0)
+ 2693 142c 90E0      		ldi r25,hi8(0)
+ 2694               	.L158:
+ 2695 142e B82E      		mov r11,r24
+ 2696 1430 B394      		inc r11
+ 2697 1432 0196      		adiw r24,1
+ 2698 1434 FC01      		movw r30,r24
+ 2699 1436 A5E0      		ldi r26,5
+ 2700 1438 EE0F      	1:	lsl r30
+ 2701 143a FF1F      		rol r31
+ 2702 143c AA95      		dec r26
+ 2703 143e 01F4      		brne 1b
+ 2704 1440 E050      		subi r30,lo8(-(TCPs.1629))
+ 2705 1442 F040      		sbci r31,hi8(-(TCPs.1629))
+ 2706 1444 2081      		ld r18,Z
+ 2707 1446 2770      		andi r18,lo8(7)
+ 2708 1448 01F4      		brne .L156
+GAS LISTING /tmp/cc9QGGXX.s 			page 47
+
+
+ 2709 144a 80E2      		ldi r24,lo8(32)
+ 2710 144c DF01      		movw r26,r30
+ 2711 144e 1D92      		st X+,__zero_reg__
+ 2712 1450 8A95      	        dec r24
+ 2713 1452 01F4      		brne .-6
+ 2714 1454 4B2D      		mov r20,r11
+ 2715 1456 50E0      		ldi r21,lo8(0)
+ 2716 1458 4150      		subi r20,lo8(-(-1))
+ 2717 145a 5040      		sbci r21,hi8(-(-1))
+ 2718 145c 6CE6      		ldi r22,lo8(620)
+ 2719 145e 72E0      		ldi r23,hi8(620)
+ 2720 1460 469F      		mul r20,r22
+ 2721 1462 9001      		movw r18,r0
+ 2722 1464 479F      		mul r20,r23
+ 2723 1466 300D      		add r19,r0
+ 2724 1468 569F      		mul r21,r22
+ 2725 146a 300D      		add r19,r0
+ 2726 146c 1124      		clr r1
+ 2727 146e 2050      		subi r18,lo8(-(1024))
+ 2728 1470 3C4F      		sbci r19,hi8(-(1024))
+ 2729 1472 358F      		std Z+29,r19
+ 2730 1474 248F      		std Z+28,r18
+ 2731 1476 00C0      		rjmp .L157
+ 2732               	.L156:
+ 2733 1478 8930      		cpi r24,9
+ 2734 147a 9105      		cpc r25,__zero_reg__
+ 2735 147c 01F4      		brne .L158
+ 2736 147e BB24      		clr r11
+ 2737               	.L157:
+ 2738 1480 4B2D      		mov r20,r11
+ 2739 1482 50E0      		ldi r21,lo8(0)
+ 2740 1484 2BE3      		ldi r18,lo8(59)
+ 2741 1486 30E0      		ldi r19,hi8(59)
+ 2742 1488 429F      		mul r20,r18
+ 2743 148a F001      		movw r30,r0
+ 2744 148c 439F      		mul r20,r19
+ 2745 148e F00D      		add r31,r0
+ 2746 1490 529F      		mul r21,r18
+ 2747 1492 F00D      		add r31,r0
+ 2748 1494 1124      		clr r1
+ 2749 1496 E050      		subi r30,lo8(-(HTTPConnections.1722))
+ 2750 1498 F040      		sbci r31,hi8(-(HTTPConnections.1722))
+ 2751 149a F093 0000 		sts curhttp.1697+1,r31
+ 2752 149e E093 0000 		sts curhttp.1697,r30
+ 2753 14a2 8BE3      		ldi r24,lo8(59)
+ 2754 14a4 DF01      		movw r26,r30
+ 2755 14a6 1D92      		st X+,__zero_reg__
+ 2756 14a8 8A95      	        dec r24
+ 2757 14aa 01F4      		brne .-6
+ 2758 14ac 8081      		ld r24,Z
+ 2759 14ae 807F      		andi r24,lo8(-16)
+ 2760 14b0 8160      		ori r24,lo8(1)
+ 2761 14b2 8083      		st Z,r24
+ 2762 14b4 B2AE      		std Z+58,r11
+ 2763 14b6 BB20      		tst r11
+ 2764 14b8 01F4      		brne .+2
+ 2765 14ba 00C0      		rjmp .L159
+GAS LISTING /tmp/cc9QGGXX.s 			page 48
+
+
+ 2766 14bc EB2C      		mov r14,r11
+ 2767 14be FF24      		clr r15
+ 2768 14c0 E7FC      		sbrc r14,7
+ 2769 14c2 F094      		com r15
+ 2770 14c4 F5E0      		ldi r31,5
+ 2771 14c6 EE0C      	1:	lsl r14
+ 2772 14c8 FF1C      		rol r15
+ 2773 14ca FA95      		dec r31
+ 2774 14cc 01F4      		brne 1b
+ 2775 14ce C701      		movw r24,r14
+ 2776 14d0 8050      		subi r24,lo8(-(TCPs.1629+17))
+ 2777 14d2 9040      		sbci r25,hi8(-(TCPs.1629+17))
+ 2778 14d4 0E94 0000 		call UpdateRemoteMAC.7461
+ 2779 14d8 E0E0      		ldi r30,lo8(TCPs.1629)
+ 2780 14da F0E0      		ldi r31,hi8(TCPs.1629)
+ 2781 14dc EE0E      		add r14,r30
+ 2782 14de FF1E      		adc r15,r31
+ 2783 14e0 D701      		movw r26,r14
+ 2784 14e2 1296      		adiw r26,1+1
+ 2785 14e4 DC92      		st X,r13
+ 2786 14e6 CE92      		st -X,r12
+ 2787 14e8 1197      		sbiw r26,1
+ 2788 14ea 8091 0000 		lds r24,remoteport.1637
+ 2789 14ee 9091 0000 		lds r25,remoteport.1637+1
+ 2790 14f2 1496      		adiw r26,3+1
+ 2791 14f4 9C93      		st X,r25
+ 2792 14f6 8E93      		st -X,r24
+ 2793 14f8 1397      		sbiw r26,3
+ 2794 14fa 8091 0000 		lds r24,ipsource.1636
+ 2795 14fe 9091 0000 		lds r25,ipsource.1636+1
+ 2796 1502 A091 0000 		lds r26,ipsource.1636+2
+ 2797 1506 B091 0000 		lds r27,ipsource.1636+3
+ 2798 150a F701      		movw r30,r14
+ 2799 150c 8583      		std Z+5,r24
+ 2800 150e 9683      		std Z+6,r25
+ 2801 1510 A783      		std Z+7,r26
+ 2802 1512 B087      		std Z+8,r27
+ 2803 1514 0894      		sec
+ 2804 1516 611C      		adc r6,__zero_reg__
+ 2805 1518 711C      		adc r7,__zero_reg__
+ 2806 151a 811C      		adc r8,__zero_reg__
+ 2807 151c 911C      		adc r9,__zero_reg__
+ 2808 151e D701      		movw r26,r14
+ 2809 1520 1D96      		adiw r26,13
+ 2810 1522 6D92      		st X+,r6
+ 2811 1524 7D92      		st X+,r7
+ 2812 1526 8D92      		st X+,r8
+ 2813 1528 9C92      		st X,r9
+ 2814 152a 5097      		sbiw r26,13+3
+ 2815 152c 8AEA      		ldi r24,lo8(-1431655766)
+ 2816 152e 9AEA      		ldi r25,hi8(-1431655766)
+ 2817 1530 AAEA      		ldi r26,hlo8(-1431655766)
+ 2818 1532 BAEA      		ldi r27,hhi8(-1431655766)
+ 2819 1534 8187      		std Z+9,r24
+ 2820 1536 9287      		std Z+10,r25
+ 2821 1538 A387      		std Z+11,r26
+ 2822 153a B487      		std Z+12,r27
+GAS LISTING /tmp/cc9QGGXX.s 			page 49
+
+
+ 2823 153c 8081      		ld r24,Z
+ 2824 153e 887F      		andi r24,lo8(-8)
+ 2825 1540 8160      		ori r24,lo8(1)
+ 2826 1542 8083      		st Z,r24
+ 2827 1544 178A      		std Z+23,__zero_reg__
+ 2828 1546 118E      		std Z+25,__zero_reg__
+ 2829 1548 108E      		std Z+24,__zero_reg__
+ 2830 154a 0E94 0000 		call enc424j600_finish_callback_now
+ 2831 154e 82E1      		ldi r24,lo8(18)
+ 2832 1550 D701      		movw r26,r14
+ 2833 1552 5B96      		adiw r26,27
+ 2834 1554 8C93      		st X,r24
+ 2835 1556 8B2D      		mov r24,r11
+ 2836 1558 0E94 0000 		call write_tcp_header.7457
+ 2837 155c F701      		movw r30,r14
+ 2838 155e 8185      		ldd r24,Z+9
+ 2839 1560 9285      		ldd r25,Z+10
+ 2840 1562 A385      		ldd r26,Z+11
+ 2841 1564 B485      		ldd r27,Z+12
+ 2842 1566 0196      		adiw r24,1
+ 2843 1568 A11D      		adc r26,__zero_reg__
+ 2844 156a B11D      		adc r27,__zero_reg__
+ 2845 156c 8187      		std Z+9,r24
+ 2846 156e 9287      		std Z+10,r25
+ 2847 1570 A387      		std Z+11,r26
+ 2848 1572 B487      		std Z+12,r27
+ 2849 1574 00C0      		rjmp .L160
+ 2850               	.L154:
+ 2851 1576 7801      		movw r14,r16
+ 2852 1578 E5E0      		ldi r30,5
+ 2853 157a EE0C      	1:	lsl r14
+ 2854 157c FF1C      		rol r15
+ 2855 157e EA95      		dec r30
+ 2856 1580 01F4      		brne 1b
+ 2857 1582 C701      		movw r24,r14
+ 2858 1584 8050      		subi r24,lo8(-(TCPs.1629+17))
+ 2859 1586 9040      		sbci r25,hi8(-(TCPs.1629+17))
+ 2860 1588 0E94 0000 		call UpdateRemoteMAC.7461
+ 2861 158c 0115      		cp r16,__zero_reg__
+ 2862 158e 1105      		cpc r17,__zero_reg__
+ 2863 1590 01F4      		brne .+2
+ 2864 1592 00C0      		rjmp .L159
+ 2865 1594 A2FE      		sbrs r10,2
+ 2866 1596 00C0      		rjmp .L161
+ 2867 1598 802F      		mov r24,r16
+ 2868 159a 90E0      		ldi r25,lo8(0)
+ 2869 159c 0E94 0000 		call HTTPClose
+ 2870 15a0 F701      		movw r30,r14
+ 2871 15a2 E050      		subi r30,lo8(-(TCPs.1629))
+ 2872 15a4 F040      		sbci r31,hi8(-(TCPs.1629))
+ 2873 15a6 84E1      		ldi r24,lo8(20)
+ 2874 15a8 838F      		std Z+27,r24
+ 2875 15aa 8081      		ld r24,Z
+ 2876 15ac 887F      		andi r24,lo8(-8)
+ 2877 15ae 8083      		st Z,r24
+ 2878 15b0 00C0      		rjmp .L162
+ 2879               	.L161:
+GAS LISTING /tmp/cc9QGGXX.s 			page 50
+
+
+ 2880 15b2 A4FE      		sbrs r10,4
+ 2881 15b4 00C0      		rjmp .L163
+ 2882 15b6 F701      		movw r30,r14
+ 2883 15b8 E050      		subi r30,lo8(-(TCPs.1629))
+ 2884 15ba F040      		sbci r31,hi8(-(TCPs.1629))
+ 2885 15bc 268D      		ldd r18,Z+30
+ 2886 15be 378D      		ldd r19,Z+31
+ 2887 15c0 2653      		subi r18,lo8(-(-54))
+ 2888 15c2 3040      		sbci r19,hi8(-(-54))
+ 2889 15c4 6185      		ldd r22,Z+9
+ 2890 15c6 7285      		ldd r23,Z+10
+ 2891 15c8 8385      		ldd r24,Z+11
+ 2892 15ca 9485      		ldd r25,Z+12
+ 2893 15cc 2115      		cp r18,__zero_reg__
+ 2894 15ce 3105      		cpc r19,__zero_reg__
+ 2895 15d0 01F4      		brne .L164
+ 2896 15d2 9B01      		movw r18,r22
+ 2897 15d4 AC01      		movw r20,r24
+ 2898 15d6 2F5F      		subi r18,lo8(-(1))
+ 2899 15d8 3F4F      		sbci r19,hi8(-(1))
+ 2900 15da 4F4F      		sbci r20,hlo8(-(1))
+ 2901 15dc 5F4F      		sbci r21,hhi8(-(1))
+ 2902 15de 00C0      		rjmp .L165
+ 2903               	.L164:
+ 2904 15e0 40E0      		ldi r20,lo8(0)
+ 2905 15e2 50E0      		ldi r21,hi8(0)
+ 2906 15e4 260F      		add r18,r22
+ 2907 15e6 371F      		adc r19,r23
+ 2908 15e8 481F      		adc r20,r24
+ 2909 15ea 591F      		adc r21,r25
+ 2910               	.L165:
+ 2911 15ec C101      		movw r24,r2
+ 2912 15ee 821B      		sub r24,r18
+ 2913 15f0 930B      		sbc r25,r19
+ 2914 15f2 97FD      		sbrc r25,7
+ 2915 15f4 00C0      		rjmp .L163
+ 2916 15f6 0097      		sbiw r24,0
+ 2917 15f8 01F4      		brne .L163
+ 2918 15fa F801      		movw r30,r16
+ 2919 15fc 75E0      		ldi r23,5
+ 2920 15fe EE0F      	1:	lsl r30
+ 2921 1600 FF1F      		rol r31
+ 2922 1602 7A95      		dec r23
+ 2923 1604 01F4      		brne 1b
+ 2924 1606 E050      		subi r30,lo8(-(TCPs.1629))
+ 2925 1608 F040      		sbci r31,hi8(-(TCPs.1629))
+ 2926 160a 118E      		std Z+25,__zero_reg__
+ 2927 160c 108E      		std Z+24,__zero_reg__
+ 2928 160e 178A      		std Z+23,__zero_reg__
+ 2929 1610 2187      		std Z+9,r18
+ 2930 1612 3287      		std Z+10,r19
+ 2931 1614 4387      		std Z+11,r20
+ 2932 1616 5487      		std Z+12,r21
+ 2933               	.L163:
+ 2934 1618 A0FE      		sbrs r10,0
+ 2935 161a 00C0      		rjmp .L166
+ 2936 161c F801      		movw r30,r16
+GAS LISTING /tmp/cc9QGGXX.s 			page 51
+
+
+ 2937 161e 65E0      		ldi r22,5
+ 2938 1620 EE0F      	1:	lsl r30
+ 2939 1622 FF1F      		rol r31
+ 2940 1624 6A95      		dec r22
+ 2941 1626 01F4      		brne 1b
+ 2942 1628 E050      		subi r30,lo8(-(TCPs.1629))
+ 2943 162a F040      		sbci r31,hi8(-(TCPs.1629))
+ 2944 162c 8585      		ldd r24,Z+13
+ 2945 162e 9685      		ldd r25,Z+14
+ 2946 1630 A785      		ldd r26,Z+15
+ 2947 1632 B089      		ldd r27,Z+16
+ 2948 1634 0196      		adiw r24,1
+ 2949 1636 A11D      		adc r26,__zero_reg__
+ 2950 1638 B11D      		adc r27,__zero_reg__
+ 2951 163a 8587      		std Z+13,r24
+ 2952 163c 9687      		std Z+14,r25
+ 2953 163e A787      		std Z+15,r26
+ 2954 1640 B08B      		std Z+16,r27
+ 2955 1642 81E1      		ldi r24,lo8(17)
+ 2956 1644 838F      		std Z+27,r24
+ 2957 1646 8081      		ld r24,Z
+ 2958 1648 887F      		andi r24,lo8(-8)
+ 2959 164a 8083      		st Z,r24
+ 2960 164c 802F      		mov r24,r16
+ 2961 164e 90E0      		ldi r25,lo8(0)
+ 2962 1650 0E94 0000 		call HTTPClose
+ 2963 1654 00C0      		rjmp .L162
+ 2964               	.L166:
+ 2965 1656 CB18      		sub r12,r11
+ 2966 1658 D108      		sbc r13,__zero_reg__
+ 2967 165a C114      		cp r12,__zero_reg__
+ 2968 165c D104      		cpc r13,__zero_reg__
+ 2969 165e 01F4      		brne .+2
+ 2970 1660 00C0      		rjmp .L233
+ 2971 1662 F801      		movw r30,r16
+ 2972 1664 55E0      		ldi r21,5
+ 2973 1666 EE0F      	1:	lsl r30
+ 2974 1668 FF1F      		rol r31
+ 2975 166a 5A95      		dec r21
+ 2976 166c 01F4      		brne 1b
+ 2977 166e E050      		subi r30,lo8(-(TCPs.1629))
+ 2978 1670 F040      		sbci r31,hi8(-(TCPs.1629))
+ 2979 1672 8585      		ldd r24,Z+13
+ 2980 1674 9685      		ldd r25,Z+14
+ 2981 1676 A785      		ldd r26,Z+15
+ 2982 1678 B089      		ldd r27,Z+16
+ 2983 167a 8615      		cp r24,r6
+ 2984 167c 9705      		cpc r25,r7
+ 2985 167e A805      		cpc r26,r8
+ 2986 1680 B905      		cpc r27,r9
+ 2987 1682 01F0      		breq .+2
+ 2988 1684 00C0      		rjmp .L233
+ 2989 1686 C601      		movw r24,r12
+ 2990 1688 A0E0      		ldi r26,lo8(0)
+ 2991 168a B0E0      		ldi r27,hi8(0)
+ 2992 168c 860D      		add r24,r6
+ 2993 168e 971D      		adc r25,r7
+GAS LISTING /tmp/cc9QGGXX.s 			page 52
+
+
+ 2994 1690 A81D      		adc r26,r8
+ 2995 1692 B91D      		adc r27,r9
+ 2996 1694 8587      		std Z+13,r24
+ 2997 1696 9687      		std Z+14,r25
+ 2998 1698 A787      		std Z+15,r26
+ 2999 169a B08B      		std Z+16,r27
+ 3000 169c B02E      		mov r11,r16
+ 3001 169e 1092 0000 		sts didsend.2038,__zero_reg__
+ 3002 16a2 202F      		mov r18,r16
+ 3003 16a4 30E0      		ldi r19,lo8(0)
+ 3004 16a6 8BE3      		ldi r24,lo8(59)
+ 3005 16a8 90E0      		ldi r25,hi8(59)
+ 3006 16aa 289F      		mul r18,r24
+ 3007 16ac F001      		movw r30,r0
+ 3008 16ae 299F      		mul r18,r25
+ 3009 16b0 F00D      		add r31,r0
+ 3010 16b2 389F      		mul r19,r24
+ 3011 16b4 F00D      		add r31,r0
+ 3012 16b6 1124      		clr r1
+ 3013 16b8 E050      		subi r30,lo8(-(HTTPConnections.1722))
+ 3014 16ba F040      		sbci r31,hi8(-(HTTPConnections.1722))
+ 3015 16bc F093 0000 		sts curhttp.1697+1,r31
+ 3016 16c0 E093 0000 		sts curhttp.1697,r30
+ 3017 16c4 12A6      		std Z+42,__zero_reg__
+ 3018 16c6 11A6      		std Z+41,__zero_reg__
+ 3019 16c8 00C0      		rjmp .L168
+ 3020               	.L183:
+ 3021 16ca 0E94 0000 		call espiR_asm
+ 3022 16ce E091 0000 		lds r30,curhttp.1697
+ 3023 16d2 F091 0000 		lds r31,curhttp.1697+1
+ 3024 16d6 9081      		ld r25,Z
+ 3025 16d8 292F      		mov r18,r25
+ 3026 16da 2F70      		andi r18,lo8(15)
+ 3027 16dc 30E0      		ldi r19,lo8(0)
+ 3028 16de 2430      		cpi r18,4
+ 3029 16e0 3105      		cpc r19,__zero_reg__
+ 3030 16e2 01F4      		brne .+2
+ 3031 16e4 00C0      		rjmp .L173
+ 3032 16e6 2530      		cpi r18,5
+ 3033 16e8 3105      		cpc r19,__zero_reg__
+ 3034 16ea 04F4      		brge .L177
+ 3035 16ec 2230      		cpi r18,2
+ 3036 16ee 3105      		cpc r19,__zero_reg__
+ 3037 16f0 01F0      		breq .L171
+ 3038 16f2 2330      		cpi r18,3
+ 3039 16f4 3105      		cpc r19,__zero_reg__
+ 3040 16f6 04F4      		brge .L172
+ 3041 16f8 2130      		cpi r18,1
+ 3042 16fa 3105      		cpc r19,__zero_reg__
+ 3043 16fc 01F0      		breq .+2
+ 3044 16fe 00C0      		rjmp .L175
+ 3045 1700 00C0      		rjmp .L252
+ 3046               	.L177:
+ 3047 1702 2730      		cpi r18,7
+ 3048 1704 3105      		cpc r19,__zero_reg__
+ 3049 1706 01F4      		brne .+2
+ 3050 1708 00C0      		rjmp .L221
+GAS LISTING /tmp/cc9QGGXX.s 			page 53
+
+
+ 3051 170a 2F30      		cpi r18,15
+ 3052 170c 3105      		cpc r19,__zero_reg__
+ 3053 170e 01F4      		brne .+2
+ 3054 1710 00C0      		rjmp .L176
+ 3055 1712 2530      		cpi r18,5
+ 3056 1714 3105      		cpc r19,__zero_reg__
+ 3057 1716 01F0      		breq .+2
+ 3058 1718 00C0      		rjmp .L175
+ 3059 171a 00C0      		rjmp .L253
+ 3060               	.L252:
+ 3061 171c 8032      		cpi r24,lo8(32)
+ 3062 171e 01F0      		breq .+2
+ 3063 1720 00C0      		rjmp .L175
+ 3064 1722 907F      		andi r25,lo8(-16)
+ 3065 1724 9260      		ori r25,lo8(2)
+ 3066 1726 00C0      		rjmp .L247
+ 3067               	.L171:
+ 3068 1728 9181      		ldd r25,Z+1
+ 3069 172a DF01      		movw r26,r30
+ 3070 172c A90F      		add r26,r25
+ 3071 172e B11D      		adc r27,__zero_reg__
+ 3072 1730 1296      		adiw r26,2
+ 3073 1732 8C93      		st X,r24
+ 3074 1734 1297      		sbiw r26,2
+ 3075 1736 292F      		mov r18,r25
+ 3076 1738 2F5F      		subi r18,lo8(-(1))
+ 3077 173a 2183      		std Z+1,r18
+ 3078 173c 2632      		cpi r18,lo8(38)
+ 3079 173e 01F4      		brne .L178
+ 3080 1740 9183      		std Z+1,r25
+ 3081               	.L178:
+ 3082 1742 8032      		cpi r24,lo8(32)
+ 3083 1744 01F0      		breq .+2
+ 3084 1746 00C0      		rjmp .L175
+ 3085 1748 8081      		ld r24,Z
+ 3086 174a 807F      		andi r24,lo8(-16)
+ 3087 174c 8360      		ori r24,lo8(3)
+ 3088 174e 8083      		st Z,r24
+ 3089 1750 8181      		ldd r24,Z+1
+ 3090 1752 DF01      		movw r26,r30
+ 3091 1754 A80F      		add r26,r24
+ 3092 1756 B11D      		adc r27,__zero_reg__
+ 3093 1758 1196      		adiw r26,1
+ 3094 175a 1C92      		st X,__zero_reg__
+ 3095 175c 1197      		sbiw r26,1
+ 3096 175e 00C0      		rjmp .L239
+ 3097               	.L172:
+ 3098 1760 8A30      		cpi r24,lo8(10)
+ 3099 1762 01F0      		breq .+2
+ 3100 1764 00C0      		rjmp .L175
+ 3101 1766 907F      		andi r25,lo8(-16)
+ 3102 1768 9460      		ori r25,lo8(4)
+ 3103 176a 00C0      		rjmp .L238
+ 3104               	.L173:
+ 3105 176c 8A30      		cpi r24,lo8(10)
+ 3106 176e 01F0      		breq .+2
+ 3107 1770 00C0      		rjmp .L179
+GAS LISTING /tmp/cc9QGGXX.s 			page 54
+
+
+ 3108 1772 907F      		andi r25,lo8(-16)
+ 3109 1774 9760      		ori r25,lo8(7)
+ 3110 1776 9083      		st Z,r25
+ 3111 1778 CF01      		movw r24,r30
+ 3112 177a 0296      		adiw r24,2
+ 3113 177c 2281      		ldd r18,Z+2
+ 3114 177e 2F32      		cpi r18,lo8(47)
+ 3115 1780 01F4      		brne .L180
+ 3116 1782 CF01      		movw r24,r30
+ 3117 1784 0396      		adiw r24,3
+ 3118               	.L180:
+ 3119 1786 DC01      		movw r26,r24
+ 3120 1788 2C91      		ld r18,X
+ 3121 178a 2436      		cpi r18,lo8(100)
+ 3122 178c 01F4      		brne .L181
+ 3123 178e 1196      		adiw r26,1
+ 3124 1790 2C91      		ld r18,X
+ 3125 1792 1197      		sbiw r26,1
+ 3126 1794 2F32      		cpi r18,lo8(47)
+ 3127 1796 01F4      		brne .L181
+ 3128 1798 80A5      		ldd r24,Z+40
+ 3129 179a 8160      		ori r24,lo8(1)
+ 3130 179c 80A7      		std Z+40,r24
+ 3131 179e 81AD      		ldd r24,Z+57
+ 3132 17a0 887F      		andi r24,lo8(-8)
+ 3133 17a2 25E0      		ldi r18,lo8(5)
+ 3134 17a4 30E0      		ldi r19,hi8(5)
+ 3135 17a6 34A7      		std Z+44,r19
+ 3136 17a8 23A7      		std Z+43,r18
+ 3137 17aa 8460      		ori r24,lo8(4)
+ 3138 17ac 81AF      		std Z+57,r24
+ 3139 17ae 00C0      		rjmp .L175
+ 3140               	.L181:
+ 3141 17b0 BF01      		movw r22,r30
+ 3142 17b2 6F5C      		subi r22,lo8(-(49))
+ 3143 17b4 7F4F      		sbci r23,hi8(-(49))
+ 3144 17b6 0E94 0000 		call FindClusterFileInDir.clone.1
+ 3145 17ba AB01      		movw r20,r22
+ 3146 17bc BC01      		movw r22,r24
+ 3147 17be E091 0000 		lds r30,curhttp.1697
+ 3148 17c2 F091 0000 		lds r31,curhttp.1697+1
+ 3149 17c6 15AA      		std Z+53,__zero_reg__
+ 3150 17c8 16AA      		std Z+54,__zero_reg__
+ 3151 17ca 17AA      		std Z+55,__zero_reg__
+ 3152 17cc 10AE      		std Z+56,__zero_reg__
+ 3153 17ce 77FF      		sbrs r23,7
+ 3154 17d0 00C0      		rjmp .L182
+ 3155 17d2 81AD      		ldd r24,Z+57
+ 3156 17d4 8560      		ori r24,lo8(5)
+ 3157 17d6 8D7F      		andi r24,lo8(-3)
+ 3158 17d8 00C0      		rjmp .L237
+ 3159               	.L182:
+ 3160 17da CF01      		movw r24,r30
+ 3161 17dc 8B96      		adiw r24,43
+ 3162 17de 0E94 0000 		call InitFileStructure
+ 3163 17e2 E091 0000 		lds r30,curhttp.1697
+ 3164 17e6 F091 0000 		lds r31,curhttp.1697+1
+GAS LISTING /tmp/cc9QGGXX.s 			page 55
+
+
+ 3165 17ea 81AD      		ldd r24,Z+57
+ 3166 17ec 8460      		ori r24,lo8(4)
+ 3167 17ee 8C7F      		andi r24,lo8(-4)
+ 3168               	.L237:
+ 3169 17f0 81AF      		std Z+57,r24
+ 3170 17f2 80A5      		ldd r24,Z+40
+ 3171 17f4 8E7F      		andi r24,lo8(-2)
+ 3172 17f6 80A7      		std Z+40,r24
+ 3173 17f8 00C0      		rjmp .L175
+ 3174               	.L179:
+ 3175 17fa 8D30      		cpi r24,lo8(13)
+ 3176 17fc 01F0      		breq .L175
+ 3177 17fe 907F      		andi r25,lo8(-16)
+ 3178 1800 9560      		ori r25,lo8(5)
+ 3179               	.L238:
+ 3180 1802 9083      		st Z,r25
+ 3181 1804 00C0      		rjmp .L175
+ 3182               	.L253:
+ 3183 1806 8A30      		cpi r24,lo8(10)
+ 3184 1808 01F4      		brne .L175
+ 3185 180a 907F      		andi r25,lo8(-16)
+ 3186 180c 9460      		ori r25,lo8(4)
+ 3187               	.L247:
+ 3188 180e 9083      		st Z,r25
+ 3189               	.L239:
+ 3190 1810 1182      		std Z+1,__zero_reg__
+ 3191 1812 00C0      		rjmp .L175
+ 3192               	.L176:
+ 3193 1814 8B2D      		mov r24,r11
+ 3194 1816 90E0      		ldi r25,lo8(0)
+ 3195 1818 0E94 0000 		call HTTPClose
+ 3196 181c 00C0      		rjmp .L175
+ 3197               	.L221:
+ 3198 181e EE24      		clr r14
+ 3199 1820 FF24      		clr r15
+ 3200               	.L175:
+ 3201 1822 6701      		movw r12,r14
+ 3202               	.L168:
+ 3203 1824 7601      		movw r14,r12
+ 3204 1826 0894      		sec
+ 3205 1828 E108      		sbc r14,__zero_reg__
+ 3206 182a F108      		sbc r15,__zero_reg__
+ 3207 182c C114      		cp r12,__zero_reg__
+ 3208 182e D104      		cpc r13,__zero_reg__
+ 3209 1830 01F0      		breq .+2
+ 3210 1832 00C0      		rjmp .L183
+ 3211 1834 F801      		movw r30,r16
+ 3212 1836 45E0      		ldi r20,5
+ 3213 1838 EE0F      	1:	lsl r30
+ 3214 183a FF1F      		rol r31
+ 3215 183c 4A95      		dec r20
+ 3216 183e 01F4      		brne 1b
+ 3217 1840 E050      		subi r30,lo8(-(TCPs.1629))
+ 3218 1842 F040      		sbci r31,hi8(-(TCPs.1629))
+ 3219 1844 8789      		ldd r24,Z+23
+ 3220 1846 8823      		tst r24
+ 3221 1848 01F0      		breq .L184
+GAS LISTING /tmp/cc9QGGXX.s 			page 56
+
+
+ 3222 184a 8185      		ldd r24,Z+9
+ 3223 184c 9285      		ldd r25,Z+10
+ 3224 184e A385      		ldd r26,Z+11
+ 3225 1850 B485      		ldd r27,Z+12
+ 3226 1852 8093 0000 		sts TCPs.1629+9,r24
+ 3227 1856 9093 0000 		sts TCPs.1629+9+1,r25
+ 3228 185a A093 0000 		sts TCPs.1629+9+2,r26
+ 3229 185e B093 0000 		sts TCPs.1629+9+3,r27
+ 3230 1862 8585      		ldd r24,Z+13
+ 3231 1864 9685      		ldd r25,Z+14
+ 3232 1866 A785      		ldd r26,Z+15
+ 3233 1868 B089      		ldd r27,Z+16
+ 3234 186a 8093 0000 		sts TCPs.1629+13,r24
+ 3235 186e 9093 0000 		sts TCPs.1629+13+1,r25
+ 3236 1872 A093 0000 		sts TCPs.1629+13+2,r26
+ 3237 1876 B093 0000 		sts TCPs.1629+13+3,r27
+ 3238 187a 80E1      		ldi r24,lo8(16)
+ 3239 187c 8093 0000 		sts TCPs.1629+27,r24
+ 3240 1880 00C0      		rjmp .L240
+ 3241               	.L184:
+ 3242 1882 80E1      		ldi r24,lo8(16)
+ 3243 1884 838F      		std Z+27,r24
+ 3244 1886 00C0      		rjmp .L162
+ 3245               	.L159:
+ 3246 1888 1092 0000 		sts TCPs.1629+13,__zero_reg__
+ 3247 188c 1092 0000 		sts TCPs.1629+13+1,__zero_reg__
+ 3248 1890 1092 0000 		sts TCPs.1629+13+2,__zero_reg__
+ 3249 1894 1092 0000 		sts TCPs.1629+13+3,__zero_reg__
+ 3250 1898 84E0      		ldi r24,lo8(4)
+ 3251 189a 8093 0000 		sts TCPs.1629+27,r24
+ 3252 189e 8091 0000 		lds r24,TCPs.1629
+ 3253 18a2 887F      		andi r24,lo8(-8)
+ 3254 18a4 8093 0000 		sts TCPs.1629,r24
+ 3255               	.L240:
+ 3256 18a8 00E0      		ldi r16,lo8(0)
+ 3257 18aa 10E0      		ldi r17,hi8(0)
+ 3258               	.L162:
+ 3259 18ac 0E94 0000 		call enc424j600_finish_callback_now
+ 3260 18b0 0115      		cp r16,__zero_reg__
+ 3261 18b2 1105      		cpc r17,__zero_reg__
+ 3262 18b4 01F4      		brne .L185
+ 3263 18b6 8091 0000 		lds r24,ipsource.1636
+ 3264 18ba 9091 0000 		lds r25,ipsource.1636+1
+ 3265 18be A091 0000 		lds r26,ipsource.1636+2
+ 3266 18c2 B091 0000 		lds r27,ipsource.1636+3
+ 3267 18c6 8093 0000 		sts TCPs.1629+5,r24
+ 3268 18ca 9093 0000 		sts TCPs.1629+5+1,r25
+ 3269 18ce A093 0000 		sts TCPs.1629+5+2,r26
+ 3270 18d2 B093 0000 		sts TCPs.1629+5+3,r27
+ 3271 18d6 8091 0000 		lds r24,remoteport.1637
+ 3272 18da 9091 0000 		lds r25,remoteport.1637+1
+ 3273 18de 9093 0000 		sts TCPs.1629+3+1,r25
+ 3274 18e2 8093 0000 		sts TCPs.1629+3,r24
+ 3275 18e6 8091 0000 		lds r24,localport.1638
+ 3276 18ea 9091 0000 		lds r25,localport.1638+1
+ 3277 18ee 9093 0000 		sts TCPs.1629+1+1,r25
+ 3278 18f2 8093 0000 		sts TCPs.1629+1,r24
+GAS LISTING /tmp/cc9QGGXX.s 			page 57
+
+
+ 3279               	.L185:
+ 3280 18f6 802F      		mov r24,r16
+ 3281 18f8 0E94 0000 		call write_tcp_header.7457
+ 3282               	.L160:
+ 3283 18fc 802F      		mov r24,r16
+ 3284 18fe 0E94 0000 		call EndTCPWrite
+ 3285 1902 00C0      		rjmp .L137
+ 3286               	.L233:
+ 3287 1904 0E94 0000 		call enc424j600_finish_callback_now
+ 3288               	.L137:
+ 3289 1908 8091 0000 		lds r24,termcallbackearly.4618
+ 3290 190c 8823      		tst r24
+ 3291 190e 01F4      		brne .L136
+ 3292 1910 0E94 0000 		call enc424j600_finish_callback_now
+ 3293               	.L136:
+ 3294 1914 30E0      		ldi r19,lo8(HTTPConnections.1722+41)
+ 3295 1916 432E      		mov r4,r19
+ 3296 1918 30E0      		ldi r19,hi8(HTTPConnections.1722+41)
+ 3297 191a 532E      		mov r5,r19
+ 3298 191c 2224      		clr r2
+ 3299 191e 3324      		clr r3
+ 3300 1920 7E01      		movw r14,r28
+ 3301 1922 0894      		sec
+ 3302 1924 E11C      		adc r14,__zero_reg__
+ 3303 1926 F11C      		adc r15,__zero_reg__
+ 3304               	.L214:
+ 3305 1928 8BE3      		ldi r24,lo8(59)
+ 3306 192a 90E0      		ldi r25,hi8(59)
+ 3307 192c 289E      		mul r2,r24
+ 3308 192e A001      		movw r20,r0
+ 3309 1930 299E      		mul r2,r25
+ 3310 1932 500D      		add r21,r0
+ 3311 1934 389E      		mul r3,r24
+ 3312 1936 500D      		add r21,r0
+ 3313 1938 1124      		clr r1
+ 3314 193a 8A01      		movw r16,r20
+ 3315 193c 0050      		subi r16,lo8(-(HTTPConnections.1722))
+ 3316 193e 1040      		sbci r17,hi8(-(HTTPConnections.1722))
+ 3317 1940 1093 0000 		sts curhttp.1697+1,r17
+ 3318 1944 0093 0000 		sts curhttp.1697,r16
+ 3319 1948 D801      		movw r26,r16
+ 3320 194a 8C91      		ld r24,X
+ 3321 194c 8F70      		andi r24,lo8(15)
+ 3322 194e 90E0      		ldi r25,lo8(0)
+ 3323 1950 8730      		cpi r24,7
+ 3324 1952 9105      		cpc r25,__zero_reg__
+ 3325 1954 01F0      		breq .L187
+ 3326 1956 8F30      		cpi r24,15
+ 3327 1958 9105      		cpc r25,__zero_reg__
+ 3328 195a 01F0      		breq .+2
+ 3329 195c 00C0      		rjmp .L234
+ 3330 195e 00C0      		rjmp .L254
+ 3331               	.L187:
+ 3332 1960 F201      		movw r30,r4
+ 3333 1962 8189      		ldd r24,Z+17
+ 3334 1964 E82F      		mov r30,r24
+ 3335 1966 F0E0      		ldi r31,lo8(0)
+GAS LISTING /tmp/cc9QGGXX.s 			page 58
+
+
+ 3336 1968 25E0      		ldi r18,5
+ 3337 196a EE0F      	1:	lsl r30
+ 3338 196c FF1F      		rol r31
+ 3339 196e 2A95      		dec r18
+ 3340 1970 01F4      		brne 1b
+ 3341 1972 E050      		subi r30,lo8(-(TCPs.1629))
+ 3342 1974 F040      		sbci r31,hi8(-(TCPs.1629))
+ 3343 1976 9789      		ldd r25,Z+23
+ 3344 1978 9923      		tst r25
+ 3345 197a 01F0      		breq .+2
+ 3346 197c 00C0      		rjmp .L189
+ 3347 197e D801      		movw r26,r16
+ 3348 1980 9896      		adiw r26,40
+ 3349 1982 2C91      		ld r18,X
+ 3350 1984 9897      		sbiw r26,40
+ 3351 1986 D996      		adiw r26,57
+ 3352 1988 9C91      		ld r25,X
+ 3353 198a D997      		sbiw r26,57
+ 3354 198c 20FF      		sbrs r18,0
+ 3355 198e 00C0      		rjmp .L190
+ 3356 1990 91FF      		sbrs r25,1
+ 3357 1992 00C0      		rjmp .L191
+ 3358 1994 DA96      		adiw r26,58
+ 3359 1996 8C91      		ld r24,X
+ 3360 1998 DA97      		sbiw r26,58
+ 3361 199a 90E0      		ldi r25,lo8(0)
+ 3362 199c 00C0      		rjmp .L245
+ 3363               	.L191:
+ 3364 199e 92FF      		sbrs r25,2
+ 3365 19a0 00C0      		rjmp .L189
+ 3366 19a2 F801      		movw r30,r16
+ 3367 19a4 82AD      		ldd r24,Z+58
+ 3368 19a6 E82F      		mov r30,r24
+ 3369 19a8 F0E0      		ldi r31,lo8(0)
+ 3370 19aa 95E0      		ldi r25,5
+ 3371 19ac EE0F      	1:	lsl r30
+ 3372 19ae FF1F      		rol r31
+ 3373 19b0 9A95      		dec r25
+ 3374 19b2 01F4      		brne 1b
+ 3375 19b4 E050      		subi r30,lo8(-(TCPs.1629))
+ 3376 19b6 F040      		sbci r31,hi8(-(TCPs.1629))
+ 3377 19b8 28E1      		ldi r18,lo8(24)
+ 3378 19ba 238F      		std Z+27,r18
+ 3379 19bc 0E94 0000 		call write_tcp_header.7457
+ 3380 19c0 80E0      		ldi r24,lo8(.LC0)
+ 3381 19c2 90E0      		ldi r25,hi8(.LC0)
+ 3382 19c4 0E94 0000 		call PushStr
+ 3383 19c8 B2E0      		ldi r27,lo8(2)
+ 3384 19ca CB2E      		mov r12,r27
+ 3385 19cc D12C      		mov r13,__zero_reg__
+ 3386 19ce C00E      		add r12,r16
+ 3387 19d0 D11E      		adc r13,r17
+ 3388 19d2 C601      		movw r24,r12
+ 3389 19d4 60E0      		ldi r22,lo8(.LC1)
+ 3390 19d6 70E0      		ldi r23,hi8(.LC1)
+ 3391 19d8 46E0      		ldi r20,lo8(6)
+ 3392 19da 50E0      		ldi r21,hi8(6)
+GAS LISTING /tmp/cc9QGGXX.s 			page 59
+
+
+ 3393 19dc 0E94 0000 		call strncmp
+ 3394 19e0 0097      		sbiw r24,0
+ 3395 19e2 01F4      		brne .L192
+ 3396 19e4 1982      		std Y+1,__zero_reg__
+ 3397 19e6 1A82      		std Y+2,__zero_reg__
+ 3398 19e8 1B82      		std Y+3,__zero_reg__
+ 3399 19ea A8E0      		ldi r26,lo8(8)
+ 3400 19ec CA2E      		mov r12,r26
+ 3401 19ee D12C      		mov r13,__zero_reg__
+ 3402 19f0 C00E      		add r12,r16
+ 3403 19f2 D11E      		adc r13,r17
+ 3404 19f4 D801      		movw r26,r16
+ 3405 19f6 1896      		adiw r26,8
+ 3406 19f8 8C91      		ld r24,X
+ 3407 19fa 0E94 0000 		call hex2val
+ 3408 19fe B82E      		mov r11,r24
+ 3409 1a00 F601      		movw r30,r12
+ 3410 1a02 8181      		ldd r24,Z+1
+ 3411 1a04 0E94 0000 		call hex2val
+ 3412 1a08 B294      		swap r11
+ 3413 1a0a F0EF      		ldi r31,lo8(-16)
+ 3414 1a0c BF22      		and r11,r31
+ 3415 1a0e B80E      		add r11,r24
+ 3416 1a10 EB2D      		mov r30,r11
+ 3417 1a12 F0E0      		ldi r31,lo8(0)
+ 3418 1a14 8081      		ld r24,Z
+ 3419 1a16 00C0      		rjmp .L248
+ 3420               	.L192:
+ 3421 1a18 C601      		movw r24,r12
+ 3422 1a1a 60E0      		ldi r22,lo8(.LC2)
+ 3423 1a1c 70E0      		ldi r23,hi8(.LC2)
+ 3424 1a1e 46E0      		ldi r20,lo8(6)
+ 3425 1a20 50E0      		ldi r21,hi8(6)
+ 3426 1a22 0E94 0000 		call strncmp
+ 3427 1a26 0097      		sbiw r24,0
+ 3428 1a28 01F4      		brne .L194
+ 3429 1a2a D801      		movw r26,r16
+ 3430 1a2c 1896      		adiw r26,8
+ 3431 1a2e 8C91      		ld r24,X
+ 3432 1a30 0E94 0000 		call hex2val
+ 3433 1a34 882E      		mov r8,r24
+ 3434 1a36 EAE0      		ldi r30,lo8(10)
+ 3435 1a38 CE2E      		mov r12,r30
+ 3436 1a3a D12C      		mov r13,__zero_reg__
+ 3437 1a3c C00E      		add r12,r16
+ 3438 1a3e D11E      		adc r13,r17
+ 3439 1a40 F801      		movw r30,r16
+ 3440 1a42 8185      		ldd r24,Z+9
+ 3441 1a44 0E94 0000 		call hex2val
+ 3442 1a48 A82E      		mov r10,r24
+ 3443 1a4a D801      		movw r26,r16
+ 3444 1a4c 1A96      		adiw r26,10
+ 3445 1a4e 8C91      		ld r24,X
+ 3446 1a50 0E94 0000 		call hex2val
+ 3447 1a54 B82E      		mov r11,r24
+ 3448 1a56 F601      		movw r30,r12
+ 3449 1a58 8181      		ldd r24,Z+1
+GAS LISTING /tmp/cc9QGGXX.s 			page 60
+
+
+ 3450 1a5a 0E94 0000 		call hex2val
+ 3451 1a5e 8294      		swap r8
+ 3452 1a60 70EF      		ldi r23,lo8(-16)
+ 3453 1a62 8722      		and r8,r23
+ 3454 1a64 8A0C      		add r8,r10
+ 3455 1a66 E82D      		mov r30,r8
+ 3456 1a68 F0E0      		ldi r31,lo8(0)
+ 3457 1a6a B294      		swap r11
+ 3458 1a6c 60EF      		ldi r22,lo8(-16)
+ 3459 1a6e B622      		and r11,r22
+ 3460 1a70 B80E      		add r11,r24
+ 3461 1a72 B082      		st Z,r11
+ 3462 1a74 00C0      		rjmp .L193
+ 3463               	.L194:
+ 3464 1a76 C601      		movw r24,r12
+ 3465 1a78 60E0      		ldi r22,lo8(.LC3)
+ 3466 1a7a 70E0      		ldi r23,hi8(.LC3)
+ 3467 1a7c 46E0      		ldi r20,lo8(6)
+ 3468 1a7e 50E0      		ldi r21,hi8(6)
+ 3469 1a80 0E94 0000 		call strncmp
+ 3470 1a84 0097      		sbiw r24,0
+ 3471 1a86 01F4      		brne .L195
+ 3472 1a88 1982      		std Y+1,__zero_reg__
+ 3473 1a8a 1A82      		std Y+2,__zero_reg__
+ 3474 1a8c 1B82      		std Y+3,__zero_reg__
+ 3475 1a8e 58E0      		ldi r21,lo8(8)
+ 3476 1a90 C52E      		mov r12,r21
+ 3477 1a92 D12C      		mov r13,__zero_reg__
+ 3478 1a94 C00E      		add r12,r16
+ 3479 1a96 D11E      		adc r13,r17
+ 3480 1a98 D801      		movw r26,r16
+ 3481 1a9a 1896      		adiw r26,8
+ 3482 1a9c 8C91      		ld r24,X
+ 3483 1a9e 0E94 0000 		call hex2val
+ 3484 1aa2 B82E      		mov r11,r24
+ 3485 1aa4 F601      		movw r30,r12
+ 3486 1aa6 8181      		ldd r24,Z+1
+ 3487 1aa8 0E94 0000 		call hex2val
+ 3488 1aac B294      		swap r11
+ 3489 1aae 40EF      		ldi r20,lo8(-16)
+ 3490 1ab0 B422      		and r11,r20
+ 3491 1ab2 B80E      		add r11,r24
+ 3492 1ab4 EB2D      		mov r30,r11
+ 3493 1ab6 F0E0      		ldi r31,lo8(0)
+ 3494 1ab8 C080      		ld r12,Z
+ 3495 1aba 8181      		ldd r24,Z+1
+ 3496 1abc B701      		movw r22,r14
+ 3497 1abe 0E94 0000 		call int8tohex
+ 3498 1ac2 C701      		movw r24,r14
+ 3499 1ac4 0E94 0000 		call PushStr
+ 3500 1ac8 8C2D      		mov r24,r12
+ 3501               	.L248:
+ 3502 1aca B701      		movw r22,r14
+ 3503 1acc 0E94 0000 		call int8tohex
+ 3504 1ad0 C701      		movw r24,r14
+ 3505 1ad2 00C0      		rjmp .L242
+ 3506               	.L195:
+GAS LISTING /tmp/cc9QGGXX.s 			page 61
+
+
+ 3507 1ad4 C601      		movw r24,r12
+ 3508 1ad6 60E0      		ldi r22,lo8(.LC4)
+ 3509 1ad8 70E0      		ldi r23,hi8(.LC4)
+ 3510 1ada 46E0      		ldi r20,lo8(6)
+ 3511 1adc 50E0      		ldi r21,hi8(6)
+ 3512 1ade 0E94 0000 		call strncmp
+ 3513 1ae2 0097      		sbiw r24,0
+ 3514 1ae4 01F0      		breq .+2
+ 3515 1ae6 00C0      		rjmp .L196
+ 3516 1ae8 D801      		movw r26,r16
+ 3517 1aea 1896      		adiw r26,8
+ 3518 1aec 8C91      		ld r24,X
+ 3519 1aee 0E94 0000 		call hex2val
+ 3520 1af2 882E      		mov r8,r24
+ 3521 1af4 F801      		movw r30,r16
+ 3522 1af6 8185      		ldd r24,Z+9
+ 3523 1af8 0E94 0000 		call hex2val
+ 3524 1afc A82E      		mov r10,r24
+ 3525 1afe D801      		movw r26,r16
+ 3526 1b00 1A96      		adiw r26,10
+ 3527 1b02 8C91      		ld r24,X
+ 3528 1b04 0E94 0000 		call hex2val
+ 3529 1b08 682E      		mov r6,r24
+ 3530 1b0a 3CE0      		ldi r19,lo8(12)
+ 3531 1b0c C32E      		mov r12,r19
+ 3532 1b0e D12C      		mov r13,__zero_reg__
+ 3533 1b10 C00E      		add r12,r16
+ 3534 1b12 D11E      		adc r13,r17
+ 3535 1b14 F801      		movw r30,r16
+ 3536 1b16 8385      		ldd r24,Z+11
+ 3537 1b18 0E94 0000 		call hex2val
+ 3538 1b1c 782E      		mov r7,r24
+ 3539 1b1e D801      		movw r26,r16
+ 3540 1b20 1C96      		adiw r26,12
+ 3541 1b22 8C91      		ld r24,X
+ 3542 1b24 0E94 0000 		call hex2val
+ 3543 1b28 B82E      		mov r11,r24
+ 3544 1b2a F601      		movw r30,r12
+ 3545 1b2c 8181      		ldd r24,Z+1
+ 3546 1b2e 0E94 0000 		call hex2val
+ 3547 1b32 6294      		swap r6
+ 3548 1b34 20EF      		ldi r18,lo8(-16)
+ 3549 1b36 6222      		and r6,r18
+ 3550 1b38 6A8A      		std Y+18,r6
+ 3551 1b3a 198A      		std Y+17,__zero_reg__
+ 3552 1b3c 7C8A      		std Y+20,r7
+ 3553 1b3e 1B8A      		std Y+19,__zero_reg__
+ 3554 1b40 2989      		ldd r18,Y+17
+ 3555 1b42 3A89      		ldd r19,Y+18
+ 3556 1b44 4B89      		ldd r20,Y+19
+ 3557 1b46 5C89      		ldd r21,Y+20
+ 3558 1b48 240F      		add r18,r20
+ 3559 1b4a 351F      		adc r19,r21
+ 3560 1b4c 280F      		add r18,r24
+ 3561 1b4e 311D      		adc r19,__zero_reg__
+ 3562 1b50 8294      		swap r8
+ 3563 1b52 90EF      		ldi r25,lo8(-16)
+GAS LISTING /tmp/cc9QGGXX.s 			page 62
+
+
+ 3564 1b54 8922      		and r8,r25
+ 3565 1b56 8A0C      		add r8,r10
+ 3566 1b58 E82D      		mov r30,r8
+ 3567 1b5a F0E0      		ldi r31,lo8(0)
+ 3568 1b5c 4B2D      		mov r20,r11
+ 3569 1b5e 50E0      		ldi r21,lo8(0)
+ 3570 1b60 84E0      		ldi r24,4
+ 3571 1b62 440F      	1:	lsl r20
+ 3572 1b64 551F      		rol r21
+ 3573 1b66 8A95      		dec r24
+ 3574 1b68 01F4      		brne 1b
+ 3575 1b6a 240F      		add r18,r20
+ 3576 1b6c 351F      		adc r19,r21
+ 3577 1b6e 3183      		std Z+1,r19
+ 3578 1b70 2083      		st Z,r18
+ 3579 1b72 00C0      		rjmp .L193
+ 3580               	.L196:
+ 3581 1b74 80E0      		ldi r24,lo8(.LC5)
+ 3582 1b76 90E0      		ldi r25,hi8(.LC5)
+ 3583 1b78 0E94 0000 		call PushStr
+ 3584 1b7c C601      		movw r24,r12
+ 3585               	.L242:
+ 3586 1b7e 0E94 0000 		call PushStr
+ 3587               	.L193:
+ 3588 1b82 D801      		movw r26,r16
+ 3589 1b84 DA96      		adiw r26,58
+ 3590 1b86 8C91      		ld r24,X
+ 3591 1b88 0E94 0000 		call EndTCPWrite
+ 3592 1b8c F801      		movw r30,r16
+ 3593 1b8e 81AD      		ldd r24,Z+57
+ 3594 1b90 8B7F      		andi r24,lo8(-5)
+ 3595 1b92 00C0      		rjmp .L249
+ 3596               	.L190:
+ 3597 1b94 91FD      		sbrc r25,1
+ 3598 1b96 00C0      		rjmp .L246
+ 3599               	.L197:
+ 3600 1b98 90FF      		sbrs r25,0
+ 3601 1b9a 00C0      		rjmp .L198
+ 3602 1b9c 28E1      		ldi r18,lo8(24)
+ 3603 1b9e 238F      		std Z+27,r18
+ 3604 1ba0 0E94 0000 		call write_tcp_header.7457
+ 3605 1ba4 80E0      		ldi r24,lo8(__c.10105)
+ 3606 1ba6 90E0      		ldi r25,hi8(__c.10105)
+ 3607 1ba8 0E94 0000 		call PushPGMStr
+ 3608 1bac E091 0000 		lds r30,curhttp.1697
+ 3609 1bb0 F091 0000 		lds r31,curhttp.1697+1
+ 3610 1bb4 82AD      		ldd r24,Z+58
+ 3611 1bb6 0E94 0000 		call EndTCPWrite
+ 3612 1bba E091 0000 		lds r30,curhttp.1697
+ 3613 1bbe F091 0000 		lds r31,curhttp.1697+1
+ 3614 1bc2 00C0      		rjmp .L250
+ 3615               	.L198:
+ 3616 1bc4 92FF      		sbrs r25,2
+ 3617 1bc6 00C0      		rjmp .L199
+ 3618 1bc8 9A01      		movw r18,r20
+ 3619 1bca 2050      		subi r18,lo8(-(HTTPConnections.1722+2))
+ 3620 1bcc 3040      		sbci r19,hi8(-(HTTPConnections.1722+2))
+GAS LISTING /tmp/cc9QGGXX.s 			page 63
+
+
+ 3621 1bce D901      		movw r26,r18
+ 3622 1bd0 0D90      		ld __tmp_reg__,X+
+ 3623 1bd2 0020      		tst __tmp_reg__
+ 3624 1bd4 01F4      		brne .-6
+ 3625 1bd6 6D01      		movw r12,r26
+ 3626 1bd8 0894      		sec
+ 3627 1bda C108      		sbc r12,__zero_reg__
+ 3628 1bdc D108      		sbc r13,__zero_reg__
+ 3629 1bde C21A      		sub r12,r18
+ 3630 1be0 B8E1      		ldi r27,lo8(24)
+ 3631 1be2 B38F      		std Z+27,r27
+ 3632 1be4 0E94 0000 		call write_tcp_header.7457
+ 3633 1be8 80E0      		ldi r24,lo8(__c.10110)
+ 3634 1bea 90E0      		ldi r25,hi8(__c.10110)
+ 3635 1bec 0E94 0000 		call PushPGMStr
+ 3636 1bf0 E091 0000 		lds r30,curhttp.1697
+ 3637 1bf4 F091 0000 		lds r31,curhttp.1697+1
+ 3638 1bf8 81A9      		ldd r24,Z+49
+ 3639 1bfa 92A9      		ldd r25,Z+50
+ 3640 1bfc A3A9      		ldd r26,Z+51
+ 3641 1bfe B4A9      		ldd r27,Z+52
+ 3642 1c00 8F3F      		cpi r24,lo8(-1)
+ 3643 1c02 EFEF      		ldi r30,hi8(-1)
+ 3644 1c04 9E07      		cpc r25,r30
+ 3645 1c06 EFEF      		ldi r30,hlo8(-1)
+ 3646 1c08 AE07      		cpc r26,r30
+ 3647 1c0a EFEF      		ldi r30,hhi8(-1)
+ 3648 1c0c BE07      		cpc r27,r30
+ 3649 1c0e 01F4      		brne .+2
+ 3650 1c10 00C0      		rjmp .L200
+ 3651 1c12 80E0      		ldi r24,lo8(__c.10112)
+ 3652 1c14 90E0      		ldi r25,hi8(__c.10112)
+ 3653 1c16 0E94 0000 		call PushPGMStr
+ 3654 1c1a E091 0000 		lds r30,curhttp.1697
+ 3655 1c1e F091 0000 		lds r31,curhttp.1697+1
+ 3656 1c22 81A8      		ldd r8,Z+49
+ 3657 1c24 92A8      		ldd r9,Z+50
+ 3658 1c26 A3A8      		ldd r10,Z+51
+ 3659 1c28 B4A8      		ldd r11,Z+52
+ 3660 1c2a 1AE0      		ldi r17,lo8(10)
+ 3661 1c2c 612E      		mov r6,r17
+ 3662 1c2e 712C      		mov r7,__zero_reg__
+ 3663 1c30 00E0      		ldi r16,lo8(0)
+ 3664 1c32 20E0      		ldi r18,lo8(1000000000)
+ 3665 1c34 3AEC      		ldi r19,hi8(1000000000)
+ 3666 1c36 4AE9      		ldi r20,hlo8(1000000000)
+ 3667 1c38 5BE3      		ldi r21,hhi8(1000000000)
+ 3668 1c3a 00C0      		rjmp .L201
+ 3669               	.L202:
+ 3670 1c3c 8F5F      		subi r24,lo8(-(1))
+ 3671 1c3e 821A      		sub r8,r18
+ 3672 1c40 930A      		sbc r9,r19
+ 3673 1c42 A40A      		sbc r10,r20
+ 3674 1c44 B50A      		sbc r11,r21
+ 3675               	.L206:
+ 3676 1c46 2815      		cp r18,r8
+ 3677 1c48 3905      		cpc r19,r9
+GAS LISTING /tmp/cc9QGGXX.s 			page 64
+
+
+ 3678 1c4a 4A05      		cpc r20,r10
+ 3679 1c4c 5B05      		cpc r21,r11
+ 3680 1c4e 00F0      		brlo .L202
+ 3681 1c50 0023      		tst r16
+ 3682 1c52 01F4      		brne .L203
+ 3683 1c54 8823      		tst r24
+ 3684 1c56 01F0      		breq .L204
+ 3685               	.L203:
+ 3686 1c58 F701      		movw r30,r14
+ 3687 1c5a E00F      		add r30,r16
+ 3688 1c5c F11D      		adc r31,__zero_reg__
+ 3689 1c5e 805D      		subi r24,lo8(-(48))
+ 3690 1c60 8083      		st Z,r24
+ 3691 1c62 0F5F      		subi r16,lo8(-(1))
+ 3692               	.L204:
+ 3693 1c64 CA01      		movw r24,r20
+ 3694 1c66 B901      		movw r22,r18
+ 3695 1c68 2AE0      		ldi r18,lo8(10)
+ 3696 1c6a 30E0      		ldi r19,hi8(10)
+ 3697 1c6c 40E0      		ldi r20,hlo8(10)
+ 3698 1c6e 50E0      		ldi r21,hhi8(10)
+ 3699 1c70 0E94 0000 		call __udivmodsi4
+ 3700 1c74 0894      		sec
+ 3701 1c76 6108      		sbc r6,__zero_reg__
+ 3702 1c78 7108      		sbc r7,__zero_reg__
+ 3703 1c7a 6114      		cp r6,__zero_reg__
+ 3704 1c7c 7104      		cpc r7,__zero_reg__
+ 3705 1c7e 01F0      		breq .L205
+ 3706               	.L201:
+ 3707 1c80 80E0      		ldi r24,lo8(0)
+ 3708 1c82 00C0      		rjmp .L206
+ 3709               	.L205:
+ 3710 1c84 F701      		movw r30,r14
+ 3711 1c86 E00F      		add r30,r16
+ 3712 1c88 F11D      		adc r31,__zero_reg__
+ 3713 1c8a 1082      		st Z,__zero_reg__
+ 3714 1c8c D701      		movw r26,r14
+ 3715 1c8e 0D90      		ld __tmp_reg__,X+
+ 3716 1c90 0020      		tst __tmp_reg__
+ 3717 1c92 01F4      		brne .-6
+ 3718 1c94 BD01      		movw r22,r26
+ 3719 1c96 6150      		subi r22,lo8(-(-1))
+ 3720 1c98 7040      		sbci r23,hi8(-(-1))
+ 3721 1c9a 6E19      		sub r22,r14
+ 3722 1c9c 7F09      		sbc r23,r15
+ 3723 1c9e C701      		movw r24,r14
+ 3724 1ca0 0E94 0000 		call enc424j600_pushblob
+ 3725               	.L200:
+ 3726 1ca4 80E0      		ldi r24,lo8(__c.10114)
+ 3727 1ca6 90E0      		ldi r25,hi8(__c.10114)
+ 3728 1ca8 0E94 0000 		call PushPGMStr
+ 3729 1cac 8091 0000 		lds r24,curhttp.1697
+ 3730 1cb0 9091 0000 		lds r25,curhttp.1697+1
+ 3731               	.L208:
+ 3732 1cb4 CC20      		tst r12
+ 3733 1cb6 01F0      		breq .L207
+ 3734 1cb8 CA94      		dec r12
+GAS LISTING /tmp/cc9QGGXX.s 			page 65
+
+
+ 3735 1cba FC01      		movw r30,r24
+ 3736 1cbc EC0D      		add r30,r12
+ 3737 1cbe F11D      		adc r31,__zero_reg__
+ 3738 1cc0 2281      		ldd r18,Z+2
+ 3739 1cc2 2E32      		cpi r18,lo8(46)
+ 3740 1cc4 01F4      		brne .L208
+ 3741               	.L207:
+ 3742 1cc6 8C0D      		add r24,r12
+ 3743 1cc8 911D      		adc r25,__zero_reg__
+ 3744 1cca 0396      		adiw r24,3
+ 3745 1ccc 60E0      		ldi r22,lo8(.LC6)
+ 3746 1cce 70E0      		ldi r23,hi8(.LC6)
+ 3747 1cd0 0E94 0000 		call strcmp
+ 3748 1cd4 0097      		sbiw r24,0
+ 3749 1cd6 01F4      		brne .L209
+ 3750 1cd8 80E0      		ldi r24,lo8(__c.10119)
+ 3751 1cda 90E0      		ldi r25,hi8(__c.10119)
+ 3752 1cdc 00C0      		rjmp .L243
+ 3753               	.L209:
+ 3754 1cde 80E0      		ldi r24,lo8(__c.10121)
+ 3755 1ce0 90E0      		ldi r25,hi8(__c.10121)
+ 3756               	.L243:
+ 3757 1ce2 0E94 0000 		call PushPGMStr
+ 3758 1ce6 80E0      		ldi r24,lo8(__c.10123)
+ 3759 1ce8 90E0      		ldi r25,hi8(__c.10123)
+ 3760 1cea 0E94 0000 		call PushPGMStr
+ 3761 1cee E091 0000 		lds r30,curhttp.1697
+ 3762 1cf2 F091 0000 		lds r31,curhttp.1697+1
+ 3763 1cf6 82AD      		ldd r24,Z+58
+ 3764 1cf8 0E94 0000 		call EndTCPWrite
+ 3765 1cfc E091 0000 		lds r30,curhttp.1697
+ 3766 1d00 F091 0000 		lds r31,curhttp.1697+1
+ 3767 1d04 81AD      		ldd r24,Z+57
+ 3768 1d06 8B7F      		andi r24,lo8(-5)
+ 3769 1d08 00C0      		rjmp .L244
+ 3770               	.L199:
+ 3771 1d0a 0E94 0000 		call write_tcp_header.7457
+ 3772 1d0e 8091 0000 		lds r24,curhttp.1697
+ 3773 1d12 9091 0000 		lds r25,curhttp.1697+1
+ 3774 1d16 8B96      		adiw r24,43
+ 3775 1d18 0E94 0000 		call StartReadFAT_SA
+ 3776 1d1c E091 0000 		lds r30,curhttp.1697
+ 3777 1d20 F091 0000 		lds r31,curhttp.1697+1
+ 3778 1d24 81A9      		ldd r24,Z+49
+ 3779 1d26 92A9      		ldd r25,Z+50
+ 3780 1d28 A3A9      		ldd r26,Z+51
+ 3781 1d2a B4A9      		ldd r27,Z+52
+ 3782 1d2c 8130      		cpi r24,lo8(513)
+ 3783 1d2e E2E0      		ldi r30,hi8(513)
+ 3784 1d30 9E07      		cpc r25,r30
+ 3785 1d32 E0E0      		ldi r30,hlo8(513)
+ 3786 1d34 AE07      		cpc r26,r30
+ 3787 1d36 E0E0      		ldi r30,hhi8(513)
+ 3788 1d38 BE07      		cpc r27,r30
+ 3789 1d3a 00F0      		brlo .L211
+ 3790 1d3c 80E0      		ldi r24,lo8(512)
+ 3791 1d3e 92E0      		ldi r25,hi8(512)
+GAS LISTING /tmp/cc9QGGXX.s 			page 66
+
+
+ 3792 1d40 A0E0      		ldi r26,hlo8(512)
+ 3793 1d42 B0E0      		ldi r27,hhi8(512)
+ 3794               	.L211:
+ 3795 1d44 6C01      		movw r12,r24
+ 3796 1d46 00E0      		ldi r16,lo8(0)
+ 3797 1d48 10E0      		ldi r17,hi8(0)
+ 3798 1d4a 00C0      		rjmp .L212
+ 3799               	.L213:
+ 3800 1d4c 0E94 0000 		call popSDread
+ 3801 1d50 0E94 0000 		call espiW_asm
+ 3802 1d54 0F5F      		subi r16,lo8(-(1))
+ 3803 1d56 1F4F      		sbci r17,hi8(-(1))
+ 3804               	.L212:
+ 3805 1d58 0C15      		cp r16,r12
+ 3806 1d5a 1D05      		cpc r17,r13
+ 3807 1d5c 00F0      		brlo .L213
+ 3808 1d5e 0E94 0000 		call endSDread
+ 3809 1d62 0E94 0000 		call FATAdvanceSector
+ 3810 1d66 E091 0000 		lds r30,curhttp.1697
+ 3811 1d6a F091 0000 		lds r31,curhttp.1697+1
+ 3812 1d6e 82AD      		ldd r24,Z+58
+ 3813 1d70 0E94 0000 		call EndTCPWrite
+ 3814 1d74 E091 0000 		lds r30,curhttp.1697
+ 3815 1d78 F091 0000 		lds r31,curhttp.1697+1
+ 3816 1d7c 9601      		movw r18,r12
+ 3817 1d7e 40E0      		ldi r20,lo8(0)
+ 3818 1d80 50E0      		ldi r21,hi8(0)
+ 3819 1d82 81A9      		ldd r24,Z+49
+ 3820 1d84 92A9      		ldd r25,Z+50
+ 3821 1d86 A3A9      		ldd r26,Z+51
+ 3822 1d88 B4A9      		ldd r27,Z+52
+ 3823 1d8a 821B      		sub r24,r18
+ 3824 1d8c 930B      		sbc r25,r19
+ 3825 1d8e A40B      		sbc r26,r20
+ 3826 1d90 B50B      		sbc r27,r21
+ 3827 1d92 81AB      		std Z+49,r24
+ 3828 1d94 92AB      		std Z+50,r25
+ 3829 1d96 A3AB      		std Z+51,r26
+ 3830 1d98 B4AB      		std Z+52,r27
+ 3831 1d9a 0097      		sbiw r24,0
+ 3832 1d9c A105      		cpc r26,__zero_reg__
+ 3833 1d9e B105      		cpc r27,__zero_reg__
+ 3834 1da0 01F4      		brne .L189
+ 3835               	.L250:
+ 3836 1da2 81AD      		ldd r24,Z+57
+ 3837               	.L249:
+ 3838 1da4 8260      		ori r24,lo8(2)
+ 3839               	.L244:
+ 3840 1da6 81AF      		std Z+57,r24
+ 3841 1da8 00C0      		rjmp .L189
+ 3842               	.L254:
+ 3843 1daa D201      		movw r26,r4
+ 3844 1dac 5196      		adiw r26,17
+ 3845 1dae EC91      		ld r30,X
+ 3846 1db0 5197      		sbiw r26,17
+ 3847 1db2 F0E0      		ldi r31,lo8(0)
+ 3848 1db4 B5E0      		ldi r27,5
+GAS LISTING /tmp/cc9QGGXX.s 			page 67
+
+
+ 3849 1db6 EE0F      	1:	lsl r30
+ 3850 1db8 FF1F      		rol r31
+ 3851 1dba BA95      		dec r27
+ 3852 1dbc 01F4      		brne 1b
+ 3853 1dbe E050      		subi r30,lo8(-(TCPs.1629))
+ 3854 1dc0 F040      		sbci r31,hi8(-(TCPs.1629))
+ 3855 1dc2 8789      		ldd r24,Z+23
+ 3856 1dc4 8823      		tst r24
+ 3857 1dc6 01F4      		brne .L189
+ 3858               	.L246:
+ 3859 1dc8 0E94 0000 		call HTTPClose
+ 3860 1dcc 00C0      		rjmp .L189
+ 3861               	.L234:
+ 3862 1dce F201      		movw r30,r4
+ 3863 1dd0 8081      		ld r24,Z
+ 3864 1dd2 9181      		ldd r25,Z+1
+ 3865 1dd4 9C01      		movw r18,r24
+ 3866 1dd6 2F5F      		subi r18,lo8(-(1))
+ 3867 1dd8 3F4F      		sbci r19,hi8(-(1))
+ 3868 1dda 3183      		std Z+1,r19
+ 3869 1ddc 2083      		st Z,r18
+ 3870 1dde F7E2      		ldi r31,hi8(10001)
+ 3871 1de0 8131      		cpi r24,lo8(10001)
+ 3872 1de2 9F07      		cpc r25,r31
+ 3873 1de4 00F0      		brlo .L189
+ 3874 1de6 C101      		movw r24,r2
+ 3875               	.L245:
+ 3876 1de8 0E94 0000 		call HTTPClose
+ 3877               	.L189:
+ 3878 1dec 0894      		sec
+ 3879 1dee 211C      		adc r2,__zero_reg__
+ 3880 1df0 311C      		adc r3,__zero_reg__
+ 3881 1df2 2BE3      		ldi r18,lo8(59)
+ 3882 1df4 30E0      		ldi r19,hi8(59)
+ 3883 1df6 420E      		add r4,r18
+ 3884 1df8 531E      		adc r5,r19
+ 3885 1dfa 36E0      		ldi r19,lo8(6)
+ 3886 1dfc 2316      		cp r2,r19
+ 3887 1dfe 3104      		cpc r3,__zero_reg__
+ 3888 1e00 01F0      		breq .+2
+ 3889 1e02 00C0      		rjmp .L214
+ 3890 1e04 B89B      		sbis 55-32,0
+ 3891 1e06 00C0      		rjmp .L232
+ 3892 1e08 B89A      		sbi 55-32,0
+ 3893 1e0a 00E0      		ldi r16,lo8(TCPs.1629+23)
+ 3894 1e0c 10E0      		ldi r17,hi8(TCPs.1629+23)
+ 3895 1e0e CC24      		clr r12
+ 3896 1e10 DD24      		clr r13
+ 3897 1e12 BB24      		clr r11
+ 3898 1e14 B394      		inc r11
+ 3899               	.L217:
+ 3900 1e16 7601      		movw r14,r12
+ 3901 1e18 A5E0      		ldi r26,5
+ 3902 1e1a EE0C      	1:	lsl r14
+ 3903 1e1c FF1C      		rol r15
+ 3904 1e1e AA95      		dec r26
+ 3905 1e20 01F4      		brne 1b
+GAS LISTING /tmp/cc9QGGXX.s 			page 68
+
+
+ 3906 1e22 40E0      		ldi r20,lo8(TCPs.1629)
+ 3907 1e24 50E0      		ldi r21,hi8(TCPs.1629)
+ 3908 1e26 E40E      		add r14,r20
+ 3909 1e28 F51E      		adc r15,r21
+ 3910 1e2a D701      		movw r26,r14
+ 3911 1e2c 8C91      		ld r24,X
+ 3912 1e2e 8770      		andi r24,lo8(7)
+ 3913 1e30 01F0      		breq .L216
+ 3914 1e32 F801      		movw r30,r16
+ 3915 1e34 8181      		ldd r24,Z+1
+ 3916 1e36 9281      		ldd r25,Z+2
+ 3917 1e38 0196      		adiw r24,1
+ 3918 1e3a 9283      		std Z+2,r25
+ 3919 1e3c 8183      		std Z+1,r24
+ 3920 1e3e 8081      		ld r24,Z
+ 3921 1e40 8823      		tst r24
+ 3922 1e42 01F0      		breq .L216
+ 3923 1e44 8F5F      		subi r24,lo8(-(1))
+ 3924 1e46 8083      		st Z,r24
+ 3925 1e48 8333      		cpi r24,lo8(51)
+ 3926 1e4a 00F0      		brlo .L216
+ 3927 1e4c 6781      		ldd r22,Z+7
+ 3928 1e4e 7085      		ldd r23,Z+8
+ 3929 1e50 8581      		ldd r24,Z+5
+ 3930 1e52 9681      		ldd r25,Z+6
+ 3931 1e54 0E94 0000 		call enc424j600_xmitpacket
+ 3932 1e58 D801      		movw r26,r16
+ 3933 1e5a BC92      		st X,r11
+ 3934 1e5c 1396      		adiw r26,3
+ 3935 1e5e 8C91      		ld r24,X
+ 3936 1e60 1397      		sbiw r26,3
+ 3937 1e62 982F      		mov r25,r24
+ 3938 1e64 9F5F      		subi r25,lo8(-(1))
+ 3939 1e66 1396      		adiw r26,3
+ 3940 1e68 9C93      		st X,r25
+ 3941 1e6a 1397      		sbiw r26,3
+ 3942 1e6c 8932      		cpi r24,lo8(41)
+ 3943 1e6e 00F0      		brlo .L216
+ 3944 1e70 C601      		movw r24,r12
+ 3945 1e72 0E94 0000 		call HTTPClose
+ 3946 1e76 F701      		movw r30,r14
+ 3947 1e78 8081      		ld r24,Z
+ 3948 1e7a 887F      		andi r24,lo8(-8)
+ 3949 1e7c 8083      		st Z,r24
+ 3950               	.L216:
+ 3951 1e7e 0894      		sec
+ 3952 1e80 C11C      		adc r12,__zero_reg__
+ 3953 1e82 D11C      		adc r13,__zero_reg__
+ 3954 1e84 005E      		subi r16,lo8(-(32))
+ 3955 1e86 1F4F      		sbci r17,hi8(-(32))
+ 3956 1e88 FAE0      		ldi r31,lo8(10)
+ 3957 1e8a CF16      		cp r12,r31
+ 3958 1e8c D104      		cpc r13,__zero_reg__
+ 3959 1e8e 01F4      		brne .L217
+ 3960 1e90 00C0      		rjmp .L232
+ 3962               		.data
+ 3965               	MyIP:
+GAS LISTING /tmp/cc9QGGXX.s 			page 69
+
+
+ 3966 0057 C0        		.byte	-64
+ 3967 0058 A8        		.byte	-88
+ 3968 0059 00        		.byte	0
+ 3969 005a 8E        		.byte	-114
+ 3972               	MyMask.1380:
+ 3973 005b FF        		.byte	-1
+ 3974 005c FF        		.byte	-1
+ 3975 005d FF        		.byte	-1
+ 3976 005e 00        		.byte	0
+ 3979               	NextPacketPointer.4669:
+ 3980 005f 4053      		.word	21312
+ 3981               		.lcomm MyMAC.1381,6
+ 3982               		.lcomm sendbaseaddress.1586,2
+ 3983               		.lcomm TCPs.1629,320
+ 3984               		.lcomm macfrom.1635,6
+ 3985               		.lcomm ipsource.1636,4
+ 3986               		.lcomm remoteport.1637,2
+ 3987               		.lcomm localport.1638,2
+ 3988               		.lcomm opsleftSD.1662,2
+ 3989               		.lcomm curhttp.1697,2
+ 3990               		.lcomm HTTPConnections.1722,354
+ 3991               		.lcomm didsend.2038,1
+ 3992               		.lcomm termcallbackearly.4618,1
+ 3993               		.lcomm lastfile.12307,2
+ 3994               		.lcomm cluster512s.12306,1
+ 3995               		.lcomm first_fat_table_sector.12305,4
+ 3996               		.lcomm fat_partition_head.12303,4
+ 3997               		.lcomm first_data_sector.12304,4
+ 3998               		.lcomm dummy.12317,6
+ 3999               		.lcomm highcap.11231,1
+ 4000               		.section	.progmem.data,"a",@progbits
+ 4003               	__c.10123:
+ 4004 0000 0D0A 0D0A 		.string	"\r\n\r\n"
+ 4004      00
+ 4007               	__c.10121:
+ 4008 0005 7465 7874 		.string	"text/html"
+ 4008      2F68 746D 
+ 4008      6C00 
+ 4011               	__c.10119:
+ 4012 000f 6175 6469 		.string	"audio/mpeg3"
+ 4012      6F2F 6D70 
+ 4012      6567 3300 
+ 4015               	__c.10114:
+ 4016 001b 0D0A 436F 		.string	"\r\nContent-Type: "
+ 4016      6E74 656E 
+ 4016      742D 5479 
+ 4016      7065 3A20 
+ 4016      00
+ 4019               	__c.10112:
+ 4020 002c 0D0A 436F 		.string	"\r\nContent-Length: "
+ 4020      6E74 656E 
+ 4020      742D 4C65 
+ 4020      6E67 7468 
+ 4020      3A20 00
+ 4023               	__c.10110:
+ 4024 003f 4854 5450 		.string	"HTTP/1.1 200 Ok\r\nConnection: close"
+ 4024      2F31 2E31 
+GAS LISTING /tmp/cc9QGGXX.s 			page 70
+
+
+ 4024      2032 3030 
+ 4024      204F 6B0D 
+ 4024      0A43 6F6E 
+ 4027               	__c.10105:
+ 4028 0062 4854 5450 		.string	"HTTP/1.1 404 Not Found\r\nConnection: close\r\n\r\nFile not found."
+ 4028      2F31 2E31 
+ 4028      2034 3034 
+ 4028      204E 6F74 
+ 4028      2046 6F75 
+ 4029               		.lcomm iptotallen.6173,2
+ 4030               		.lcomm i.6174,2
+ 4031               	.global __do_copy_data
+ 4032               	.global __do_clear_bss
+GAS LISTING /tmp/cc9QGGXX.s 			page 71
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 example.c
+     /tmp/cc9QGGXX.s:2      *ABS*:000000000000003f __SREG__
+     /tmp/cc9QGGXX.s:3      *ABS*:000000000000003e __SP_H__
+     /tmp/cc9QGGXX.s:4      *ABS*:000000000000003d __SP_L__
+     /tmp/cc9QGGXX.s:5      *ABS*:0000000000000034 __CCP__
+     /tmp/cc9QGGXX.s:6      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cc9QGGXX.s:7      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cc9QGGXX.s:10     .text:0000000000000000 hex2val
+     /tmp/cc9QGGXX.s:36     .text:000000000000001e int8tohex
+     /tmp/cc9QGGXX.s:66     .text:0000000000000042 enc424j600_stopop
+     /tmp/cc9QGGXX.s:76     .text:0000000000000046 UpdateRemoteMAC.7461
+     /tmp/cc9QGGXX.s:3983   .bss:0000000000000148 macfrom.1635
+     /tmp/cc9QGGXX.s:98     .text:000000000000006e microSPIR
+     /tmp/cc9QGGXX.s:147    .text:00000000000000b4 popSDread
+     /tmp/cc9QGGXX.s:3987   .bss:0000000000000156 opsleftSD.1662
+     /tmp/cc9QGGXX.s:162    .text:00000000000000cc WaitFor.11224
+     /tmp/cc9QGGXX.s:188    .text:00000000000000ec microSPIW
+     /tmp/cc9QGGXX.s:251    .text:0000000000000140 microSPID
+     /tmp/cc9QGGXX.s:290    .text:0000000000000166 dumpSD
+     /tmp/cc9QGGXX.s:320    .text:0000000000000190 endSDread
+     /tmp/cc9QGGXX.s:336    .text:00000000000001a8 reCS.11229
+     /tmp/cc9QGGXX.s:351    .text:00000000000001ba InitFileStructure
+     /tmp/cc9QGGXX.s:367    .text:00000000000001ca internal_16LEFAT.12311
+     /tmp/cc9QGGXX.s:393    .text:00000000000001f2 internal_32LEFAT.12310
+     /tmp/cc9QGGXX.s:461    .text:0000000000000272 startSDread
+     /tmp/cc9QGGXX.s:3998   .bss:00000000000002d3 highcap.11231
+     /tmp/cc9QGGXX.s:532    .text:0000000000000304 FATAdvanceSector
+     /tmp/cc9QGGXX.s:3992   .bss:00000000000002be lastfile.12307
+     /tmp/cc9QGGXX.s:3993   .bss:00000000000002c0 cluster512s.12306
+     /tmp/cc9QGGXX.s:3995   .bss:00000000000002c5 fat_partition_head.12303
+     /tmp/cc9QGGXX.s:3994   .bss:00000000000002c1 first_fat_table_sector.12305
+     /tmp/cc9QGGXX.s:609    .text:00000000000003ae StartReadFAT_SA
+     /tmp/cc9QGGXX.s:3996   .bss:00000000000002c9 first_data_sector.12304
+     /tmp/cc9QGGXX.s:667    .text:000000000000042c StartReadFAT
+     /tmp/cc9QGGXX.s:741    .text:00000000000004ca standarddelay.4620
+     /tmp/cc9QGGXX.s:754    .text:00000000000004d4 PushPGMStr
+     /tmp/cc9QGGXX.s:782    .text:00000000000004f0 PUSH32.7446
+     /tmp/cc9QGGXX.s:812    .text:0000000000000526 enc_oneshot.4667
+     /tmp/cc9QGGXX.s:824    .text:0000000000000530 enc424j600_pushblob
+     /tmp/cc9QGGXX.s:854    .text:000000000000055c enc424j600_write_ctrl_reg16
+     /tmp/cc9QGGXX.s:886    .text:0000000000000596 enc424j600_finish_callback_now
+     /tmp/cc9QGGXX.s:3979   .data:000000000000005f NextPacketPointer.4669
+     /tmp/cc9QGGXX.s:3991   .bss:00000000000002bd termcallbackearly.4618
+     /tmp/cc9QGGXX.s:915    .text:00000000000005c6 enc424j600_alter_word
+     /tmp/cc9QGGXX.s:3981   .bss:0000000000000006 sendbaseaddress.1586
+     /tmp/cc9QGGXX.s:945    .text:00000000000005fe enc424j600_startsend
+     /tmp/cc9QGGXX.s:962    .text:0000000000000618 enc424j600_push16
+     /tmp/cc9QGGXX.s:978    .text:000000000000062c send_etherlink_header
+     /tmp/cc9QGGXX.s:998    .text:0000000000000648 send_ip_header
+     /tmp/cc9QGGXX.s:3965   .data:0000000000000057 MyIP
+     /tmp/cc9QGGXX.s:1044   .text:00000000000006a8 write_tcp_header.7457
+     /tmp/cc9QGGXX.s:3982   .bss:0000000000000008 TCPs.1629
+     /tmp/cc9QGGXX.s:1118   .text:0000000000000746 PushStr
+     /tmp/cc9QGGXX.s:1147   .text:000000000000076e POP32.7442
+     /tmp/cc9QGGXX.s:1214   .text:00000000000007ec enc_read_ctrl_reg8_common.4659
+     /tmp/cc9QGGXX.s:1227   .text:00000000000007fa enc424j600_wait_for_dma
+GAS LISTING /tmp/cc9QGGXX.s 			page 72
+
+
+     /tmp/cc9QGGXX.s:1251   .text:0000000000000818 enc424j600_start_checksum
+     /tmp/cc9QGGXX.s:1282   .text:0000000000000852 enc424j600_xmitpacket
+     /tmp/cc9QGGXX.s:1327   .text:00000000000008a0 enc424j600_dumpbytes
+     /tmp/cc9QGGXX.s:1346   .text:00000000000008b4 enc424j600_popblob
+     /tmp/cc9QGGXX.s:1376   .text:00000000000008e0 enc424j600_pop16LE
+     /tmp/cc9QGGXX.s:1397   .text:00000000000008fe enc424j600_read_ctrl_reg16
+     /tmp/cc9QGGXX.s:1416   .text:000000000000091a enc424j600_get_checksum
+     /tmp/cc9QGGXX.s:1431   .text:000000000000092c enc424j600_endsend
+     /tmp/cc9QGGXX.s:1450   .text:000000000000094a EndTCPWrite
+     /tmp/cc9QGGXX.s:1529   .text:00000000000009f0 HTTPClose
+     /tmp/cc9QGGXX.s:3988   .bss:0000000000000158 curhttp.1697
+     /tmp/cc9QGGXX.s:1566   .text:0000000000000a30 enc424j600_pop16
+     /tmp/cc9QGGXX.s:1587   .text:0000000000000a4e FindClusterFileInDir.clone.1
+     /tmp/cc9QGGXX.s:1981   .text:0000000000000d20 main
+     /tmp/cc9QGGXX.s:3997   .bss:00000000000002cd dummy.12317
+                             .bss:0000000000000000 MyMAC.1381
+     /tmp/cc9QGGXX.s:4029   .bss:00000000000002d6 i.6174
+     /tmp/cc9QGGXX.s:3999   .bss:00000000000002d4 iptotallen.6173
+     /tmp/cc9QGGXX.s:3984   .bss:000000000000014e ipsource.1636
+     /tmp/cc9QGGXX.s:3972   .data:000000000000005b MyMask.1380
+     /tmp/cc9QGGXX.s:3985   .bss:0000000000000152 remoteport.1637
+     /tmp/cc9QGGXX.s:3986   .bss:0000000000000154 localport.1638
+     /tmp/cc9QGGXX.s:3989   .bss:000000000000015a HTTPConnections.1722
+     /tmp/cc9QGGXX.s:3990   .bss:00000000000002bc didsend.2038
+     /tmp/cc9QGGXX.s:4027   .progmem.data:0000000000000062 __c.10105
+     /tmp/cc9QGGXX.s:4023   .progmem.data:000000000000003f __c.10110
+     /tmp/cc9QGGXX.s:4019   .progmem.data:000000000000002c __c.10112
+     /tmp/cc9QGGXX.s:4015   .progmem.data:000000000000001b __c.10114
+     /tmp/cc9QGGXX.s:4011   .progmem.data:000000000000000f __c.10119
+     /tmp/cc9QGGXX.s:4007   .progmem.data:0000000000000005 __c.10121
+     /tmp/cc9QGGXX.s:4003   .progmem.data:0000000000000000 __c.10123
+
+UNDEFINED SYMBOLS
+__mulsi3
+__epilogue_restores__
+espiW_asm
+__prologue_saves__
+espiR_asm
+strncmp
+__udivmodsi4
+strcmp
+__do_copy_data
+__do_clear_bss
+GAS LISTING /tmp/cc9QGGXX.s 			page 1
+
+
+   1               	# 1 "enc424j600_asm.S"
+   1               	// Copyright 2012 Charles Lohr under the MIT/x11, newBSD, LGPL or GPL licenses.  You choose.
+   0               	
+   0               	
+   2               	
+   3               	//XXX TODO In SPIW, should we be setting ETSI low on start in r18??
+   4               	
+   5               	#define _SFR_ASM_COMPAT 1
+   6               	#define __SFR_OFFSET 0
+   7               	
+   8               	#include <avr/io.h>
+   1               	/* Copyright (c) 2002,2003,2005,2006,2007 Marek Michalkiewicz, Joerg Wunsch
+   2               	   Copyright (c) 2007 Eric B. Weddington
+   3               	   All rights reserved.
+   4               	
+   5               	   Redistribution and use in source and binary forms, with or without
+   6               	   modification, are permitted provided that the following conditions are met:
+   7               	
+   8               	   * Redistributions of source code must retain the above copyright
+   9               	     notice, this list of conditions and the following disclaimer.
+  10               	
+  11               	   * Redistributions in binary form must reproduce the above copyright
+  12               	     notice, this list of conditions and the following disclaimer in
+  13               	     the documentation and/or other materials provided with the
+  14               	     distribution.
+  15               	
+  16               	   * Neither the name of the copyright holders nor the names of
+  17               	     contributors may be used to endorse or promote products derived
+  18               	     from this software without specific prior written permission.
+  19               	
+  20               	  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  21               	  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  22               	  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  23               	  ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+  24               	  LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  25               	  CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  26               	  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  27               	  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  28               	  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  29               	  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  30               	  POSSIBILITY OF SUCH DAMAGE. */
+  31               	
+  32               	/* $Id: io.h 2211 2011-02-14 14:04:25Z aboyapati $ */
+  33               	
+  34               	/** \file */
+  35               	/** \defgroup avr_io <avr/io.h>: AVR device-specific IO definitions
+  36               	    \code #include <avr/io.h> \endcode
+  37               	
+  38               	    This header file includes the apropriate IO definitions for the
+  39               	    device that has been specified by the <tt>-mmcu=</tt> compiler
+  40               	    command-line switch.  This is done by diverting to the appropriate
+  41               	    file <tt>&lt;avr/io</tt><em>XXXX</em><tt>.h&gt;</tt> which should
+  42               	    never be included directly.  Some register names common to all
+  43               	    AVR devices are defined directly within <tt>&lt;avr/common.h&gt;</tt>,
+  44               	    which is included in <tt>&lt;avr/io.h&gt;</tt>,
+  45               	    but most of the details come from the respective include file.
+  46               	
+GAS LISTING /tmp/cc9QGGXX.s 			page 2
+
+
+  47               	    Note that this file always includes the following files:
+  48               	    \code 
+  49               	    #include <avr/sfr_defs.h>
+  50               	    #include <avr/portpins.h>
+  51               	    #include <avr/common.h>
+  52               	    #include <avr/version.h>
+  53               	    \endcode
+  54               	    See \ref avr_sfr for more details about that header file.
+  55               	
+  56               	    Included are definitions of the IO register set and their
+  57               	    respective bit values as specified in the Atmel documentation.
+  58               	    Note that inconsistencies in naming conventions,
+  59               	    so even identical functions sometimes get different names on
+  60               	    different devices.
+  61               	
+  62               	    Also included are the specific names useable for interrupt
+  63               	    function definitions as documented
+  64               	    \ref avr_signames "here".
+  65               	
+  66               	    Finally, the following macros are defined:
+  67               	
+  68               	    - \b RAMEND
+  69               	    <br>
+  70               	    The last on-chip RAM address.
+  71               	    <br>
+  72               	    - \b XRAMEND
+  73               	    <br>
+  74               	    The last possible RAM location that is addressable. This is equal to 
+  75               	    RAMEND for devices that do not allow for external RAM. For devices 
+  76               	    that allow external RAM, this will be larger than RAMEND.
+  77               	    <br>
+  78               	    - \b E2END
+  79               	    <br>
+  80               	    The last EEPROM address.
+  81               	    <br>
+  82               	    - \b FLASHEND
+  83               	    <br>
+  84               	    The last byte address in the Flash program space.
+  85               	    <br>
+  86               	    - \b SPM_PAGESIZE
+  87               	    <br>
+  88               	    For devices with bootloader support, the flash pagesize
+  89               	    (in bytes) to be used for the \c SPM instruction. 
+  90               	    - \b E2PAGESIZE
+  91               	    <br>
+  92               	    The size of the EEPROM page.
+  93               	    
+  94               	*/
+  95               	
+  96               	#ifndef _AVR_IO_H_
+  97               	#define _AVR_IO_H_
+  98               	
+  99               	#include <avr/sfr_defs.h>
+   1               	/* Copyright (c) 2002, Marek Michalkiewicz <marekm@amelek.gda.pl>
+ 100               	
+ 101               	#if defined (__AVR_AT94K__)
+ 102               	#  include <avr/ioat94k.h>
+GAS LISTING /tmp/cc9QGGXX.s 			page 3
+
+
+ 103               	#elif defined (__AVR_AT43USB320__)
+ 104               	#  include <avr/io43u32x.h>
+ 105               	#elif defined (__AVR_AT43USB355__)
+ 106               	#  include <avr/io43u35x.h>
+ 107               	#elif defined (__AVR_AT76C711__)
+ 108               	#  include <avr/io76c711.h>
+ 109               	#elif defined (__AVR_AT86RF401__)
+ 110               	#  include <avr/io86r401.h>
+ 111               	#elif defined (__AVR_AT90PWM1__)
+ 112               	#  include <avr/io90pwm1.h>
+ 113               	#elif defined (__AVR_AT90PWM2__)
+ 114               	#  include <avr/io90pwmx.h>
+ 115               	#elif defined (__AVR_AT90PWM2B__)
+ 116               	#  include <avr/io90pwm2b.h>
+ 117               	#elif defined (__AVR_AT90PWM3__)
+ 118               	#  include <avr/io90pwmx.h>
+ 119               	#elif defined (__AVR_AT90PWM3B__)
+ 120               	#  include <avr/io90pwm3b.h>
+ 121               	#elif defined (__AVR_AT90PWM216__)
+ 122               	#  include <avr/io90pwm216.h>
+ 123               	#elif defined (__AVR_AT90PWM316__)
+ 124               	#  include <avr/io90pwm316.h>
+ 125               	#elif defined (__AVR_AT90PWM81__)
+ 126               	#  include <avr/io90pwm81.h>
+ 127               	#elif defined (__AVR_ATmega8U2__)
+ 128               	#  include <avr/iom8u2.h>
+ 129               	#elif defined (__AVR_ATmega16M1__)
+ 130               	#  include <avr/iom16m1.h>
+ 131               	#elif defined (__AVR_ATmega16U2__)
+ 132               	#  include <avr/iom16u2.h>
+ 133               	#elif defined (__AVR_ATmega16U4__)
+ 134               	#  include <avr/iom16u4.h>
+ 135               	#elif defined (__AVR_ATmega32C1__)
+ 136               	#  include <avr/iom32c1.h>
+ 137               	#elif defined (__AVR_ATmega32M1__)
+ 138               	#  include <avr/iom32m1.h>
+ 139               	#elif defined (__AVR_ATmega32U2__)
+ 140               	#  include <avr/iom32u2.h>
+ 141               	#elif defined (__AVR_ATmega32U4__)
+ 142               	#  include <avr/iom32u4.h>
+ 143               	#elif defined (__AVR_ATmega32U6__)
+ 144               	#  include <avr/iom32u6.h>
+ 145               	#elif defined (__AVR_ATmega64C1__)
+ 146               	#  include <avr/iom64c1.h>
+ 147               	#elif defined (__AVR_ATmega64M1__)
+ 148               	#  include <avr/iom64m1.h>
+ 149               	#elif defined (__AVR_ATmega128__)
+ 150               	#  include <avr/iom128.h>
+ 151               	#elif defined (__AVR_ATmega1280__)
+ 152               	#  include <avr/iom1280.h>
+ 153               	#elif defined (__AVR_ATmega1281__)
+ 154               	#  include <avr/iom1281.h>
+ 155               	#elif defined (__AVR_ATmega1284P__)
+ 156               	#  include <avr/iom1284p.h>
+ 157               	#elif defined (__AVR_ATmega128RFA1__)
+ 158               	#  include <avr/iom128rfa1.h>
+ 159               	#elif defined (__AVR_ATmega2560__)
+GAS LISTING /tmp/cc9QGGXX.s 			page 4
+
+
+ 160               	#  include <avr/iom2560.h>
+ 161               	#elif defined (__AVR_ATmega2561__)
+ 162               	#  include <avr/iom2561.h>
+ 163               	#elif defined (__AVR_AT90CAN32__)
+ 164               	#  include <avr/iocan32.h>
+ 165               	#elif defined (__AVR_AT90CAN64__)
+ 166               	#  include <avr/iocan64.h>
+ 167               	#elif defined (__AVR_AT90CAN128__)
+ 168               	#  include <avr/iocan128.h>
+ 169               	#elif defined (__AVR_AT90USB82__)
+ 170               	#  include <avr/iousb82.h>
+ 171               	#elif defined (__AVR_AT90USB162__)
+ 172               	#  include <avr/iousb162.h>
+ 173               	#elif defined (__AVR_AT90USB646__)
+ 174               	#  include <avr/iousb646.h>
+ 175               	#elif defined (__AVR_AT90USB647__)
+ 176               	#  include <avr/iousb647.h>
+ 177               	#elif defined (__AVR_AT90USB1286__)
+ 178               	#  include <avr/iousb1286.h>
+ 179               	#elif defined (__AVR_AT90USB1287__)
+ 180               	#  include <avr/iousb1287.h>
+ 181               	#elif defined (__AVR_ATmega64__)
+ 182               	#  include <avr/iom64.h>
+ 183               	#elif defined (__AVR_ATmega640__)
+ 184               	#  include <avr/iom640.h>
+ 185               	#elif defined (__AVR_ATmega644__) || defined (__AVR_ATmega644A__)
+ 186               	#  include <avr/iom644.h>
+ 187               	#elif defined (__AVR_ATmega644P__)
+ 188               	#  include <avr/iom644p.h>
+ 189               	#elif defined (__AVR_ATmega644PA__)
+ 190               	#  include <avr/iom644pa.h>
+ 191               	#elif defined (__AVR_ATmega645__) || defined (__AVR_ATmega645A__) || defined (__AVR_ATmega645P__)
+ 192               	#  include <avr/iom645.h>
+ 193               	#elif defined (__AVR_ATmega6450__) || defined (__AVR_ATmega6450A__) || defined (__AVR_ATmega6450P__
+ 194               	#  include <avr/iom6450.h>
+ 195               	#elif defined (__AVR_ATmega649__) || defined (__AVR_ATmega649A__)
+ 196               	#  include <avr/iom649.h>
+ 197               	#elif defined (__AVR_ATmega6490__) || defined (__AVR_ATmega6490A__) || defined (__AVR_ATmega6490P__
+ 198               	#  include <avr/iom6490.h>
+ 199               	#elif defined (__AVR_ATmega649P__)
+ 200               	#  include <avr/iom649p.h>
+ 201               	#elif defined (__AVR_ATmega64HVE__)
+ 202               	#  include <avr/iom64hve.h>
+ 203               	#elif defined (__AVR_ATmega103__)
+ 204               	#  include <avr/iom103.h>
+ 205               	#elif defined (__AVR_ATmega32__)
+ 206               	#  include <avr/iom32.h>
+ 207               	#elif defined (__AVR_ATmega323__)
+ 208               	#  include <avr/iom323.h>
+ 209               	#elif defined (__AVR_ATmega324P__) || defined (__AVR_ATmega324A__)
+ 210               	#  include <avr/iom324.h>
+ 211               	#elif defined (__AVR_ATmega324PA__)
+ 212               	#  include <avr/iom324pa.h>
+ 213               	#elif defined (__AVR_ATmega325__) || defined (__AVR_ATmega325A__)
+ 214               	#  include <avr/iom325.h>
+ 215               	#elif defined (__AVR_ATmega325P__)
+ 216               	#  include <avr/iom325.h>
+GAS LISTING /tmp/cc9QGGXX.s 			page 5
+
+
+ 217               	#elif defined (__AVR_ATmega3250__) || defined (__AVR_ATmega3250A__)
+ 218               	#  include <avr/iom3250.h>
+ 219               	#elif defined (__AVR_ATmega3250P__)
+ 220               	#  include <avr/iom3250.h>
+ 221               	#elif defined (__AVR_ATmega328P__) || defined (__AVR_ATmega328__)
+ 222               	#  include <avr/iom328p.h>
+   1               	/* Copyright (c) 2007 Atmel Corporation
+ 223               	#elif defined (__AVR_ATmega329__) || defined (__AVR_ATmega329A__)
+ 224               	#  include <avr/iom329.h>
+ 225               	#elif defined (__AVR_ATmega329P__) || defined (__AVR_ATmega329PA__)
+ 226               	#  include <avr/iom329.h>
+ 227               	#elif defined (__AVR_ATmega3290__) || defined (__AVR_ATmega3290A__)
+ 228               	#  include <avr/iom3290.h>
+ 229               	#elif defined (__AVR_ATmega3290P__)
+ 230               	#  include <avr/iom3290.h>
+ 231               	#elif defined (__AVR_ATmega32HVB__)
+ 232               	#  include <avr/iom32hvb.h>
+ 233               	#elif defined (__AVR_ATmega32HVBREVB__)
+ 234               	#  include <avr/iom32hvbrevb.h>
+ 235               	#elif defined (__AVR_ATmega406__)
+ 236               	#  include <avr/iom406.h>
+ 237               	#elif defined (__AVR_ATmega16__)
+ 238               	#  include <avr/iom16.h>
+ 239               	#elif defined (__AVR_ATmega16A__)
+ 240               	#  include <avr/iom16a.h>
+ 241               	#elif defined (__AVR_ATmega161__)
+ 242               	#  include <avr/iom161.h>
+ 243               	#elif defined (__AVR_ATmega162__)
+ 244               	#  include <avr/iom162.h>
+ 245               	#elif defined (__AVR_ATmega163__)
+ 246               	#  include <avr/iom163.h>
+ 247               	#elif defined (__AVR_ATmega164P__) || defined (__AVR_ATmega164A__)
+ 248               	#  include <avr/iom164.h>
+ 249               	#elif defined (__AVR_ATmega165__) || defined (__AVR_ATmega165A__)
+ 250               	#  include <avr/iom165.h>
+ 251               	#elif defined (__AVR_ATmega165P__)
+ 252               	#  include <avr/iom165p.h>
+ 253               	#elif defined (__AVR_ATmega168__) || defined (__AVR_ATmega168A__)
+ 254               	#  include <avr/iom168.h>
+ 255               	#elif defined (__AVR_ATmega168P__)
+ 256               	#  include <avr/iom168p.h>
+ 257               	#elif defined (__AVR_ATmega169__) || defined (__AVR_ATmega169A__)
+ 258               	#  include <avr/iom169.h>
+ 259               	#elif defined (__AVR_ATmega169P__)
+ 260               	#  include <avr/iom169p.h>
+ 261               	#elif defined (__AVR_ATmega169PA__)
+ 262               	#  include <avr/iom169pa.h>
+ 263               	#elif defined (__AVR_ATmega8HVA__)
+ 264               	#  include <avr/iom8hva.h>
+ 265               	#elif defined (__AVR_ATmega16HVA__)
+ 266               	#  include <avr/iom16hva.h>
+ 267               	#elif defined (__AVR_ATmega16HVA2__)
+ 268               	#  include <avr/iom16hva2.h>
+ 269               	#elif defined (__AVR_ATmega16HVB__)
+ 270               	#  include <avr/iom16hvb.h>
+ 271               	#elif defined (__AVR_ATmega16HVBREVB__)
+ 272               	#  include <avr/iom16hvbrevb.h>
+GAS LISTING /tmp/cc9QGGXX.s 			page 6
+
+
+ 273               	#elif defined (__AVR_ATmega8__)
+ 274               	#  include <avr/iom8.h>
+ 275               	#elif defined (__AVR_ATmega48__) || defined (__AVR_ATmega48A__)
+ 276               	#  include <avr/iom48.h>
+ 277               	#elif defined (__AVR_ATmega48P__)
+ 278               	#  include <avr/iom48p.h>
+ 279               	#elif defined (__AVR_ATmega88__) || defined (__AVR_ATmega88A__)
+ 280               	#  include <avr/iom88.h>
+ 281               	#elif defined (__AVR_ATmega88P__)
+ 282               	#  include <avr/iom88p.h>
+ 283               	#elif defined (__AVR_ATmega88PA__)
+ 284               	#  include <avr/iom88pa.h>
+ 285               	#elif defined (__AVR_ATmega8515__)
+ 286               	#  include <avr/iom8515.h>
+ 287               	#elif defined (__AVR_ATmega8535__)
+ 288               	#  include <avr/iom8535.h>
+ 289               	#elif defined (__AVR_AT90S8535__)
+ 290               	#  include <avr/io8535.h>
+ 291               	#elif defined (__AVR_AT90C8534__)
+ 292               	#  include <avr/io8534.h>
+ 293               	#elif defined (__AVR_AT90S8515__)
+ 294               	#  include <avr/io8515.h>
+ 295               	#elif defined (__AVR_AT90S4434__)
+ 296               	#  include <avr/io4434.h>
+ 297               	#elif defined (__AVR_AT90S4433__)
+ 298               	#  include <avr/io4433.h>
+ 299               	#elif defined (__AVR_AT90S4414__)
+ 300               	#  include <avr/io4414.h>
+ 301               	#elif defined (__AVR_ATtiny22__)
+ 302               	#  include <avr/iotn22.h>
+ 303               	#elif defined (__AVR_ATtiny26__)
+ 304               	#  include <avr/iotn26.h>
+ 305               	#elif defined (__AVR_AT90S2343__)
+ 306               	#  include <avr/io2343.h>
+ 307               	#elif defined (__AVR_AT90S2333__)
+ 308               	#  include <avr/io2333.h>
+ 309               	#elif defined (__AVR_AT90S2323__)
+ 310               	#  include <avr/io2323.h>
+ 311               	#elif defined (__AVR_AT90S2313__)
+ 312               	#  include <avr/io2313.h>
+ 313               	#elif defined (__AVR_ATtiny4__)
+ 314               	#  include <avr/iotn4.h>
+ 315               	#elif defined (__AVR_ATtiny5__)
+ 316               	#  include <avr/iotn5.h>
+ 317               	#elif defined (__AVR_ATtiny9__)
+ 318               	#  include <avr/iotn9.h>
+ 319               	#elif defined (__AVR_ATtiny10__)
+ 320               	#  include <avr/iotn10.h>
+ 321               	#elif defined (__AVR_ATtiny20__)
+ 322               	#  include <avr/iotn20.h>
+ 323               	#elif defined (__AVR_ATtiny40__)
+ 324               	#  include <avr/iotn40.h>
+ 325               	#elif defined (__AVR_ATtiny2313__)
+ 326               	#  include <avr/iotn2313.h>
+ 327               	#elif defined (__AVR_ATtiny2313A__)
+ 328               	#  include <avr/iotn2313a.h>
+ 329               	#elif defined (__AVR_ATtiny13__)
+GAS LISTING /tmp/cc9QGGXX.s 			page 7
+
+
+ 330               	#  include <avr/iotn13.h>
+ 331               	#elif defined (__AVR_ATtiny13A__)
+ 332               	#  include <avr/iotn13a.h>
+ 333               	#elif defined (__AVR_ATtiny25__)
+ 334               	#  include <avr/iotn25.h>
+ 335               	#elif defined (__AVR_ATtiny4313__)
+ 336               	#  include <avr/iotn4313.h>
+ 337               	#elif defined (__AVR_ATtiny45__)
+ 338               	#  include <avr/iotn45.h>
+ 339               	#elif defined (__AVR_ATtiny85__)
+ 340               	#  include <avr/iotn85.h>
+ 341               	#elif defined (__AVR_ATtiny24__)
+ 342               	#  include <avr/iotn24.h>
+ 343               	#elif defined (__AVR_ATtiny24A__)
+ 344               	#  include <avr/iotn24a.h>
+ 345               	#elif defined (__AVR_ATtiny44__)
+ 346               	#  include <avr/iotn44.h>
+ 347               	#elif defined (__AVR_ATtiny44A__)
+ 348               	#  include <avr/iotn44a.h>
+ 349               	#elif defined (__AVR_ATtiny84__)
+ 350               	#  include <avr/iotn84.h>
+ 351               	#elif defined (__AVR_ATtiny84A__)
+ 352               	#  include <avr/iotn84a.h>  
+ 353               	#elif defined (__AVR_ATtiny261__)
+ 354               	#  include <avr/iotn261.h>
+ 355               	#elif defined (__AVR_ATtiny261A__)
+ 356               	#  include <avr/iotn261a.h>
+ 357               	#elif defined (__AVR_ATtiny461__)
+ 358               	#  include <avr/iotn461.h>
+ 359               	#elif defined (__AVR_ATtiny461A__)
+ 360               	#  include <avr/iotn461a.h>
+ 361               	#elif defined (__AVR_ATtiny861__)
+ 362               	#  include <avr/iotn861.h>
+ 363               	#elif defined (__AVR_ATtiny861A__)
+ 364               	#  include <avr/iotn861a.h>
+ 365               	#elif defined (__AVR_ATtiny43U__)
+ 366               	#  include <avr/iotn43u.h>
+ 367               	#elif defined (__AVR_ATtiny48__)
+ 368               	#  include <avr/iotn48.h>
+ 369               	#elif defined (__AVR_ATtiny88__)
+ 370               	#  include <avr/iotn88.h>
+ 371               	#elif defined (__AVR_ATtiny87__)
+ 372               	#  include <avr/iotn87.h>
+ 373               	#elif defined (__AVR_ATtiny167__)
+ 374               	#  include <avr/iotn167.h>
+ 375               	#elif defined (__AVR_AT90SCR100__)
+ 376               	#  include <avr/io90scr100.h>
+ 377               	#elif defined (__AVR_ATxmega16A4__)
+ 378               	#  include <avr/iox16a4.h>
+ 379               	#elif defined (__AVR_ATxmega16D4__)
+ 380               	#  include <avr/iox16d4.h>
+ 381               	#elif defined (__AVR_ATxmega32A4__)
+ 382               	#  include <avr/iox32a4.h>
+ 383               	#elif defined (__AVR_ATxmega32D4__)
+ 384               	#  include <avr/iox32d4.h>
+ 385               	#elif defined (__AVR_ATxmega64A1__)
+ 386               	#  include <avr/iox64a1.h>
+GAS LISTING /tmp/cc9QGGXX.s 			page 8
+
+
+ 387               	#elif defined (__AVR_ATxmega64A1U__)
+ 388               	#  include <avr/iox64a1u.h>
+ 389               	#elif defined (__AVR_ATxmega64A3__)
+ 390               	#  include <avr/iox64a3.h>
+ 391               	#elif defined (__AVR_ATxmega64D3__)
+ 392               	#  include <avr/iox64d3.h>
+ 393               	#elif defined (__AVR_ATxmega128A1__)
+ 394               	#  include <avr/iox128a1.h>
+ 395               	#elif defined (__AVR_ATxmega128A1U__)
+ 396               	#  include <avr/iox128a1u.h>
+ 397               	#elif defined (__AVR_ATxmega128A3__)
+ 398               	#  include <avr/iox128a3.h>
+ 399               	#elif defined (__AVR_ATxmega128D3__)
+ 400               	#  include <avr/iox128d3.h>
+ 401               	#elif defined (__AVR_ATxmega192A3__)
+ 402               	#  include <avr/iox192a3.h>
+ 403               	#elif defined (__AVR_ATxmega192D3__)
+ 404               	#  include <avr/iox192d3.h>
+ 405               	#elif defined (__AVR_ATxmega256A3__)
+ 406               	#  include <avr/iox256a3.h>
+ 407               	#elif defined (__AVR_ATxmega256A3B__)
+ 408               	#  include <avr/iox256a3b.h>
+ 409               	#elif defined (__AVR_ATxmega256D3__)
+ 410               	#  include <avr/iox256d3.h>
+ 411               	#elif defined (__AVR_ATA6289__)
+ 412               	#  include <avr/ioa6289.h>
+ 413               	/* avr1: the following only supported for assembler programs */
+ 414               	#elif defined (__AVR_ATtiny28__)
+ 415               	#  include <avr/iotn28.h>
+ 416               	#elif defined (__AVR_AT90S1200__)
+ 417               	#  include <avr/io1200.h>
+ 418               	#elif defined (__AVR_ATtiny15__)
+ 419               	#  include <avr/iotn15.h>
+ 420               	#elif defined (__AVR_ATtiny12__)
+ 421               	#  include <avr/iotn12.h>
+ 422               	#elif defined (__AVR_ATtiny11__)
+ 423               	#  include <avr/iotn11.h>
+ 424               	#elif defined (__AVR_M3000__)
+ 425               	#  include <avr/iom3000.h>
+ 426               	#else
+ 427               	#  if !defined(__COMPILING_AVR_LIBC__)
+ 428               	#    warning "device type not defined"
+ 429               	#  endif
+ 430               	#endif
+ 431               	
+ 432               	#include <avr/portpins.h>
+   1               	/* Copyright (c) 2003  Theodore A. Roth
+ 433               	
+ 434               	#include <avr/common.h>
+   1               	/* Copyright (c) 2007 Eric B. Weddington
+ 435               	
+ 436               	#include <avr/version.h>
+   1               	/* Copyright (c) 2005, Joerg Wunsch                               -*- c -*-
+ 437               	
+ 438               	/* Include fuse.h after individual IO header files. */
+ 439               	#include <avr/fuse.h>
+   1               	/* Copyright (c) 2007, Atmel Corporation
+GAS LISTING /tmp/cc9QGGXX.s 			page 9
+
+
+ 440               	
+ 441               	/* Include lock.h after individual IO header files. */
+ 442               	#include <avr/lock.h>
+   1               	/* Copyright (c) 2007, Atmel Corporation
+ 443               	
+   9               	
+  10               	#define ASSEMBLY
+  11               	#include "enc424j600.h"
+   1               	//Copyright 2012 Charles Lohr under the MIT/x11, newBSD, LGPL or GPL licenses.  You choose.
+   2               	
+   3               	#ifndef _enc424j600_H
+   4               	#define _enc424j600_H
+   5               	
+   6               	#include "eth_config.h"
+   1               	//Copyright 2012 Charles Lohr under the MIT/x11, newBSD, LGPL or GPL licenses.  You choose.
+   7               	#include "enc424j600_regs.h"
+   1               	//Standard header definitions, no Copyright applies.
+   8               	#include <avr/io.h>
+  12               	
+  13               	#ifdef ASM_SPI
+  14               	
+  15               	.global espiR_asm
+  16               	espiR_asm:
+  17               	
+  18               	
+  19               	#ifdef ASM_REALLY_FAST_SPI
+  20               	#define ASM_REALLY_FAST_SPI_R
+  21               	#define ASM_REALLY_FAST_SPI_W
+  22               	#endif
+  23               	
+  24               	//This is odd, but at high clock speeds, we need to look
+  25               	//after the falling edge because we didn't give the chip
+  26               	//enough time to respond.  This is usually only a problem
+  27               	//when exceeding 20 MHz, but because it still works at 8
+  28               	//I decided to use it all the time.
+  29               	#ifdef ASM_REALLY_FAST_SPI_R
+  30               	#define ASM_REALLY_FAST_SPI_R_SPEEDPHASE
+  31               	#endif
+  32               	
+  33               	//Return value in R24
+  34               	#ifdef ASM_REALLY_FAST_SPI_R_SPEEDPHASE
+  35 0000 28B1      		in r18, ETPORT
+  36 0002 2B7F      		andi r18, ~(ETSCK)
+  37 0004 322F      		mov r19, r18
+  38 0006 3460      		ori r19, ETSCK
+  39               	
+  40 0008 8827      		clr r24
+  41 000a 28B9      		out ETPORT, r18
+  42 000c 38B9      		out ETPORT, r19
+  43               	
+  44 000e 28B9      		out ETPORT, r18
+  45 0010 3499      		sbic ETPIN, ETSOP
+  46 0012 8068      		ori r24, 0x80
+  47 0014 38B9      		out ETPORT, r19
+  48               	
+  49 0016 28B9      		out ETPORT, r18
+  50 0018 3499      		sbic ETPIN, ETSOP
+GAS LISTING /tmp/cc9QGGXX.s 			page 10
+
+
+  51 001a 8064      		ori r24, 0x40
+  52 001c 38B9      		out ETPORT, r19
+  53               	
+  54 001e 28B9      		out ETPORT, r18
+  55 0020 3499      		sbic ETPIN, ETSOP
+  56 0022 8062      		ori r24, 0x20
+  57 0024 38B9      		out ETPORT, r19
+  58               	
+  59 0026 28B9      		out ETPORT, r18
+  60 0028 3499      		sbic ETPIN, ETSOP
+  61 002a 8061      		ori r24, 0x10
+  62 002c 38B9      		out ETPORT, r19
+  63               	
+  64 002e 28B9      		out ETPORT, r18
+  65 0030 3499      		sbic ETPIN, ETSOP
+  66 0032 8860      		ori r24, 0x08
+  67 0034 38B9      		out ETPORT, r19
+  68               	
+  69 0036 28B9      		out ETPORT, r18
+  70 0038 3499      		sbic ETPIN, ETSOP
+  71 003a 8460      		ori r24, 0x04
+  72 003c 38B9      		out ETPORT, r19
+  73               	
+  74 003e 28B9      		out ETPORT, r18
+  75 0040 3499      		sbic ETPIN, ETSOP
+  76 0042 8260      		ori r24, 0x02
+  77 0044 38B9      		out ETPORT, r19
+  78               	
+  79 0046 28B9      		out ETPORT, r18
+  80 0048 3499      		sbic ETPIN, ETSOP
+  81 004a 8160      		ori r24, 0x01
+  82               	
+  83               	
+  84 004c 0895      		ret
+  85               	
+  86               	#elif defined( ASM_REALLY_FAST_SPI_R )
+  87               		in r18, ETPORT
+  88               		andi r18, ~(ETSCK)
+  89               		mov r19, r18
+  90               		ori r19, ETSCK
+  91               	
+  92               		clr r24
+  93               		out ETPORT, r18
+  94               		out ETPORT, r19
+  95               	#ifdef ADD_WAIT_IN_READ
+  96               		nop
+  97               	#endif
+  98               		sbic ETPIN, ETSOP
+  99               		ori r24, 0x80
+ 100               		out ETPORT, r18
+ 101               		out ETPORT, r19
+ 102               	#ifdef ADD_WAIT_IN_READ
+ 103               		nop
+ 104               	#endif
+ 105               		sbic ETPIN, ETSOP
+ 106               		ori r24, 0x40
+ 107               		out ETPORT, r18
+GAS LISTING /tmp/cc9QGGXX.s 			page 11
+
+
+ 108               		out ETPORT, r19
+ 109               	#ifdef ADD_WAIT_IN_READ
+ 110               		nop
+ 111               	#endif
+ 112               		sbic ETPIN, ETSOP
+ 113               		ori r24, 0x20
+ 114               		out ETPORT, r18
+ 115               		out ETPORT, r19
+ 116               	#ifdef ADD_WAIT_IN_READ
+ 117               		nop
+ 118               	#endif
+ 119               		sbic ETPIN, ETSOP
+ 120               		ori r24, 0x10
+ 121               		out ETPORT, r18
+ 122               		out ETPORT, r19
+ 123               	#ifdef ADD_WAIT_IN_READ
+ 124               		nop
+ 125               	#endif
+ 126               		sbic ETPIN, ETSOP
+ 127               		ori r24, 0x08
+ 128               		out ETPORT, r18
+ 129               		out ETPORT, r19
+ 130               	#ifdef ADD_WAIT_IN_READ
+ 131               		nop
+ 132               	#endif
+ 133               		sbic ETPIN, ETSOP
+ 134               		ori r24, 0x04
+ 135               		out ETPORT, r18
+ 136               		out ETPORT, r19
+ 137               	#ifdef ADD_WAIT_IN_READ
+ 138               		nop
+ 139               	#endif
+ 140               		sbic ETPIN, ETSOP
+ 141               		ori r24, 0x02
+ 142               		out ETPORT, r18
+ 143               		out ETPORT, r19
+ 144               	#ifdef ADD_WAIT_IN_READ
+ 145               		nop
+ 146               	#endif
+ 147               		sbic ETPIN, ETSOP
+ 148               		ori r24, 0x01
+ 149               		out ETPORT, r18
+ 150               	
+ 151               	
+ 152               		ret
+ 153               	#else
+ 154               		clr r24              // 1 cycle 
+ 155               		cbi ETPORT, ETSCKP   // 2 cycles
+ 156               		sbi ETPORT, ETSCKP   // 2 cycles
+ 157               		sbic ETPIN, ETSOP    // 1 cycle
+ 158               		ori r24, 0x80        // 1 cycle
+ 159               		cbi ETPORT, ETSCKP
+ 160               		sbi ETPORT, ETSCKP
+ 161               		sbic ETPIN, ETSOP
+ 162               		ori r24, 0x40
+ 163               		cbi ETPORT, ETSCKP
+ 164               		sbi ETPORT, ETSCKP
+GAS LISTING /tmp/cc9QGGXX.s 			page 12
+
+
+ 165               		sbic ETPIN, ETSOP
+ 166               		ori r24, 0x20
+ 167               		cbi ETPORT, ETSCKP
+ 168               		sbi ETPORT, ETSCKP
+ 169               		sbic ETPIN, ETSOP
+ 170               		ori r24, 0x10
+ 171               		cbi ETPORT, ETSCKP
+ 172               		sbi ETPORT, ETSCKP
+ 173               		sbic ETPIN, ETSOP
+ 174               		ori r24, 0x08
+ 175               		cbi ETPORT, ETSCKP
+ 176               		sbi ETPORT, ETSCKP
+ 177               		sbic ETPIN, ETSOP
+ 178               		ori r24, 0x04
+ 179               		cbi ETPORT, ETSCKP
+ 180               		sbi ETPORT, ETSCKP
+ 181               		sbic ETPIN, ETSOP
+ 182               		ori r24, 0x02
+ 183               		cbi ETPORT, ETSCKP
+ 184               		sbi ETPORT, ETSCKP
+ 185               		sbic ETPIN, ETSOP
+ 186               		ori r24, 0x01
+ 187               		cbi ETPORT, ETSCKP
+ 188               		ret
+ 189               	#endif
+ 190               	
+ 191               	.global espiW_asm
+ 192               	espiW_asm:
+ 193               	#ifdef ASM_REALLY_FAST_SPI_W
+ 194               	
+ 195               	
+ 196 004e 28B1      		in r18, ETPORT
+ 197 0050 2B7F      		andi r18, ~(ETSCK)
+ 198 0052 422F      		mov r20, r18
+ 199 0054 4860      		ori r20, ETSI
+ 200               	
+ 201 0056 28B9      		out ETPORT, r18     //SCK is low
+ 202               	
+ 203 0058 87FD      		sbrc r24, 7
+ 204 005a 48B9      		out ETPORT, r20     //Set SI high
+ 205 005c 429A      		sbi ETPORT, ETSCKP  //Set SCK high
+ 206 005e 28B9      		out ETPORT, r18     //Set SCK Low
+ 207               	
+ 208 0060 86FD      		sbrc r24, 6
+ 209 0062 48B9      		out ETPORT, r20
+ 210 0064 429A      		sbi ETPORT, ETSCKP
+ 211 0066 28B9      		out ETPORT, r18
+ 212               	
+ 213 0068 85FD      		sbrc r24, 5
+ 214 006a 48B9      		out ETPORT, r20
+ 215 006c 429A      		sbi ETPORT, ETSCKP
+ 216 006e 28B9      		out ETPORT, r18
+ 217               	
+ 218 0070 84FD      		sbrc r24, 4
+ 219 0072 48B9      		out ETPORT, r20
+ 220 0074 429A      		sbi ETPORT, ETSCKP
+ 221 0076 28B9      		out ETPORT, r18
+GAS LISTING /tmp/cc9QGGXX.s 			page 13
+
+
+ 222               	
+ 223 0078 83FD      		sbrc r24, 3
+ 224 007a 48B9      		out ETPORT, r20
+ 225 007c 429A      		sbi ETPORT, ETSCKP
+ 226 007e 28B9      		out ETPORT, r18
+ 227               	
+ 228 0080 82FD      		sbrc r24, 2
+ 229 0082 48B9      		out ETPORT, r20
+ 230 0084 429A      		sbi ETPORT, ETSCKP
+ 231 0086 28B9      		out ETPORT, r18
+ 232               	
+ 233 0088 81FD      		sbrc r24, 1
+ 234 008a 48B9      		out ETPORT, r20
+ 235 008c 429A      		sbi ETPORT, ETSCKP
+ 236 008e 28B9      		out ETPORT, r18
+ 237               	
+ 238 0090 80FD      		sbrc r24, 0
+ 239 0092 48B9      		out ETPORT, r20
+ 240 0094 429A      		sbi ETPORT, ETSCKP
+ 241 0096 28B9      		out ETPORT, r18
+ 242               	
+ 243 0098 0895      		ret
+GAS LISTING /tmp/cc9QGGXX.s 			page 14
+
+
+DEFINED SYMBOLS
+    enc424j600_asm.S:16     .text:0000000000000000 espiR_asm
+    enc424j600_asm.S:192    .text:000000000000004e espiW_asm
+
+NO UNDEFINED SYMBOLS
