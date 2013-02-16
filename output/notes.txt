@@ -1,0 +1,15 @@
+nclude <tcclib.h>                                                             
+                                                                                
+void _outbyte( unsigned short address, unsigned char val )                      
+{                                                                               
+//__asm__ __volatile__ ("movl 0x6e, %%eax\n\tmovl $3, %%ebx\n\tint $0x80\n\t\   
+//" : : );                                                                      
+int res;                                                                        
+__asm__ volatile ( "int $0x80" : "=a" (res) :                                   
+"0" (110), "b" (3) );                                                           
+                                                                                
+printf( "XXX\n" );                                                              
+__asm__ __volatile__ ("outb %0,%1" : : "a" (val), "Nd" (address));                                                                              
+}                                                                               
+                                                                                
+                

@@ -1,0 +1,34 @@
+#!/bin/sh
+
+show_boot_time
+
+echo
+echo JSL init v0.1
+
+source /etc/profile
+
+mount -a
+
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin
+export HOME=/root
+export TERM=vt100
+
+rm -rf /dev/random /dev/urandom
+mknod /dev/random c 1 8
+mknod /dev/urandom c 1 9
+
+cd $HOME
+
+stty -F /dev/ttyS0 rows 30
+
+cat /etc/issue
+
+echo Starting network...
+
+cd /root/tunnel
+./tunnel.sh
+cd /root
+
+while /bin/true; do
+  setsid sh -c 'exec sh </dev/ttyS0 >/dev/ttyS0 2>&1'
+done
